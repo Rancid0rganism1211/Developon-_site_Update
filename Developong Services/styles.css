@@ -187,6 +187,21 @@ header {
   color: rgb(158, 155, 155);
 }
 
+/* Match textarea in header form to header input styles */
+.header__form textarea,
+.header__form .message-field {
+  padding: 1rem;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  color: var(--text-dark);
+  background-color: var(--primary-color-light);
+  border-radius: 5px;
+}
+
+.header__form textarea::placeholder {
+  color: rgb(158, 155, 155);
+}
 .form__btn {
   background-color: rgb(71, 66, 66);
   transition: 0.3s;

@@ -303,6 +303,25 @@ header {
   color: var(--white);
 }
 
+/* Larger message field used in header form */
+.message-field {
+  width: 100%;
+  min-height: 160px; /* make message area noticeably larger */
+  resize: vertical; /* allow user to resize vertically */
+  padding: 1rem;
+  font-size: 1.1rem; /* slightly larger text for readability */
+  border-radius: 5px;
+  border: none;
+  background-color: var(--primary-color-light);
+  color: var(--text-dark);
+  outline: none;
+}
+
+.message-field::placeholder {
+  color: rgb(158, 155, 155);
+}
+
+
 
 @media(max-width:950px) {
   .hero-img,
