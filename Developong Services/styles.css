@@ -197,6 +197,7 @@ header {
   color: var(--text-dark);
   background-color: var(--primary-color-light);
   border-radius: 5px;
+  min-height: 220px; /* increased height for the message area */
 }
 
 .header__form textarea::placeholder {
