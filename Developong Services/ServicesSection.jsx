@@ -185,7 +185,7 @@ const styles = {
   },
   link: {
     display: 'inline-block',
-    color: '#3b82f6',
+    color: '#ED4447FF',
     fontWeight: '500',
     fontSize: '0.9375rem',
     textDecoration: 'none',

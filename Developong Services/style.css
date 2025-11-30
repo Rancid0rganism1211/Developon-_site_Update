@@ -87,16 +87,19 @@ header {
 
 .main-nav {
   width: 79%;
+  max-width: 1200px;
   background-color: rgb(50, 49, 49);
-  padding-left: 5%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-radius: 1px;
   position: fixed;
-  padding: 0.5rem 0.5rem;
-  transition: top 0.3s ease-in-out; /* Add a smooth transition */
+  padding: 0.5rem 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: top 0.3s ease-in-out;
   overflow: hidden;
+  z-index: 1000;
 }
 
 .main-nav a:hover {
