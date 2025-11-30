@@ -59,93 +59,201 @@
     ---->
     </header>
 
-    <div class="container">
-      <div class="description">
-        <h2 class="heading-secondary">
-          Services that we provide:
-        </h2>
-        <p>School counselors play a crucial role in supporting the academic, social,
-          and <br>emotional development of students. Their services are diverse and may 
-          vary <br>based on the specific needs of students and the school community. 
-          Here are <br>some common services that school counselors provide:</p>
-      </div>
-
-      <div class="cards">
-        <div class="card">
-          <div class="icon">
-            <img src="img/img-1.png" alt="Image 1">
-          </div>
-
-          <h3 class="heading-tertiary">Academic Counseling</h3>
-          <p>
-            Assisting students in course selection and academic planning.
-            Providing guidance on study skills, time management, and<br>organization.
-            Helping students set and achieve academic goals.
-          </p>
+    <!-- Modern Services Section -->
+    <section class="services-section">
+      <div class="services-container">
+        <!-- Section Header -->
+        <div class="services-header fade-up" data-delay="0">
+          <h1 class="services-title">Our Services</h1>
+          <p class="services-tagline">Comprehensive technology solutions tailored to elevate your business</p>
         </div>
 
-        <div class="card">
-          <div class="icon">
-            <img src="img/img-2.png" alt="Image 2">
+        <!-- Services Grid -->
+        <div class="services-grid">
+          <!-- Service Card 1 -->
+          <div class="service-card fade-up" data-delay="100">
+            <h3 class="service-title">Web Development Solutions</h3>
+            <p class="service-description">
+              Custom websites, ecommerce platforms, content management systems, and performance optimization to establish your digital presence.
+            </p>
+            <a href="#" class="service-link">Learn More →</a>
           </div>
 
-          <h3 class="heading-tertiary">College and Career Guidance</h3>
-          <p>
-            Assisting students in exploring career options and setting career goals.
-            Assisting with college applications, including guidance on essays and interviews.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="icon">
-            <img src="img/img-3.png" alt="Image 3">
+          <!-- Service Card 2 -->
+          <div class="service-card fade-up" data-delay="200">
+            <h3 class="service-title">Cloud Solutions</h3>
+            <p class="service-description">
+              Cloud infrastructure setup, automated backups, seamless deployments, and migrations to scalable cloud environments.
+            </p>
+            <a href="#" class="service-link">Learn More →</a>
           </div>
 
-          <h3 class="heading-tertiary">Crisis Intervention</h3>
-          <p>
-            Offering support during times of crisis, such as family issues, grief, or emergencies.
-            Collaborating with other professionals to ensure the safety and well-being of students.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="icon">
-            <img src="img/img-4.png" alt="Image 4">
+          <!-- Service Card 3 -->
+          <div class="service-card fade-up" data-delay="300">
+            <h3 class="service-title">Affiliate Network Setup</h3>
+            <p class="service-description">
+              Complete tracking systems, commission management, analytics dashboards, and API integrations for your affiliate program.
+            </p>
+            <a href="#" class="service-link">Learn More →</a>
           </div>
 
-          <h3 class="heading-tertiary">Character Education<br> and Life Skills</h3>
-          <p>
-            Providing guidance on character development and values.
-            Teaching life skills, including communication, decision-making, and problem-solving.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="icon">
-            <img src="img/img-5.png" alt="Image 5">
+          <!-- Service Card 4 -->
+          <div class="service-card fade-up" data-delay="400">
+            <h3 class="service-title">Application Software & Systems</h3>
+            <p class="service-description">
+              Biometric authentication systems, inventory management tools, point-of-sale systems, and CRM solutions for business operations.
+            </p>
+            <a href="#" class="service-link">Learn More →</a>
           </div>
 
-          <h3 class="heading-tertiary">Personal and Social Development</h3>
-          <p>
-            Addressing social and emotional challenges faced by students.
-            Conducting individual and group counseling sessions.
-            Promoting positive interpersonal relationships and conflict resolution.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="icon">
-            <img src="img/img-6.png" alt="Image 6">
+          <!-- Service Card 5 -->
+          <div class="service-card fade-up" data-delay="500">
+            <h3 class="service-title">Hardware & OS Solutions</h3>
+            <p class="service-description">
+              Hardware procurement and setup, network infrastructure, operating system configuration, and peripheral device management.
+            </p>
+            <a href="#" class="service-link">Learn More →</a>
           </div>
-
-          <h3 class="heading-tertiary">Support for Special Populations</h3>
-          <p>
-            Offering assistance to students with special needs or learning differences.
-            Collaborating with special education teams to provide inclusive support.
-          </p>
         </div>
       </div>
-    </div>
+    </section>
+
+    <style>
+      /* Modern Services Section Styles */
+      .services-section {
+        padding: 80px 20px;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        min-height: 100vh;
+      }
+
+      .services-container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      /* Header Styles */
+      .services-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .services-title {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #1a1a2e;
+        margin-bottom: 16px;
+        letter-spacing: -0.5px;
+      }
+
+      .services-tagline {
+        font-size: 1.125rem;
+        color: #64748b;
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.6;
+      }
+
+      /* Grid Layout */
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+      }
+
+      /* Scroll Animation Styles */
+      .fade-up {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+
+      .fade-up.animate {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Service Card Styles */
+      .service-card {
+        background: #ffffff;
+        border-radius: 16px;
+        padding: 40px 32px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07), 0 1px 3px rgba(0, 0, 0, 0.06);
+        transition: all 0.3s ease, opacity 0.6s ease-out, transform 0.6s ease-out;
+        border: 1px solid rgba(226, 232, 240, 0.8);
+      }
+
+      .service-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.06);
+      }
+
+      .service-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #1e293b;
+        margin-bottom: 16px;
+        line-height: 1.3;
+      }
+
+      .service-description {
+        font-size: 1rem;
+        color: #475569;
+        line-height: 1.7;
+        margin-bottom: 24px;
+      }
+
+      .service-link {
+        display: inline-block;
+        color: #3b82f6;
+        font-weight: 500;
+        font-size: 0.9375rem;
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+
+      .service-link:hover {
+        color: #2563eb;
+      }
+
+      /* Responsive: Mobile Layout */
+      @media (max-width: 768px) {
+        .services-section {
+          padding: 60px 16px;
+        }
+
+        .services-title {
+          font-size: 2rem;
+        }
+
+        .services-tagline {
+          font-size: 1rem;
+        }
+
+        .services-grid {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+
+        .service-card {
+          padding: 32px 24px;
+        }
+
+        .service-title {
+          font-size: 1.25rem;
+        }
+      }
+
+      /* Tablet adjustments */
+      @media (max-width: 1024px) and (min-width: 769px) {
+        .services-grid {
+          gap: 24px;
+        }
+
+        .service-card {
+          padding: 36px 28px;
+        }
+      }
+    </style>
 
 <br>
 <br>
@@ -167,5 +275,29 @@
     - custom js link
  -->
  <script src="script.js"></script>
+
+  <!-- Scroll Animation Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const animateElements = document.querySelectorAll('.fade-up');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const delay = entry.target.getAttribute('data-delay') || 0;
+            setTimeout(() => {
+              entry.target.classList.add('animate');
+            }, delay);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      });
+      
+      animateElements.forEach(el => observer.observe(el));
+    });
+  </script>
   </body>
     </html>
