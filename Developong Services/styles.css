@@ -197,7 +197,7 @@ header {
   color: var(--text-dark);
   background-color: var(--primary-color-light);
   border-radius: 5px;
-  min-height: 220px; /* increased height for the message area */
+  min-height: 120px; /* increased height for the message area */
 }
 
 .header__form textarea::placeholder {
@@ -434,8 +434,28 @@ header {
   transition: 0.3s;
 }
 
-.doctors__socials span:hover {
+.doctors__socials span:hover,
+.doctors__socials a:hover {
   color: var(--primary-color);
+}
+
+/* Keep same formatting when social icons are anchors */
+.doctors__socials a,
+.footer__socials a {
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  background-color: var(--white);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.doctors__socials a i,
+.footer__socials a i {
+  vertical-align: middle;
 }
 
 .doctors__card:hover .doctors__socials {
@@ -529,6 +549,14 @@ header {
   color: var(--white);
   cursor: pointer;
 }
+
+/* Inline feedback message for forms */
+.form-message {
+  margin-top: 0.5rem;
+  font-weight: 600;
+  color: green;
+}
+.form-message.error { color: #c43d3d; }
 
 
 .newsletter-title {
