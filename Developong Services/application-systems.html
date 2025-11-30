@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css" />
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>Application Systems | Developong Company</title>
+
+    <style>
+      /* Service Detail Page Styles - Matching Design System */
+      
+      /* Hero Section */
+      .service-hero {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 120px 20px 80px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .service-hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+        pointer-events: none;
+      }
+
+      .hero-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero-content {
+        color: #ffffff;
+      }
+
+      .service-category {
+        display: inline-block;
+        padding: 8px 16px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 20px;
+        font-size: 0.875rem;
+        font-weight: 600;
+        margin-bottom: 16px;
+        backdrop-filter: blur(10px);
+      }
+
+      .hero-title {
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+        font-weight: 700;
+        margin-bottom: 24px;
+        line-height: 1.2;
+        letter-spacing: -0.5px;
+      }
+
+      .hero-description {
+        font-size: 1.125rem;
+        line-height: 1.7;
+        opacity: 0.95;
+        margin-bottom: 32px;
+      }
+
+      .hero-cta {
+        display: inline-flex;
+        align-items: center;
+        padding: 14px 32px;
+        background: #ffffff;
+        color: #667eea;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      .hero-cta:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Illustration Placeholder */
+      .hero-illustration {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        padding: 60px;
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        min-height: 400px;
+      }
+
+      .illustration-icon {
+        width: 200px;
+        height: 200px;
+        color: #ffffff;
+        opacity: 0.9;
+      }
+
+      /* Features Section */
+      .features-section {
+        padding: 80px 20px;
+        background: #f5f7fa;
+      }
+
+      .features-container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #1a1a2e;
+        margin-bottom: 16px;
+        letter-spacing: -0.5px;
+      }
+
+      .section-subtitle {
+        font-size: 1.125rem;
+        color: #64748b;
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.6;
+      }
+
+      /* Feature Grid */
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 32px;
+        margin-bottom: 60px;
+      }
+
+      .feature-card {
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 32px;
+        border-left: 4px solid #667eea;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      }
+
+      .feature-icon {
+        width: 48px;
+        height: 48px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        margin-bottom: 20px;
+        font-size: 1.5rem;
+      }
+
+      .feature-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #1e293b;
+        margin-bottom: 12px;
+      }
+
+      .feature-description {
+        font-size: 1rem;
+        color: #475569;
+        line-height: 1.6;
+      }
+
+      /* Details Section with Bullet Points */
+      .details-section {
+        background: #ffffff;
+        padding: 80px 20px;
+      }
+
+      .details-container {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .details-content {
+        background: #f8fafc;
+        border-radius: 16px;
+        padding: 48px;
+        border: 1px solid #e2e8f0;
+      }
+
+      .details-title {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #1a1a2e;
+        margin-bottom: 32px;
+        padding-bottom: 16px;
+        border-bottom: 3px solid #667eea;
+      }
+
+      .details-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .details-list li {
+        padding: 16px 0;
+        padding-left: 40px;
+        position: relative;
+        font-size: 1.125rem;
+        color: #334155;
+        line-height: 1.6;
+        border-bottom: 1px solid #e2e8f0;
+      }
+
+      .details-list li:last-child {
+        border-bottom: none;
+      }
+
+      .details-list li::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        top: 16px;
+        width: 28px;
+        height: 28px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: #ffffff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 0.875rem;
+      }
+
+      /* CTA Section */
+      .cta-section {
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        padding: 80px 20px;
+        text-align: center;
+      }
+
+      .cta-container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .cta-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #1a1a2e;
+        margin-bottom: 16px;
+      }
+
+      .cta-description {
+        font-size: 1.125rem;
+        color: #64748b;
+        margin-bottom: 32px;
+        line-height: 1.6;
+      }
+
+      .cta-buttons {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        padding: 14px 32px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: #ffffff;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+      }
+
+      .btn-secondary {
+        display: inline-flex;
+        align-items: center;
+        padding: 14px 32px;
+        background: #ffffff;
+        color: #667eea;
+        border: 2px solid #667eea;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .btn-secondary:hover {
+        background: #667eea;
+        color: #ffffff;
+        transform: translateY(-2px);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .hero-container {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+
+        .hero-illustration {
+          min-height: 300px;
+          padding: 40px;
+        }
+
+        .illustration-icon {
+          width: 150px;
+          height: 150px;
+        }
+
+        .service-hero {
+          padding: 80px 20px 60px;
+        }
+
+        .features-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .details-content {
+          padding: 32px 24px;
+        }
+
+        .cta-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .btn-primary,
+        .btn-secondary {
+          width: 100%;
+          max-width: 300px;
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="section__container nav__container">
+      <a href="index.html" class="nav__logo">Developong <span>Company</span></a>
+      
+      <div class="menu-icon">&#9776;</div>
+      <ul class="nav__links">
+        <li class="link"><a href="Home.html">Home</a></li>
+        <li class="link"><a href="about.html">About</a></li>
+        <li class="link"><a href="services.html">Services</a></li>
+        <li class="link"><a href="FAQ.html">FAQ</a></li>
+      </ul> 
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="service-hero">
+      <div class="hero-container">
+        <div class="hero-content" data-aos="fade-right" data-aos-duration="800">
+          <span class="service-category">APPLICATION SYSTEMS</span>
+          <h1 class="hero-title">Custom Application Development</h1>
+          <p class="hero-description">
+            Enterprise-grade software solutions tailored to your workflows. From CRM systems to inventory management, we build applications that streamline operations.
+          </p>
+          <a href="Home.html#contact" class="hero-cta">
+            Get Started
+            <i class="ri-arrow-right-line" style="margin-left: 8px;"></i>
+          </a>
+        </div>
+        <div class="hero-illustration" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+          <svg class="illustration-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <rect x="50" y="50" width="40" height="40" rx="6" fill="rgba(255,255,255,0.9)"/>
+            <rect x="110" y="50" width="40" height="40" rx="6" fill="rgba(255,255,255,0.8)"/>
+            <rect x="50" y="110" width="40" height="40" rx="6" fill="rgba(255,255,255,0.8)"/>
+            <rect x="110" y="110" width="40" height="40" rx="6" fill="rgba(255,255,255,0.9)"/>
+            <line x1="70" y1="60" x2="80" y2="60" stroke="currentColor" stroke-width="2"/>
+            <line x1="70" y1="70" x2="80" y2="70" stroke="currentColor" stroke-width="2" opacity="0.7"/>
+            <circle cx="130" cy="70" r="8" fill="currentColor"/>
+            <rect x="60" y="120" width="20" height="20" fill="currentColor" opacity="0.7"/>
+            <circle cx="130" cy="130" r="8" fill="currentColor"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Overview -->
+    <section class="features-section">
+      <div class="features-container">
+        <div class="section-header" data-aos="fade-down" data-aos-duration="600">
+          <h2 class="section-title">What We Deliver</h2>
+          <p class="section-subtitle">
+            Enterprise application software designed to streamline your unique business workflows
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="ri-flow-chart"></i>
+            </div>
+            <h3 class="feature-title">Custom Workflows</h3>
+            <p class="feature-description">
+              Software designed specifically around your business processes, ensuring seamless integration with your existing operations.
+            </p>
+          </div>
+
+          <div class="feature-card" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="200">
+            <div class="feature-icon">
+              <i class="ri-device-line"></i>
+            </div>
+            <h3 class="feature-title">Cross-Platform</h3>
+            <p class="feature-description">
+              Desktop, web, and mobile applications providing consistent experiences across all platforms and devices.
+            </p>
+          </div>
+
+          <div class="feature-card" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="300">
+            <div class="feature-icon">
+              <i class="ri-plug-line"></i>
+            </div>
+            <h3 class="feature-title">Integration Ready</h3>
+            <p class="feature-description">
+              Seamless connection with existing tools, databases, and third-party services for unified operations.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detailed Features with Bullet Points -->
+    <section class="details-section">
+      <div class="details-container">
+        <div class="details-content" data-aos="fade-up" data-aos-duration="800">
+          <h2 class="details-title">Comprehensive Features</h2>
+          <ul class="details-list">
+            <li>Requirements analysis with deep dive into business needs, workflows, and operational challenges</li>
+            <li>UI/UX design focused on user-centered interfaces for intuitive and efficient interactions</li>
+            <li>Full-stack development covering both frontend interfaces and robust backend systems</li>
+            <li>Database architecture with scalable design and performance optimization strategies</li>
+            <li>Third-party integrations connecting CRM, ERP, payment systems, and custom APIs</li>
+            <li>Mobile applications for iOS and Android using native or cross-platform frameworks</li>
+            <li>Testing and QA with comprehensive bug testing, performance validation, and security audits</li>
+            <li>Deployment support including server setup, cloud deployment, and production configuration</li>
+            <li>User training through onboarding sessions, video tutorials, and comprehensive documentation</li>
+            <li>Iterative updates providing ongoing feature development, enhancements, and improvements</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+      <div class="cta-container">
+        <h2 class="cta-title">Ready to Streamline Your Operations?</h2>
+        <p class="cta-description">
+          Let's discuss how custom application software can transform your workflows and boost productivity across your organization.
+        </p>
+        <div class="cta-buttons">
+          <a href="Home.html#contact" class="btn-primary">
+            <i class="ri-mail-line" style="margin-right: 8px;"></i>
+            Contact Us
+          </a>
+          <a href="services.html" class="btn-secondary">
+            <i class="ri-arrow-left-line" style="margin-right: 8px;"></i>
+            View All Services
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <div class="footer__bar">
+      <div class="footer__bar__content">
+        <p>Copyright © 2023 Developong. All rights reserved.</p>
+        <div class="footer__socials">
+          <a href="https://wa.me/PHONENUMBER" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <i class="ri-whatsapp-line" aria-hidden="true"></i>
+          </a>
+          <a href="https://www.snapchat.com/add/YOUR_SNAPCHAT_USERNAME" target="_blank" rel="noopener noreferrer" aria-label="Snapchat">
+            <i class="ri-snapchat-line" aria-hidden="true"></i>
+          </a>
+          <a href="https://instagram.com/YOUR_INSTAGRAM_USERNAME" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <i class="ri-instagram-line" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true,
+        offset: 100
+      });
+    </script>
+  </body>
+</html>
