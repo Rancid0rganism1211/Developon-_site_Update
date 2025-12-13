@@ -45,4 +45,37 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
         }
+
+        const metricsSection = document.querySelector('#metrics');
+        if (metricsSection) {
+            const counters = metricsSection.querySelectorAll('.counter');
+            let animated = false;
+
+            const animateCounter = (el, target, duration = 1500) => {
+                let startTs = null;
+                const step = (ts) => {
+                    if (!startTs) startTs = ts;
+                    const progress = Math.min((ts - startTs) / duration, 1);
+                    const value = Math.floor(progress * target);
+                    el.textContent = value.toLocaleString();
+                    if (progress < 1) requestAnimationFrame(step);
+                };
+                requestAnimationFrame(step);
+            };
+
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting && !animated) {
+                        animated = true;
+                        counters.forEach((el) => {
+                            const target = parseInt(el.getAttribute('data-target'), 10) || 0;
+                            animateCounter(el, target);
+                        });
+                        io.disconnect();
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            io.observe(metricsSection);
+        }
 });
