@@ -133,6 +133,8 @@
       </div>
     </section>
     
+    
+    
         <!---
         ABOUT SECTION
         -->
@@ -290,6 +292,133 @@
           </div>
           <h4>Prof. Michael Lee</h4>
           <p>Software Engineer</p>
+        </div>
+      </div>
+    </section>
+
+    <!---
+        PORTFOLIO SECTION
+      -->
+
+    <section class="section__container home__portfolio">
+      <div class="portfolio__header" data-aos="fade-up">
+        <h2 class="section__header">Recent Projects</h2>
+        <p>
+          A few websites we’ve built and launched for clients.
+        </p>
+      </div>
+
+      <style>
+        .home__portfolio .portfolio__grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 1.5rem;
+        }
+        .home__portfolio .portfolio__card {
+          background: var(--white);
+          border-radius: 12px;
+          overflow: hidden;
+          box-shadow: 0 4px 6px rgba(0,0,0,0.08);
+          transition: transform .3s ease, box-shadow .3s ease;
+        }
+        .home__portfolio .portfolio__card:hover {
+          transform: translateY(-6px);
+          box-shadow: 0 12px 20px rgba(0,0,0,0.12);
+        }
+        .home__portfolio .portfolio__image {
+          width: 100%;
+          height: 180px;
+          object-fit: cover;
+          display: block;
+        }
+        .home__portfolio .portfolio__content { padding: 1rem; }
+        .home__portfolio .portfolio__title { color: var(--text-dark); font-weight: 600; margin-bottom: .25rem; }
+        .home__portfolio .portfolio__meta { color: var(--text-light); font-size: .95rem; margin-bottom: .5rem; }
+        .home__portfolio .portfolio__link { color: var(--primary-color); font-weight: 600; text-decoration: none; }
+        .home__portfolio .portfolio__link:hover { color: var(--primary-color-dark); }
+        @media (max-width: 1024px){ .home__portfolio .portfolio__grid{ grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px){ .home__portfolio .portfolio__grid{ grid-template-columns: 1fr; } .home__portfolio .portfolio__image{ height: 150px; } }
+      </style>
+
+      <div class="portfolio__grid">
+        <!-- Project 1 -->
+        <div class="portfolio__card" data-aos="zoom-in">
+          <img class="portfolio__image" src="img/work-2.jpg" alt="Tech Solutions Hub" />
+          <div class="portfolio__content">
+            <h3 class="portfolio__title">Tech Solutions Hub</h3>
+            <p class="portfolio__meta">Corporate site • HTML/CSS/JS</p>
+            <a class="portfolio__link" href="portfolio.html" aria-label="View project">View Project</a>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="portfolio__card" data-aos="zoom-in" data-aos-delay="100">
+          <img class="portfolio__image" src="img/work-3.jpg" alt="Fashion Store Online" />
+          <div class="portfolio__content">
+            <h3 class="portfolio__title">Fashion Store Online</h3>
+            <p class="portfolio__meta">E‑Commerce • React/Node</p>
+            <a class="portfolio__link" href="portfolio.html" aria-label="View project">View Project</a>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="portfolio__card" data-aos="zoom-in" data-aos-delay="200">
+          <img class="portfolio__image" src="img/work-4.jpg" alt="Fitness Tracker Pro" />
+          <div class="portfolio__content">
+            <h3 class="portfolio__title">Fitness Tracker Pro</h3>
+            <p class="portfolio__meta">Mobile App • React Native</p>
+            <a class="portfolio__link" href="portfolio.html" aria-label="View project">View Project</a>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="portfolio__card" data-aos="zoom-in" data-aos-delay="300">
+          <img class="portfolio__image" src="img/work-5.jpg" alt="Corporate Solutions Ltd" />
+          <div class="portfolio__content">
+            <h3 class="portfolio__title">Corporate Solutions Ltd</h3>
+            <p class="portfolio__meta">Business site • WordPress</p>
+            <a class="portfolio__link" href="portfolio.html" aria-label="View project">View Project</a>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="portfolio__card" data-aos="zoom-in" data-aos-delay="400">
+          <img class="portfolio__image" src="img/img-1.png" alt="Startup Landing Page" />
+          <div class="portfolio__content">
+            <h3 class="portfolio__title">Startup Landing Page</h3>
+            <p class="portfolio__meta">Landing page • HTML/CSS</p>
+            <a class="portfolio__link" href="portfolio.html" aria-label="View project">View Project</a>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="portfolio__card" data-aos="zoom-in" data-aos-delay="500">
+          <img class="portfolio__image" src="img/img-2.png" alt="Restaurant Website" />
+          <div class="portfolio__content">
+            <h3 class="portfolio__title">Restaurant Website</h3>
+            <p class="portfolio__meta">Restaurant site • WordPress</p>
+            <a class="portfolio__link" href="portfolio.html" aria-label="View project">View Project</a>
+          </div>
+        </div>
+
+        <!-- Project 7 -->
+        <div class="portfolio__card" data-aos="zoom-in" data-aos-delay="600">
+          <img class="portfolio__image" src="img/img-3.png" alt="Education Portal" />
+          <div class="portfolio__content">
+            <h3 class="portfolio__title">Education Portal</h3>
+            <p class="portfolio__meta">Learning platform • Django</p>
+            <a class="portfolio__link" href="portfolio.html" aria-label="View project">View Project</a>
+          </div>
+        </div>
+
+        <!-- Project 8 -->
+        <div class="portfolio__card" data-aos="zoom-in" data-aos-delay="700">
+          <img class="portfolio__image" src="img/img-6.png" alt="Portfolio Showcase" />
+          <div class="portfolio__content">
+            <h3 class="portfolio__title">Portfolio Showcase</h3>
+            <p class="portfolio__meta">Portfolio • Static Site</p>
+            <a class="portfolio__link" href="portfolio.html" aria-label="View project">View Project</a>
+          </div>
         </div>
       </div>
     </section>
