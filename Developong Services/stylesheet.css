@@ -87,7 +87,7 @@ header {
   align-items: left;
   justify-content: space-between;
   background-color: rgb(54, 54, 54);
-  position: sticky;
+  position:none  ;
   top: 0;
   z-index: 1000;
   transition: top 0.3s ease-in-out; /* Add a smooth transition */
@@ -288,6 +288,7 @@ header {
   width: 100%;
   padding-left: 0;
   padding-right: 0;
+  background: transparent; /* match Home: no special background */
 }
 
 .footer {
