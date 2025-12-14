@@ -291,6 +291,11 @@ header {
   background: transparent; /* match Home: no special background */
 }
 
+/* Utility classes to replace inline icon spacing and rounded buttons */
+.icon-margin-left-8 { margin-left: 8px; }
+.icon-margin-right-8 { margin-right: 8px; }
+.btn--rounded { border-radius: 12px; }
+
 .footer {
   background-image:
     linear-gradient(rgba(11, 12, 16, 0.85), rgba(11, 12, 16, 0.85)),
