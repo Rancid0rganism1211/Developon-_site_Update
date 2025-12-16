@@ -203,6 +203,10 @@ header {
   background-color: var(--primary-color-light);
   border-radius: 5px;
   min-height: 120px; /* increased height for the message area */
+  max-height: 150px; /* prevent overflow beyond form */
+  width: 100%;
+  box-sizing: border-box;
+  resize: none; /* disable manual resizing */
 }
 
 .header__form textarea::placeholder {
