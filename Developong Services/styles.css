@@ -213,7 +213,7 @@ header {
   color: rgb(158, 155, 155);
 }
 .form__btn {
-  background-color: rgb(71, 66, 66);
+  background-color: rgb(201, 100, 100);
   transition: 0.3s;
 }
 
@@ -903,5 +903,63 @@ header {
   
   .pricing__card--featured:hover {
     transform: translateY(-8px);
+  }
+}
+
+/* Success Metrics Section */
+.metrics__container {
+  text-align: center;
+}
+
+.metrics__header {
+  margin-bottom: 2rem;
+}
+
+.metrics__header p {
+  color: var(--text-light);
+}
+
+.metrics__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.metric {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.metric__icon {
+  font-size: 2rem;
+  color: var(--primary-color);
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.metric__value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.2;
+}
+
+.metric__label {
+  color: var(--text-light);
+  margin-top: 0.25rem;
+}
+
+@media (max-width: 1024px) {
+  .metrics__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .metrics__grid {
+    grid-template-columns: 1fr;
   }
 }
