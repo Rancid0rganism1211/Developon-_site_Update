@@ -290,7 +290,398 @@
           font-size: 0.875rem;
         }
       }
+
+      /* Pricing Section Styles */
+      .pricing__section {
+        padding: 80px 20px;
+        background: #ffffff;
+      }
+
+      .pricing__container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .pricing__section-title {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+      .pricing__section-title h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #2c2b2bd6;
+        margin-bottom: 12px;
+      }
+      .pricing__section-title p {
+        color: #64748b;
+        font-size: 1.1rem;
+      }
+
+      .pricing__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+        margin-bottom: 60px;
+      }
+
+      .pricing__card {
+        background: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+      }
+      .pricing__card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      .pricing__card--starter .pricing__card-header {
+        background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); /* Gold */
+      }
+      .pricing__card--growth .pricing__card-header {
+        background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%); /* Diamond */
+      }
+      .pricing__card--pro .pricing__card-header {
+        background: linear-gradient(135deg, #94a3b8 0%, #64748b 100%); /* Platinum */
+      }
+
+      .pricing__card-header {
+        padding: 28px 24px;
+        color: #ffffff;
+        text-align: center;
+      }
+      .pricing__card-header h3 {
+        font-size: 1.5rem;
+        margin-bottom: 6px;
+      }
+      .pricing__card-header .subtitle {
+        font-size: 0.9rem;
+        opacity: 0.9;
+        margin-bottom: 12px;
+      }
+      .pricing__card-header .best-for {
+        background: rgba(255, 255, 255, 0.2);
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        display: inline-block;
+      }
+
+      .pricing__badge {
+        position: absolute;
+        top: 12px;
+        right: -30px;
+        background: #fbbf24;
+        color: #000;
+        padding: 4px 40px;
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        transform: rotate(45deg);
+      }
+
+      .pricing__card-body {
+        padding: 24px;
+      }
+
+      .pricing__includes {
+        font-weight: 600;
+        color: #2c2b2bd6;
+        margin-bottom: 12px;
+        font-size: 0.95rem;
+      }
+
+      .pricing__features {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 20px 0;
+      }
+      .pricing__features li {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 8px 0;
+        color: #64748b;
+        font-size: 0.9rem;
+      }
+      .pricing__features li i {
+        color: #10b981;
+        font-size: 1rem;
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+
+      .pricing__outcome {
+        background: #f8fafc;
+        border-left: 4px solid #d72020f1;
+        padding: 12px 16px;
+        margin: 16px 0;
+        border-radius: 0 8px 8px 0;
+      }
+      .pricing__outcome-label {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #2c2b2bd6;
+        margin-bottom: 4px;
+      }
+      .pricing__outcome-text {
+        font-style: italic;
+        color: #64748b;
+        font-size: 0.85rem;
+      }
+
+      .pricing__card-footer {
+        padding: 0 24px 24px;
+      }
+      .pricing__btn {
+        display: block;
+        width: 100%;
+        padding: 14px;
+        text-align: center;
+        border-radius: 8px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+      .pricing__btn--primary {
+        background: #d72020f1;
+        color: #ffffff;
+      }
+      .pricing__btn--primary:hover {
+        background: #ac2730ee;
+      }
+      .pricing__btn--outline {
+        border: 2px solid #d72020f1;
+        color: #d72020f1;
+        background: transparent;
+      }
+      .pricing__btn--outline:hover {
+        background: #d72020f1;
+        color: #ffffff;
+      }
+
+      /* Add-ons Section */
+      .addons__section {
+        background: #f8fafc;
+        padding: 60px 20px;
+      }
+      .addons__container {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+      .addons__header {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      .addons__header h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #2c2b2bd6;
+        margin-bottom: 8px;
+      }
+      .addons__header p {
+        color: #64748b;
+      }
+
+      .addons__grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 20px;
+      }
+      .addon__card {
+        background: #ffffff;
+        padding: 24px 16px;
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease;
+      }
+      .addon__card:hover {
+        transform: translateY(-4px);
+      }
+      .addon__card i {
+        font-size: 2rem;
+        color: #d72020f1;
+        margin-bottom: 12px;
+      }
+      .addon__card h4 {
+        color: #2c2b2bd6;
+        font-size: 0.95rem;
+        margin-bottom: 6px;
+      }
+      .addon__card p {
+        color: #64748b;
+        font-size: 0.8rem;
+      }
+
+      /* Pricing Responsive */
+      @media (max-width: 1024px) {
+        .pricing__grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .addons__grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .pricing__section {
+          padding: 60px 16px;
+        }
+        .pricing__section-title h2 {
+          font-size: 1.75rem;
+        }
+        .pricing__grid {
+          grid-template-columns: 1fr;
+        }
+        .addons__grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .addons__header h2 {
+          font-size: 1.5rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .addons__grid {
+          grid-template-columns: 1fr;
+        }
+      }
     </style>
+
+    <!-- Pricing Section -->
+    <section class="pricing__section">
+      <div class="pricing__container">
+        <div class="pricing__section-title" data-aos="fade-up">
+          <h2>Our Pricing Packages</h2>
+          <p>Find the right solution for your business stage</p>
+        </div>
+
+        <div class="pricing__grid">
+          <!-- STARTER Package -->
+          <div class="pricing__card pricing__card--starter" data-aos="fade-up" data-aos-delay="100">
+            <div class="pricing__card-header">
+              <h3>🥇 Gold</h3>
+              <p class="subtitle">Best for First-Time Clients</p>
+              <span class="best-for">Small businesses that just want to be online</span>
+            </div>
+            <div class="pricing__card-body">
+              <p class="pricing__includes">Includes:</p>
+              <ul class="pricing__features">
+                <li><i class="fas fa-check"></i> 1–5 page website (Hostinger)</li>
+                <li><i class="fas fa-check"></i> Free domain (1 year)</li>
+                <li><i class="fas fa-check"></i> Hosting setup</li>
+                <li><i class="fas fa-check"></i> Mobile-friendly design</li>
+                <li><i class="fas fa-check"></i> Basic security setup</li>
+                <li><i class="fas fa-check"></i> Website uptime monitoring</li>
+                <li><i class="fas fa-check"></i> WhatsApp support (business hours)</li>
+              </ul>
+              <div class="pricing__outcome">
+                <p class="pricing__outcome-label">Outcome for client:</p>
+                <p class="pricing__outcome-text">"Your website is online, fast, and monitored."</p>
+              </div>
+            </div>
+            <div class="pricing__card-footer">
+              <a href="#contact" class="pricing__btn pricing__btn--outline">Get Started</a>
+            </div>
+          </div>
+
+          <!-- GROWTH Package -->
+          <div class="pricing__card pricing__card--growth" data-aos="fade-up" data-aos-delay="200">
+            <div class="pricing__badge">Most Popular</div>
+            <div class="pricing__card-header">
+              <h3>💎 Diamond</h3>
+              <p class="subtitle">Most Recommended</p>
+              <span class="best-for">Growing businesses that want reliability</span>
+            </div>
+            <div class="pricing__card-body">
+              <p class="pricing__includes">Includes everything in Starter +</p>
+              <ul class="pricing__features">
+                <li><i class="fas fa-check"></i> Website updates (monthly)</li>
+                <li><i class="fas fa-check"></i> Performance & uptime monitoring dashboard</li>
+                <li><i class="fas fa-check"></i> Monthly health report (PDF or WhatsApp)</li>
+                <li><i class="fas fa-check"></i> Backup configuration</li>
+                <li><i class="fas fa-check"></i> Faster response time</li>
+                <li><i class="fas fa-check"></i> Basic SEO setup</li>
+              </ul>
+              <div class="pricing__outcome">
+                <p class="pricing__outcome-label">Outcome for client:</p>
+                <p class="pricing__outcome-text">"Your website is managed, monitored, and protected."</p>
+              </div>
+            </div>
+            <div class="pricing__card-footer">
+              <a href="#contact" class="pricing__btn pricing__btn--primary">Get Started</a>
+            </div>
+          </div>
+
+          <!-- CARE / PRO Package -->
+          <div class="pricing__card pricing__card--pro" data-aos="fade-up" data-aos-delay="300">
+            <div class="pricing__card-header">
+              <h3>⚪ Platinum</h3>
+              <p class="subtitle">Recurring Income Focus</p>
+              <span class="best-for">Businesses that don't want IT stress</span>
+            </div>
+            <div class="pricing__card-body">
+              <p class="pricing__includes">Includes everything in Growth +</p>
+              <ul class="pricing__features">
+                <li><i class="fas fa-check"></i> Hardware & network support (on-call)</li>
+                <li><i class="fas fa-check"></i> Priority response</li>
+                <li><i class="fas fa-check"></i> Advanced monitoring (resources, errors)</li>
+                <li><i class="fas fa-check"></i> Quarterly system review</li>
+                <li><i class="fas fa-check"></i> Emergency recovery support</li>
+              </ul>
+              <div class="pricing__outcome">
+                <p class="pricing__outcome-label">Outcome for client:</p>
+                <p class="pricing__outcome-text">"We fully take care of your IT so you focus on business."</p>
+              </div>
+            </div>
+            <div class="pricing__card-footer">
+              <a href="#contact" class="pricing__btn pricing__btn--outline">Contact Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Add-ons Section -->
+    <section class="addons__section">
+      <div class="addons__container">
+        <div class="addons__header" data-aos="fade-up">
+          <h2>🔄 Add-Ons (Optional)</h2>
+          <p>Enhance any package with additional services</p>
+        </div>
+
+        <div class="addons__grid">
+          <div class="addon__card" data-aos="zoom-in" data-aos-delay="100">
+            <i class="fas fa-file-alt"></i>
+            <h4>Extra Pages</h4>
+            <p>Add more pages to your website</p>
+          </div>
+          <div class="addon__card" data-aos="zoom-in" data-aos-delay="150">
+            <i class="fas fa-shopping-cart"></i>
+            <h4>E-commerce Setup</h4>
+            <p>Start selling online</p>
+          </div>
+          <div class="addon__card" data-aos="zoom-in" data-aos-delay="200">
+            <i class="fas fa-envelope"></i>
+            <h4>Email Setup</h4>
+            <p>Professional business email</p>
+          </div>
+          <div class="addon__card" data-aos="zoom-in" data-aos-delay="250">
+            <i class="fas fa-video"></i>
+            <h4>CCTV & Hardware</h4>
+            <p>Installation services</p>
+          </div>
+          <div class="addon__card" data-aos="zoom-in" data-aos-delay="300">
+            <i class="fas fa-share-alt"></i>
+            <h4>Social Media</h4>
+            <p>Connect your platforms</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
   <!-- Footer -->
   <footer class="footer">
