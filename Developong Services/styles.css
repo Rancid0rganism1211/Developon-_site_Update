@@ -7,7 +7,7 @@
   --secondary-color: #cd3d3dee;
   --text-dark: #2c2b2bd6;
   --text-light: #767268;
-  --white: #ffffff;
+  --white: #E8E8E8;
   --max-width: 1200px;
 }
 
@@ -68,6 +68,7 @@ body {
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
+  background-color: var(--white);
 }
 
 /* ON SCROLL REVEAL CONTENTS */
