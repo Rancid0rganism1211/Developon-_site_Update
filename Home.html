@@ -6,6 +6,7 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="shortcut icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="styles.css?v=20251216" />
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <title>Developong Company | Home</title>
   </head>
   <body>
@@ -24,13 +25,9 @@
 
       <div class="section__container header__container">
         <div class="header__content">
-          <h1>Enhancing IT User Experience.</h1>
+          <h1><span id="typed-heading"></span></h1>
           <p>
-            At Developong, we're here to make tech work for you. From smart solutions to
-            friendly service, we're your go-to for all things IT.
-            With innovative solutions and compassionate support
-            we're committed to your technological well-being.
-            Trust Developong and experience the IT difference.
+          Developong Services aims to become a trusted technology partner for businesses by providing dependable IT services, robust infrastructure, and proactive system monitoring that enables long-term growth, stability, and innovation.
           </p><br>
           <a href="services.html" class="btn">Services</a>
         </div>
@@ -112,20 +109,10 @@
       <div class="about__content">
         <h2 class="section__header">About Us</h2>
         <p>
-          
-         Welcome to Developong, a budding force in the world of information technology.
-         As a new player in the field, our passion lies in introducing innovative 
-         solutions to meet the evolving needs of businesses entering the digital realm.
-         At Developong, we understand the challenges faced by beginners in navigating 
-         the vast landscape of technology, and we are here to guide you on this exciting
-         journey.
+          We are a developing technology service startup focused on delivering reliable, scalable, and secure IT solutions for individuals, startups, and growing businesses. Our core services span hardware support, IT infrastructure management, WordPress website development and hosting, and DevOps-driven system monitoring.
         </p>
         <p>
-         Our story begins with a vision to simplify technology for startups and small 
-         businesses. We are committed to providing accessible and user-friendly IT 
-         solutions that empower you to grow and succeed in the digital age. From 
-         creating your first website to implementing basic cybersecurity measures, 
-         Developong is here to support you at every step...
+        What began as a service-based initiative is evolving into a structured company with a strong emphasis on operational excellence...
         </p><br>
         <br>
         <a href="about.html" class="service__btn">Learn More</a>
@@ -159,20 +146,16 @@
           </div>
           <span><i class="ri-truck-line"></i></span>
           <div>
-            <h4>Free IT Assessment</h4>
+            <h4>Operational Excellence</h4>
             <p>
-               As part of our commitment to your success, we offer
-               a free initial IT consultation. Take advantage of this
-               opportunity to discuss your technological needs without
-               any financial obligation.
+               Document all internal processes and service workflows.Develop clear onboarding procedures for clients.Create service-level standards to ensure consistency and quality.
             </p>
           </div>
           <span><i class="ri-mental-health-line"></i></span>
           <div>
-            <h4>Comprehensive Tech Services</h4>
+            <h4>Hardware and IT Support</h4>
             <p>
-              Our range of tech services goes beyond the ordinary, providing
-              advanced solutions to address diverse IT challenges.
+              From hardware repairs and upgrades to comprehensive IT support, we ensure your systems run smoothly and efficiently.
             </p>
           </div>
         </div>
@@ -442,6 +425,32 @@
     - custom js link
  -->
   <script src="script.js"></script>
+
+  <!-- Typed.js Initialization -->
+  <style>
+    .highlight-red {
+      color: #e63946;
+    }
+  </style>
+  <script>
+    var typed = new Typed('#typed-heading', {
+      strings: [
+        'Reliable Technology <span class="highlight-red">Partners</span>',
+        'Powering Business <span class="highlight-red">Technology</span>',
+        'Infrastructure You <span class="highlight-red">Trust</span>',
+        'Technology That <span class="highlight-red">Scales</span>',
+        'Built for <span class="highlight-red">Reliability</span>'
+      ],
+      typeSpeed: 50,
+      backSpeed: 30,
+      backDelay: 2000,
+      startDelay: 500,
+      loop: true,
+      showCursor: true,
+      cursorChar: '|',
+      contentType: 'html'
+    });
+  </script>
 
   </body>
 </html>
