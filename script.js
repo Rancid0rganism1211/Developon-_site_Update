@@ -2,9 +2,34 @@ document.addEventListener('DOMContentLoaded', function () {
     const menuIcon = document.querySelector('.menu-icon');
     const navlinks = document.querySelector('.nav__links');
 
-    menuIcon.addEventListener('click', function () {
-        navlinks.classList.toggle('show');
-    });
+    // Mobile menu toggle
+    if (menuIcon && navlinks) {
+        menuIcon.addEventListener('click', function () {
+            navlinks.classList.toggle('show');
+            // Toggle aria-expanded for accessibility
+            const isExpanded = navlinks.classList.contains('show');
+            menuIcon.setAttribute('aria-expanded', isExpanded);
+        });
+
+        // Close menu when clicking on a link (for mobile)
+        const navLinkItems = navlinks.querySelectorAll('a');
+        navLinkItems.forEach(link => {
+            link.addEventListener('click', function () {
+                if (window.innerWidth <= 768) {
+                    navlinks.classList.remove('show');
+                    menuIcon.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function (e) {
+            if (!menuIcon.contains(e.target) && !navlinks.contains(e.target)) {
+                navlinks.classList.remove('show');
+                menuIcon.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
     
         // AJAX submit for header enquiry form (uses Formspree endpoint from the form's action)
         const headerForm = document.querySelector('form.header__form');
