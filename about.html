@@ -17,16 +17,20 @@
       <!-- 
         - custom css link
       -->
-    <link rel="stylesheet" href="stylesheet.css" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Developong Company | About</title>
 
   </head>
   <body>
     <header>
-
-      <!-- Update your existing HTML code for the navigation bar -->
-
-    
+      <!-- Video Background -->
+      <div class="video-background">
+        <video autoplay muted loop playsinline>
+          <source src="3b17c199-390c-45ad-9fac-af3a781f869f_wm.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+      </div>
+      <!-- Navigation Bar -->
       <nav class="section__container nav__container">
         <a href="index.html" class="nav__logo">Developong <span>Services</span></a>
         <div class="menu-icon">&#9776;</div>
@@ -41,15 +45,17 @@
 
       <div class="section__container header__container">
         <div class="header__content">
-          <h1>Our IT Journey: Crafting Excellence, Building Connections</h1>
+          <h1>
+            <span class="heading-line">Crafting excellence,</span>
+            <span class="heading-line">building connections.</span>
+          </h1>
           <p>
-            Welcome to Developong, your trusted IT consulting companion.
-            We specialize in crafting excellence and building lasting 
-            connections to navigate your tech future. With a commitment 
-            to innovative solutions, personalized consultations, and a 
-            client-centric approach, we're dedicated to your success. 
-          </p><br>
-          <a href="services.html" class="btn btn--rounded">Services</a>
+            Welcome to Developong, your trusted IT consulting companion. We navigate your tech future with innovative solutions.
+          </p>
+          <div class="header__buttons">
+            <a href="services.html" class="btn btn-primary">Explore <i class="ri-arrow-right-line"></i></a>
+            <a href="Home.html" class="btn btn-text">Learn More</a>
+          </div>
         </div>
       </div>
     </header>

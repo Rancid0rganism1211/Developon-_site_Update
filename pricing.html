@@ -285,6 +285,13 @@
   </head>
   <body>
     <header>
+      <!-- Video Background -->
+      <div class="video-background">
+        <video autoplay muted loop playsinline>
+          <source src="3b17c199-390c-45ad-9fac-af3a781f869f_wm.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+      </div>
       <!-- Navigation Bar -->
       <nav class="section__container nav__container">
         <a href="index.html" class="nav__logo">Developong <span>Services</span></a>
@@ -297,16 +304,26 @@
           <li class="link"><a href="Contact Us.html">Contact Us</a></li>
         </ul>
       </nav>
+
+      <div class="section__container header__container">
+        <div class="header__content">
+          <h1>
+            <span class="heading-line">Transparent pricing,</span>
+            <span class="heading-line">real value.</span>
+          </h1>
+          <p>
+            Choose the perfect retainer plan for your business needs. Quality service and continuous support.
+          </p>
+          <div class="header__buttons">
+            <a href="#pricing-section" class="btn btn-primary">View Plans <i class="ri-arrow-right-line"></i></a>
+            <a href="services.html" class="btn btn-text">Our Services</a>
+          </div>
+        </div>
+      </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="pricing__hero">
-      <h1>Web Development Retainer Packages</h1>
-      <p>Choose the perfect retainer plan for your business needs. All packages include our commitment to quality service, ongoing support, and continuous website management.</p>
-    </section>
-
     <!-- Pricing Cards Section -->
-    <section class="pricing__section">
+    <section id="pricing-section" class="pricing__section">
       <div class="pricing__section-title">
         <h2>Our Retainer Packages</h2>
         <p>Find the right monthly retainer solution for your business stage</p>
