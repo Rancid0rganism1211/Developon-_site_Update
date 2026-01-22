@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles.css?v=20251216" />
     <title>Developong Company | Pricing</title>
     <style>
-      /* Pricing Page Styles */
+      /* Pricing Page Styles - Modern Clean Design */
       .pricing__hero {
         background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-color-dark) 100%);
         padding: 6rem 1rem 4rem;
@@ -25,168 +25,278 @@
         opacity: 0.9;
       }
 
+      /* New Pricing Section Styles */
       .pricing__section {
-        padding: 4rem 1rem;
+        padding: 5rem 1rem 4rem;
         max-width: 1200px;
         margin: 0 auto;
+        background: #fff;
       }
 
-      .pricing__section-title {
+      .pricing__section-header {
         text-align: center;
-        margin-bottom: 3rem;
+        margin-bottom: 3.5rem;
       }
-      .pricing__section-title h2 {
-        font-size: 2rem;
-        color: var(--text-dark);
-        margin-bottom: 0.5rem;
+
+      .pricing__label {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: #f5f5f5;
+        border: 1px solid #e5e5e5;
+        padding: 0.5rem 1.25rem;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        color: #333;
+        margin-bottom: 1.5rem;
       }
-      .pricing__section-title p {
-        color: var(--text-light);
+
+      .pricing__label i {
+        font-size: 1rem;
+        color: #333;
+      }
+
+      .pricing__section-header h2 {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #111;
+        margin-bottom: 1rem;
+        letter-spacing: -0.02em;
+      }
+
+      .pricing__section-header p {
+        color: #666;
+        font-size: 1.1rem;
+        max-width: 550px;
+        margin: 0 auto;
+        line-height: 1.6;
       }
 
       .pricing__grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 2rem;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
         margin-bottom: 4rem;
+        align-items: start;
       }
 
       .pricing__card {
-        background: var(--white);
+        background: #fff;
         border-radius: 16px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-        overflow: hidden;
+        border: 1px solid #e8e8e8;
+        overflow: visible;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         position: relative;
-      }
-      .pricing__card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-      }
-
-      .pricing__card--starter .pricing__card-header {
-        background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); /* Gold */
-      }
-      .pricing__card--growth .pricing__card-header {
-        background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%); /* Diamond */
-      }
-      .pricing__card--pro .pricing__card-header {
-        background: linear-gradient(135deg, #94a3b8 0%, #64748b 100%); /* Platinum */
-      }
-
-      .pricing__card-header {
         padding: 2rem;
-        color: var(--white);
-        text-align: center;
       }
-      .pricing__card-header h3 {
-        font-size: 1.5rem;
-        margin-bottom: 0.25rem;
+
+      .pricing__card:hover {
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
       }
-      .pricing__card-header .subtitle {
-        font-size: 0.875rem;
-        opacity: 0.9;
-        margin-bottom: 1rem;
+
+      /* Featured Card - Professional */
+      .pricing__card--featured {
+        background: #000000;
+        border: 1px solid #000000;
+        color: #fff;
+        transform: scale(1.02);
+        z-index: 2;
       }
-      .pricing__card-header .best-for {
-        background: rgba(255, 255, 255, 0.2);
-        padding: 0.5rem 1rem;
-        border-radius: 20px;
-        font-size: 0.85rem;
-        display: inline-block;
+
+      .pricing__card--featured:hover {
+        transform: scale(1.04);
+        box-shadow: 0 12px 40px rgba(224, 122, 122, 0.35);
       }
 
       .pricing__badge {
         position: absolute;
-        top: 1rem;
-        right: -2rem;
-        background: #fbbf24;
-        color: #000;
-        padding: 0.25rem 2.5rem;
+        top: -12px;
+        right: 1.5rem;
+        background: #d4f5d4;
+        color: #1a1a1a;
+        padding: 0.4rem 1rem;
+        border-radius: 50px;
         font-size: 0.75rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        transform: rotate(45deg);
-      }
-
-      .pricing__card-body {
-        padding: 2rem;
-      }
-
-      .pricing__includes {
         font-weight: 600;
-        color: var(--text-dark);
-        margin-bottom: 1rem;
-        font-size: 0.95rem;
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+      }
+
+      .pricing__badge::before {
+        content: "🔥";
+        font-size: 0.8rem;
+      }
+
+      .pricing__plan-name {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #111;
+        margin-bottom: 0.25rem;
+      }
+
+      .pricing__card--featured .pricing__plan-name {
+        color: #fff;
+      }
+
+      .pricing__plan-desc {
+        font-size: 0.9rem;
+        color: #666;
+        margin-bottom: 1.5rem;
+      }
+
+      .pricing__card--featured .pricing__plan-desc {
+        color: #aaa;
+      }
+
+      .pricing__price {
+        display: flex;
+        align-items: baseline;
+        gap: 0.25rem;
+        margin-bottom: 2rem;
+      }
+
+      .pricing__price-amount {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #111;
+        line-height: 1;
+      }
+
+      .pricing__card--featured .pricing__price-amount {
+        color: #fff;
+      }
+
+      .pricing__price-period {
+        font-size: 1rem;
+        color: #666;
+      }
+
+      .pricing__card--featured .pricing__price-period {
+        color: #aaa;
+      }
+
+      .pricing__price-custom {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #111;
+        margin-bottom: 2rem;
+      }
+
+      .pricing__divider {
+        height: 1px;
+        background: #e8e8e8;
+        margin: 1.5rem 0;
+      }
+
+      .pricing__card--featured .pricing__divider {
+        background: rgba(255, 255, 255, 0.3);
       }
 
       .pricing__features {
         list-style: none;
         padding: 0;
-        margin: 0 0 1.5rem 0;
+        margin: 0 0 2rem 0;
       }
+
       .pricing__features li {
         display: flex;
-        align-items: flex-start;
+        align-items: center;
         gap: 0.75rem;
-        padding: 0.5rem 0;
-        color: var(--text-light);
+        padding: 0.6rem 0;
+        color: #444;
         font-size: 0.95rem;
       }
+
+      .pricing__card--featured .pricing__features li {
+        color: #ddd;
+      }
+
       .pricing__features li i {
-        color: #10b981;
-        font-size: 1.1rem;
+        color: #666;
+        font-size: 1rem;
         flex-shrink: 0;
-        margin-top: 2px;
       }
 
-      .pricing__outcome {
-        background: #f8fafc;
-        border-left: 4px solid var(--primary-color);
-        padding: 1rem;
-        margin: 1.5rem 0;
-        border-radius: 0 8px 8px 0;
+      .pricing__card--featured .pricing__features li i {
+        color: #aaa;
       }
-      .pricing__outcome-label {
-        font-size: 0.8rem;
-        font-weight: 600;
-        color: var(--text-dark);
-        margin-bottom: 0.25rem;
-      }
-      .pricing__outcome-text {
-        font-style: italic;
-        color: var(--text-light);
+
+      .pricing__features li .ri-information-line {
+        color: #999;
         font-size: 0.9rem;
+        margin-left: 0.25rem;
+        cursor: help;
       }
 
-      .pricing__card-footer {
-        padding: 0 2rem 2rem;
+      .pricing__card--featured .pricing__features li .ri-information-line {
+        color: #666;
       }
+
       .pricing__btn {
         display: block;
         width: 100%;
-        padding: 1rem;
+        padding: 1rem 1.5rem;
         text-align: center;
         border-radius: 8px;
         font-weight: 600;
+        font-size: 0.95rem;
         text-decoration: none;
         transition: all 0.3s ease;
+        cursor: pointer;
+        border: none;
       }
-      .pricing__btn--primary {
-        background: var(--primary-color);
-        color: var(--white);
+
+      .pricing__btn--dark {
+        background: #1a1a1a;
+        color: #fff;
       }
-      .pricing__btn--primary:hover {
-        background: var(--primary-color-dark);
+
+      .pricing__btn--dark:hover {
+        background: #333;
       }
+
+      .pricing__btn--light {
+        background: #fff;
+        color: #1a1a1a;
+      }
+
+      .pricing__btn--light:hover {
+        background: #f5f5f5;
+      }
+
       .pricing__btn--outline {
-        border: 2px solid var(--primary-color);
-        color: var(--primary-color);
-        background: transparent;
+        background: #fff;
+        color: #1a1a1a;
+        border: 1px solid #e8e8e8;
       }
+
       .pricing__btn--outline:hover {
-        background: var(--primary-color);
-        color: var(--white);
+        background: #f5f5f5;
+        border-color: #ddd;
+      }
+
+      .pricing__not-included {
+        font-size: 0.8rem;
+        color: #888;
+        margin-bottom: 1.5rem;
+        padding: 0.75rem;
+        background: #f9f9f9;
+        border-radius: 6px;
+        line-height: 1.5;
+      }
+
+      .pricing__not-included strong {
+        color: #666;
+      }
+
+      .pricing__card--featured .pricing__not-included {
+        background: rgba(255, 255, 255, 0.15);
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .pricing__card--featured .pricing__not-included strong {
+        color: #fff;
       }
 
       /* Add-ons Section */
@@ -268,14 +378,37 @@
         background: #f1f5f9;
       }
 
+      @media (max-width: 992px) {
+        .pricing__grid {
+          grid-template-columns: 1fr;
+          max-width: 450px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .pricing__card--featured {
+          transform: none;
+        }
+        .pricing__card--featured:hover {
+          transform: translateY(-4px);
+        }
+        .pricing__section-header h2 {
+          font-size: 2.25rem;
+        }
+      }
+
       @media (max-width: 768px) {
         .pricing__hero h1 {
           font-size: 1.75rem;
         }
-        .pricing__grid {
-          grid-template-columns: 1fr;
+        .pricing__section-header h2 {
+          font-size: 1.85rem;
         }
-        .pricing__section-title h2,
+        .pricing__section-header p {
+          font-size: 1rem;
+        }
+        .pricing__price-amount {
+          font-size: 2.5rem;
+        }
         .addons__header h2,
         .pricing__cta h2 {
           font-size: 1.5rem;
@@ -324,92 +457,81 @@
 
     <!-- Pricing Cards Section -->
     <section id="pricing-section" class="pricing__section">
-      <div class="pricing__section-title">
-        <h2>Our Retainer Packages</h2>
-        <p>Find the right monthly retainer solution for your business stage</p>
+      <div class="pricing__section-header">
+        <span class="pricing__label"><i class="ri-price-tag-3-line"></i> Pricing</span>
+        <h2>Web Development Retainer Packages</h2>
+        <p>Simple pricing with no hidden fees. Choose the plan that fits your business needs.</p>
       </div>
 
       <div class="pricing__grid">
-        <!-- STARTER Package -->
-        <div class="pricing__card pricing__card--starter">
-          <div class="pricing__card-header">
-            <h3>🥇 Gold</h3>
-            <p class="subtitle">Starter Retainer</p>
-            <span class="best-for">Small businesses getting started online</span>
+        <!-- Starter Web Care (Basic) -->
+        <div class="pricing__card">
+          <h3 class="pricing__plan-name">Starter Web Care</h3>
+          <p class="pricing__plan-desc">Best for: Small business websites & personal brands</p>
+          <div class="pricing__price">
+            <span class="pricing__price-amount">GHS 500</span>
+            <span class="pricing__price-period">/month</span>
           </div>
-          <div class="pricing__card-body">
-            <p class="pricing__includes">Monthly Retainer Includes:</p>
-            <ul class="pricing__features">
-              <li><i class="ri-check-line"></i> 1–5 page website (Hostinger)</li>
-              <li><i class="ri-check-line"></i> Free domain (1st year included)</li>
-              <li><i class="ri-check-line"></i> Hosting setup & management</li>
-              <li><i class="ri-check-line"></i> Mobile-responsive design</li>
-              <li><i class="ri-check-line"></i> Basic security setup (SSL)</li>
-              <li><i class="ri-check-line"></i> Website uptime monitoring</li>
-              <li><i class="ri-check-line"></i> WhatsApp support (business hours)</li>
-            </ul>
-            <div class="pricing__outcome">
-              <p class="pricing__outcome-label">Outcome for client:</p>
-              <p class="pricing__outcome-text">"Your website is online, fast, and monitored."</p>
-            </div>
-          </div>
-          <div class="pricing__card-footer">
-            <a href="services.html" class="pricing__btn pricing__btn--outline">Get Started</a>
-          </div>
+          <div class="pricing__divider"></div>
+          <ul class="pricing__features">
+            <li><i class="ri-check-line"></i> Website uptime monitoring</li>
+            <li><i class="ri-check-line"></i> Core updates (CMS, plugins, themes etc)</li>
+            <li><i class="ri-check-line"></i> Minor content changes (up to 3/month)</li>
+            <li><i class="ri-check-line"></i> Basic security checks</li>
+            <li><i class="ri-check-line"></i> Monthly website health report</li>
+            <li><i class="ri-check-line"></i> Email support</li>
+            <li><i class="ri-check-line"></i> 1 New page</li>
+            <li><i class="ri-check-line"></i> Redesigns</li>
+            <li><i class="ri-time-line"></i> Response Time: 48 hours</li>
+          </ul>
+          <p class="pricing__not-included"><strong>Not Included:</strong> DevOps integrations, custom features, multiple pages, daily backups</p>
+          <a href="services.html" class="pricing__btn pricing__btn--dark">Get Started</a>
         </div>
 
-        <!-- GROWTH Package -->
-        <div class="pricing__card pricing__card--growth">
+        <!-- Growth Web Management (Standard) - Featured -->
+        <div class="pricing__card pricing__card--featured">
           <div class="pricing__badge">Most Popular</div>
-          <div class="pricing__card-header">
-            <h3>💎 Diamond</h3>
-            <p class="subtitle">Growth Retainer</p>
-            <span class="best-for">Growing businesses wanting reliability</span>
+          <h3 class="pricing__plan-name">Growth Web Management</h3>
+          <p class="pricing__plan-desc">Best for: Growing businesses & service companies</p>
+          <div class="pricing__price">
+            <span class="pricing__price-amount">GHS 800</span>
+            <span class="pricing__price-period">/month</span>
           </div>
-          <div class="pricing__card-body">
-            <p class="pricing__includes">Everything in Gold +</p>
-            <ul class="pricing__features">
-              <li><i class="ri-check-line"></i> Monthly website content updates</li>
-              <li><i class="ri-check-line"></i> Performance & uptime monitoring dashboard</li>
-              <li><i class="ri-check-line"></i> Monthly health report (PDF/WhatsApp)</li>
-              <li><i class="ri-check-line"></i> Automated backup configuration</li>
-              <li><i class="ri-check-line"></i> Priority response time</li>
-              <li><i class="ri-check-line"></i> Basic SEO optimization</li>
-            </ul>
-            <div class="pricing__outcome">
-              <p class="pricing__outcome-label">Outcome for client:</p>
-              <p class="pricing__outcome-text">"Your website is managed, monitored, and protected."</p>
-            </div>
-          </div>
-          <div class="pricing__card-footer">
-            <a href="services.html" class="pricing__btn pricing__btn--primary">Get Started</a>
-          </div>
+          <div class="pricing__divider"></div>
+          <ul class="pricing__features">
+            <li><i class="ri-check-line"></i> Everything in Starter, plus:</li>
+            <li><i class="ri-check-line"></i> DevOps integration (email or WhatsApp alerts)</li>
+            <li><i class="ri-check-line"></i> Performance optimization</li>
+            <li><i class="ri-check-line"></i> Security hardening & backups</li>
+            <li><i class="ri-check-line"></i> Content updates (up to 8/month)</li>
+            <li><i class="ri-check-line"></i> Bug fixes & small feature updates</li>
+            <li><i class="ri-check-line"></i> SEO technical fixes (basic)</li>
+            <li><i class="ri-check-line"></i> WhatsApp + Email support</li>
+            <li><i class="ri-check-line"></i> Monthly performance report</li>
+            <li><i class="ri-time-line"></i> Response Time: 24 hours</li>
+          </ul>
+          <p class="pricing__not-included"><strong>Not Included:</strong> Full redesigns, complex custom development</p>
+          <a href="services.html" class="pricing__btn pricing__btn--light">Get Started</a>
         </div>
 
-        <!-- CARE / PRO Package -->
-        <div class="pricing__card pricing__card--pro">
-          <div class="pricing__card-header">
-            <h3>⚪ Platinum</h3>
-            <p class="subtitle">Premium Retainer</p>
-            <span class="best-for">Businesses wanting full IT support</span>
-          </div>
-          <div class="pricing__card-body">
-            <p class="pricing__includes">Everything in Diamond +</p>
-            <ul class="pricing__features">
-              <li><i class="ri-check-line"></i> Hardware & network support (on-call)</li>
-              <li><i class="ri-check-line"></i> VIP priority response</li>
-              <li><i class="ri-check-line"></i> Advanced monitoring (resources, errors)</li>
-              <li><i class="ri-check-line"></i> Quarterly system review & optimization</li>
-              <li><i class="ri-check-line"></i> Emergency recovery support</li>
-            </ul>
-            <div class="pricing__outcome">
-              <p class="pricing__outcome-label">Outcome for client:</p>
-              <p class="pricing__outcome-text">"We fully manage your IT so you focus on business."</p>
-            </div>
-          </div>
-          <div class="pricing__card-footer">
-            <a href="services.html" class="pricing__btn pricing__btn--outline">Contact Us</a>
-          </div>
+        <!-- Premium Enterprise -->
+        <div class="pricing__card">
+          <h3 class="pricing__plan-name">Premium Enterprise</h3>
+          <p class="pricing__plan-desc">Best for: Large companies & enterprises</p>
+          <p class="pricing__price-custom">Talk to Us!</p>
+          <div class="pricing__divider"></div>
+          <ul class="pricing__features">
+            <li><i class="ri-check-line"></i> Everything in Growth, plus:</li>
+            <li><i class="ri-check-line"></i> Full website redesigns</li>
+            <li><i class="ri-check-line"></i> Custom feature development</li>
+            <li><i class="ri-check-line"></i> Daily automated backups</li>
+            <li><i class="ri-check-line"></i> Priority 24/7 support</li>
+            <li><i class="ri-check-line"></i> Dedicated account manager</li>
+            <li><i class="ri-check-line"></i> Advanced SEO & analytics</li>
+            <li><i class="ri-check-line"></i> Multi-site management</li>
+            <li><i class="ri-time-line"></i> Response Time: 4 hours</li>
+          </ul>
+          <a href="Contact Us.html" class="pricing__btn pricing__btn--outline">Contact Us</a>
         </div>
       </div>
     </section>
