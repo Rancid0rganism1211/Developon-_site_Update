@@ -89,6 +89,7 @@ header {
   min-height: 100vh;
   position: relative;
   overflow: hidden;
+  padding-top: 60px; /* Account for fixed navbar */
 }
 
 /* Video Background Styles */
@@ -124,6 +125,7 @@ header {
 .header-no-bg {
   min-height: auto;
   background: none;
+  padding-top: 60px; /* Account for fixed navbar */
 }
 
 .header-no-bg .video-background {
@@ -136,10 +138,12 @@ header {
   align-items: center;
   justify-content: space-between;
   background-color: var(--text-dark);
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
-  transition: top 0.3s ease-in-out; /* Add a smooth transition */
+  transition: all 0.3s ease-in-out;
   flex-wrap: wrap;
 }
 
@@ -226,9 +230,9 @@ header {
 
 .header__container h1 {
   margin-bottom: 1.5rem;
-  font-size: 3.5rem;
-  font-weight: 400;
-  line-height: 1.15;
+  font-size: 4.5rem;
+  font-weight: 700;
+  line-height: 0.85;
   color: var(--white);
   text-align: left;
   letter-spacing: -0.02em;
@@ -946,7 +950,7 @@ header {
       font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
       font-weight: 700;
       text-align: center;
-      font-size: 56px;
+      font-size: 64px;
   }
 
   .header__buttons {
