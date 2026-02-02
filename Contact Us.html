@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css?v=20260202" />
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Modern Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Developong Company | Contact Us</title>
+    <style>
+      /* Modern Contact Page Styles */
+      :root {
+        --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        --gradient-dark: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        --color-primary: #667eea;
+        --color-secondary: #764ba2;
+        --glass-bg: rgba(255, 255, 255, 0.95);
+        --shadow-modern: 0 8px 32px rgba(0, 0, 0, 0.12);
+        --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      body {
+        font-family: 'Inter', 'Poppins', sans-serif;
+      }
+
+      /* Hero Section */
+      .contact__hero {
+        background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%);
+        padding: 8rem 1rem 5rem;
+        text-align: center;
+        color: #fff;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .contact__hero::before {
+        content: '';
+        position: absolute;
+        top: -100px;
+        right: -100px;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle, rgba(102, 126, 234, 0.2) 0%, transparent 70%);
+        border-radius: 50%;
+      }
+
+      .contact__hero::after {
+        content: '';
+        position: absolute;
+        bottom: -150px;
+        left: -100px;
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
+        border-radius: 50%;
+      }
+
+      .contact__hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .contact__hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1.25rem;
+        background: rgba(102, 126, 234, 0.2);
+        border: 1px solid rgba(102, 126, 234, 0.3);
+        border-radius: 50px;
+        font-size: 0.85rem;
+        color: #a5b4fc;
+        margin-bottom: 1.5rem;
+      }
+
+      .contact__hero h1 {
+        font-size: 3.5rem;
+        font-weight: 900;
+        margin-bottom: 1.5rem;
+        line-height: 1.1;
+        letter-spacing: -0.03em;
+      }
+
+      .contact__hero h1 span {
+        background: linear-gradient(135deg, #667eea 0%, #a5b4fc 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .contact__hero p {
+        font-size: 1.2rem;
+        color: rgba(255, 255, 255, 0.8);
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.7;
+      }
+
+      /* Main Contact Section */
+      .contact__main {
+        padding: 5rem 1rem;
+        background: linear-gradient(180deg, #f8fafc 0%, #fff 100%);
+      }
+
+      .contact__container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 4rem;
+        align-items: start;
+      }
+
+      /* Contact Info Side */
+      .contact__info {
+        position: sticky;
+        top: 2rem;
+      }
+
+      .contact__info-header {
+        margin-bottom: 2rem;
+      }
+
+      .contact__info-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+        border-radius: 50px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: #667eea;
+        margin-bottom: 1rem;
+      }
+
+      .contact__info-header h2 {
+        font-size: 2.5rem;
+        font-weight: 900;
+        color: #1a1a2e;
+        margin-bottom: 1rem;
+        line-height: 1.1;
+        letter-spacing: -0.03em;
+      }
+
+      .contact__info-header p {
+        color: #64748b;
+        font-size: 1.1rem;
+        line-height: 1.7;
+      }
+
+      .contact__details {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-bottom: 2.5rem;
+      }
+
+      .contact__detail-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1.25rem;
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        border: 1px solid #e8ecf3;
+        transition: var(--transition-smooth);
+      }
+
+      .contact__detail-item:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .contact__detail-icon {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .contact__detail-icon i {
+        font-size: 1.5rem;
+        color: #fff;
+      }
+
+      .contact__detail-content h4 {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #1a1a2e;
+        margin-bottom: 0.25rem;
+      }
+
+      .contact__detail-content p {
+        color: #64748b;
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+
+      .contact__detail-content a {
+        color: #667eea;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .contact__detail-content a:hover {
+        color: #764ba2;
+      }
+
+      /* Social Links */
+      .contact__social {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .contact__social-link {
+        width: 48px;
+        height: 48px;
+        background: #fff;
+        border: 1px solid #e8ecf3;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #64748b;
+        font-size: 1.25rem;
+        transition: var(--transition-smooth);
+      }
+
+      .contact__social-link:hover {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: #fff;
+        border-color: transparent;
+        transform: translateY(-4px);
+      }
+
+      /* Contact Form Side */
+      .contact__form-wrapper {
+        background: #fff;
+        border-radius: 24px;
+        padding: 2.5rem;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        border: 1px solid #e8ecf3;
+      }
+
+      .contact__form-header {
+        margin-bottom: 2rem;
+      }
+
+      .contact__form-header h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #1a1a2e;
+        margin-bottom: 0.5rem;
+      }
+
+      .contact__form-header p {
+        color: #64748b;
+        font-size: 0.95rem;
+      }
+
+      .contact__form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .form__row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+      }
+
+      .form__group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .form__group label {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #1a1a2e;
+      }
+
+      .form__group label span {
+        color: #f5576c;
+      }
+
+      .form__group input,
+      .form__group textarea,
+      .form__group select {
+        padding: 1rem 1.25rem;
+        border: 2px solid #e8ecf3;
+        border-radius: 12px;
+        font-size: 1rem;
+        font-family: inherit;
+        color: #1a1a2e;
+        transition: var(--transition-smooth);
+        background: #f8fafc;
+      }
+
+      .form__group input:focus,
+      .form__group textarea:focus,
+      .form__group select:focus {
+        outline: none;
+        border-color: #667eea;
+        background: #fff;
+        box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+      }
+
+      .form__group input::placeholder,
+      .form__group textarea::placeholder {
+        color: #94a3b8;
+      }
+
+      .form__group textarea {
+        min-height: 150px;
+        resize: vertical;
+      }
+
+      .form__group select {
+        cursor: pointer;
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 1rem center;
+        background-size: 1.25rem;
+        padding-right: 3rem;
+      }
+
+      .form__submit {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        padding: 1.25rem 2rem;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: #fff;
+        border: none;
+        border-radius: 12px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition-smooth);
+        box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
+        margin-top: 0.5rem;
+      }
+
+      .form__submit:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 30px rgba(102, 126, 234, 0.5);
+      }
+
+      .form__submit i {
+        font-size: 1.1rem;
+        transition: transform 0.3s ease;
+      }
+
+      .form__submit:hover i {
+        transform: translateX(4px);
+      }
+
+      .form__note {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #64748b;
+        font-size: 0.85rem;
+        margin-top: 0.5rem;
+      }
+
+      .form__note i {
+        color: #667eea;
+      }
+
+      /* Map Section */
+      .contact__map-section {
+        padding: 0 1rem 5rem;
+        background: #fff;
+      }
+
+      .contact__map-container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .contact__map-header {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      .contact__map-header h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #1a1a2e;
+        margin-bottom: 0.5rem;
+      }
+
+      .contact__map-header p {
+        color: #64748b;
+        font-size: 1rem;
+      }
+
+      .contact__map {
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        border: 1px solid #e8ecf3;
+      }
+
+      .contact__map iframe {
+        width: 100%;
+        height: 400px;
+        border: none;
+        display: block;
+      }
+
+      /* FAQ Section */
+      .contact__faq {
+        padding: 5rem 1rem;
+        background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+      }
+
+      .contact__faq-container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .contact__faq-header {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .contact__faq-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 50px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: white;
+        margin-bottom: 1rem;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+      }
+
+      .contact__faq-header h2 {
+        font-size: 2.5rem;
+        font-weight: 900;
+        color: #1a1a2e;
+        margin-bottom: 0.5rem;
+        letter-spacing: -0.03em;
+      }
+
+      .contact__faq-header p {
+        color: #64748b;
+        font-size: 1.1rem;
+      }
+
+      .faq__list {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .faq__item {
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        border: 1px solid #e8ecf3;
+        overflow: hidden;
+        transition: var(--transition-smooth);
+      }
+
+      .faq__item:hover {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .faq__question {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.25rem 1.5rem;
+        cursor: pointer;
+        background: #fff;
+        transition: background 0.3s ease;
+      }
+
+      .faq__question:hover {
+        background: #f8fafc;
+      }
+
+      .faq__question h4 {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #1a1a2e;
+        margin: 0;
+      }
+
+      .faq__question i {
+        font-size: 1.25rem;
+        color: #667eea;
+        transition: transform 0.3s ease;
+      }
+
+      .faq__item.active .faq__question i {
+        transform: rotate(180deg);
+      }
+
+      .faq__answer {
+        padding: 0 1.5rem;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .faq__item.active .faq__answer {
+        padding: 0 1.5rem 1.25rem;
+        max-height: 200px;
+      }
+
+      .faq__answer p {
+        color: #64748b;
+        font-size: 0.95rem;
+        line-height: 1.7;
+        margin: 0;
+      }
+
+      /* Responsive */
+      @media (max-width: 1024px) {
+        .contact__container {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+        }
+
+        .contact__info {
+          position: static;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .contact__hero h1 {
+          font-size: 2.5rem;
+        }
+
+        .contact__hero p {
+          font-size: 1rem;
+        }
+
+        .contact__info-header h2 {
+          font-size: 2rem;
+        }
+
+        .form__row {
+          grid-template-columns: 1fr;
+        }
+
+        .contact__form-wrapper {
+          padding: 1.5rem;
+        }
+
+        .contact__faq-header h2 {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <header class="header-no-bg">
+      <nav class="section__container nav__container">
+        <a href="index.html" class="nav__logo">Developong <span>Services</span></a>
+        <a href="Contact Us.html" class="mobile-contact-btn">Contact Us</a>
+        <div class="menu-icon">&#9776;</div>
+        <ul class="nav__links">
+          <li class="link"><a href="Home.html">Home</a></li>
+          <li class="link"><a href="about.html">About</a></li>
+          <li class="link"><a href="services.html">Services</a></li>
+          <li class="link"><a href="pricing.html">Packages</a></li>
+          <li class="link"><a href="Contact Us.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="contact__hero">
+      <div class="contact__hero-content" data-aos="fade-up">
+        <span class="contact__hero-badge"><i class="ri-customer-service-2-line"></i> Get In Touch</span>
+        <h1>Let's Start a <span>Conversation</span></h1>
+        <p>Have questions about our services? Ready to transform your business with innovative IT solutions? We're here to help.</p>
+      </div>
+    </section>
+
+    <!-- Main Contact Section -->
+    <section class="contact__main">
+      <div class="contact__container">
+        <!-- Contact Info Side -->
+        <div class="contact__info" data-aos="fade-right">
+          <div class="contact__info-header">
+            <span class="contact__info-badge"><i class="ri-map-pin-line"></i> Contact Info</span>
+            <h2>We'd Love to Hear From You</h2>
+            <p>Whether you have a question about our services, pricing, or anything else, our team is ready to answer all your questions.</p>
+          </div>
+
+          <div class="contact__details">
+            <div class="contact__detail-item">
+              <div class="contact__detail-icon">
+                <i class="ri-map-pin-2-line"></i>
+              </div>
+              <div class="contact__detail-content">
+                <h4>Our Office</h4>
+                <p>GA324, North Kaneshie, Accra<br>Ghana</p>
+              </div>
+            </div>
+
+            <div class="contact__detail-item">
+              <div class="contact__detail-icon">
+                <i class="ri-mail-line"></i>
+              </div>
+              <div class="contact__detail-content">
+                <h4>Email Us</h4>
+                <p><a href="mailto:info@developong.com">info@developong.com</a></p>
+              </div>
+            </div>
+
+            <div class="contact__detail-item">
+              <div class="contact__detail-icon">
+                <i class="ri-phone-line"></i>
+              </div>
+              <div class="contact__detail-content">
+                <h4>Call Us</h4>
+                <p><a href="tel:+233508635937">(+233) 5086 35 937</a></p>
+              </div>
+            </div>
+
+            <div class="contact__detail-item">
+              <div class="contact__detail-icon">
+                <i class="ri-time-line"></i>
+              </div>
+              <div class="contact__detail-content">
+                <h4>Business Hours</h4>
+                <p>Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 2:00 PM</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact__social">
+            <a href="#" class="contact__social-link" title="Facebook"><i class="ri-facebook-fill"></i></a>
+            <a href="#" class="contact__social-link" title="Twitter"><i class="ri-twitter-x-fill"></i></a>
+            <a href="#" class="contact__social-link" title="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+            <a href="#" class="contact__social-link" title="Instagram"><i class="ri-instagram-line"></i></a>
+            <a href="#" class="contact__social-link" title="WhatsApp"><i class="ri-whatsapp-line"></i></a>
+          </div>
+        </div>
+
+        <!-- Contact Form Side -->
+        <div class="contact__form-wrapper" data-aos="fade-left">
+          <div class="contact__form-header">
+            <h3>Send Us a Message</h3>
+            <p>Fill out the form below and we'll get back to you within 24 hours.</p>
+          </div>
+
+          <form action="https://formspree.io/f/mdkrlqer" method="POST" class="contact__form">
+            <input type="hidden" name="_subject" value="New Contact Form Submission - Developong Website">
+            
+            <div class="form__row">
+              <div class="form__group">
+                <label for="firstName">First Name <span>*</span></label>
+                <input type="text" id="firstName" name="firstName" placeholder="John" required>
+              </div>
+              <div class="form__group">
+                <label for="lastName">Last Name <span>*</span></label>
+                <input type="text" id="lastName" name="lastName" placeholder="Doe" required>
+              </div>
+            </div>
+
+            <div class="form__row">
+              <div class="form__group">
+                <label for="email">Email Address <span>*</span></label>
+                <input type="email" id="email" name="email" placeholder="john@example.com" required>
+              </div>
+              <div class="form__group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="+233 XXX XXX XXX">
+              </div>
+            </div>
+
+            <div class="form__group">
+              <label for="service">Service Interested In</label>
+              <select id="service" name="service">
+                <option value="">Select a service...</option>
+                <option value="web-development">Web Development</option>
+                <option value="hardware-services">Hardware Services</option>
+                <option value="system-monitoring">System Monitoring (DevOps)</option>
+                <option value="it-support">IT Support & Network</option>
+                <option value="cloud-solutions">Cloud Solutions</option>
+                <option value="cctv-installation">CCTV Installation</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form__group">
+              <label for="budget">Budget Range</label>
+              <select id="budget" name="budget">
+                <option value="">Select budget range...</option>
+                <option value="under-500">Under GHS 500</option>
+                <option value="500-1000">GHS 500 - 1,000</option>
+                <option value="1000-5000">GHS 1,000 - 5,000</option>
+                <option value="5000-10000">GHS 5,000 - 10,000</option>
+                <option value="above-10000">Above GHS 10,000</option>
+                <option value="discuss">Let's Discuss</option>
+              </select>
+            </div>
+
+            <div class="form__group">
+              <label for="message">Your Message <span>*</span></label>
+              <textarea id="message" name="message" placeholder="Tell us about your project or inquiry..." required></textarea>
+            </div>
+
+            <button type="submit" class="form__submit">
+              Send Message <i class="ri-send-plane-line"></i>
+            </button>
+
+            <p class="form__note">
+              <i class="ri-shield-check-line"></i>
+              Your information is secure and will never be shared with third parties.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="contact__map-section">
+      <div class="contact__map-container" data-aos="fade-up">
+        <div class="contact__map-header">
+          <h2>Find Us on the Map</h2>
+          <p>Visit our office in North Kaneshie, Accra</p>
+        </div>
+        <div class="contact__map">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.8!2d-0.2295!3d5.5825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNcKwMzQnNTcuMCJOIDDCsDEzJzQ2LjIiVw!5e0!3m2!1sen!2sgh!4v1600000000000!5m2!1sen!2sgh"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="contact__faq">
+      <div class="contact__faq-container">
+        <div class="contact__faq-header" data-aos="fade-up">
+          <span class="contact__faq-badge"><i class="ri-question-line"></i> FAQs</span>
+          <h2>Frequently Asked Questions</h2>
+          <p>Quick answers to common questions about our services</p>
+        </div>
+
+        <div class="faq__list" data-aos="fade-up" data-aos-delay="100">
+          <div class="faq__item">
+            <div class="faq__question">
+              <h4>How quickly can you respond to my inquiry?</h4>
+              <i class="ri-arrow-down-s-line"></i>
+            </div>
+            <div class="faq__answer">
+              <p>We typically respond to all inquiries within 24 hours during business days. For urgent matters, please call us directly for immediate assistance.</p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <div class="faq__question">
+              <h4>Do you offer free consultations?</h4>
+              <i class="ri-arrow-down-s-line"></i>
+            </div>
+            <div class="faq__answer">
+              <p>Yes! We offer free initial consultations to understand your needs and provide tailored recommendations. Contact us to schedule yours.</p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <div class="faq__question">
+              <h4>What areas do you serve?</h4>
+              <i class="ri-arrow-down-s-line"></i>
+            </div>
+            <div class="faq__answer">
+              <p>We primarily serve clients in Accra and surrounding areas for onsite services. For remote services like web development and system monitoring, we work with clients across Ghana and internationally.</p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <div class="faq__question">
+              <h4>What payment methods do you accept?</h4>
+              <i class="ri-arrow-down-s-line"></i>
+            </div>
+            <div class="faq__answer">
+              <p>We accept mobile money (MTN, Vodafone, AirtelTigo), bank transfers, and cash payments. For international clients, we also accept PayPal and wire transfers.</p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <div class="faq__question">
+              <h4>Do you provide ongoing support after project completion?</h4>
+              <i class="ri-arrow-down-s-line"></i>
+            </div>
+            <div class="faq__answer">
+              <p>Absolutely! We offer various retainer packages for ongoing support and maintenance. We believe in building long-term relationships with our clients.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" style="background-image: linear-gradient(rgba(11, 12, 16, 0.85), rgba(11, 12, 16, 0.85)), url('assets/code-bg.jpg'); background-position: center center; background-size: cover; background-repeat: no-repeat; position: relative; overflow: hidden;">
+      <style>
+        .footer::before {
+          content: '';
+          position: absolute;
+          top: -100px;
+          right: -100px;
+          width: 400px;
+          height: 400px;
+          background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+          border-radius: 50%;
+        }
+        .footer .footer__container {
+          position: relative;
+          z-index: 1;
+        }
+        .footer .footer__col h3 {
+          font-size: 1.8rem;
+          font-weight: 700;
+          color: white;
+          margin-bottom: 1rem;
+        }
+        .footer .footer__col h3 span {
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+        .footer .footer__col h4 {
+          color: white;
+          font-size: 1.1rem;
+          font-weight: 600;
+          margin-bottom: 1.5rem;
+          position: relative;
+          padding-bottom: 0.75rem;
+        }
+        .footer .footer__col h4::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 40px;
+          height: 3px;
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          border-radius: 2px;
+        }
+        .footer .footer__col p {
+          color: rgba(255,255,255,0.7);
+          margin-bottom: 0.75rem;
+          transition: all 0.3s ease;
+          cursor: pointer;
+        }
+        .footer .footer__col p:hover {
+          color: #a5b4fc;
+          padding-left: 5px;
+        }
+        .footer .footer__col p i {
+          color: #667eea;
+          margin-right: 0.5rem;
+        }
+      </style>
+      <div class="section__container footer__container" style="padding: 5rem 1rem;">
+        <div class="footer__col">
+          <h3>Developong <span>Company</span></h3>
+          <p style="max-width: 280px; line-height: 1.7;">
+           Your partners in navigating the complexities of the technological landscape. 
+            Our expertise, innovation, and client-centric approach are the cornerstones 
+            of our commitment to ensuring your success.
+          </p>
+        </div>
+
+        <div class="footer__col">
+          <h4>About Us</h4>
+          <p>Home</p>
+          <p>About Us</p>
+          <p>Work With Us</p>
+          <p>Our Blog</p>
+          <p>Terms & Conditions</p>
+        </div>
+        <div class="footer__col">
+          <h4>Services</h4>
+          <p>Hardware Services</p>
+          <p>System Monitoring</p>
+          <p>IT Support</p>
+          <p>Network & CCTV</p>
+        </div>
+
+        <div class="footer__col">
+          <h4>Contact Us</h4>
+          <p>
+            <i class="ri-map-pin-2-fill"></i> GA324, North Kaneshie, Accra
+          </p>
+          <p><i class="ri-mail-fill"></i>info@developong.com</p>
+          <p><i class="ri-phone-fill"></i> (+233) 5086 35 937</p>
+        </div>
+      </div>
+      <div class="footer__bar" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);">
+        <div class="footer__bar__content">
+          <p>Copyright © 2026 Developong. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      // Initialize AOS animations
+      AOS.init({
+        duration: 800,
+        easing: 'ease-out-cubic',
+        once: true,
+        offset: 50
+      });
+
+      // FAQ Accordion functionality
+      document.querySelectorAll('.faq__question').forEach(question => {
+        question.addEventListener('click', () => {
+          const faqItem = question.parentElement;
+          const isActive = faqItem.classList.contains('active');
+          
+          // Close all FAQ items
+          document.querySelectorAll('.faq__item').forEach(item => {
+            item.classList.remove('active');
+          });
+          
+          // Open clicked item if it wasn't active
+          if (!isActive) {
+            faqItem.classList.add('active');
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
