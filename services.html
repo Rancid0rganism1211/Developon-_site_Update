@@ -7,20 +7,46 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-      href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
       integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <!-- 
-         -  favicon
-      --->
-  <link rel="shortcut icon" href="favicon.svg" type="image/svg+xml">
-      
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+    <!-- favicon -->
+    <link rel="shortcut icon" href="favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css?v=20260125b">
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Modern Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <title>Developong Company | Services</title>
+    
+    <!-- Modern Page Enhancements -->
+    <style>
+      :root {
+        --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        --gradient-dark: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        --glass-bg: rgba(255, 255, 255, 0.1);
+        --glass-border: rgba(255, 255, 255, 0.2);
+        --shadow-modern: 0 8px 32px rgba(0, 0, 0, 0.12);
+        --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.2);
+        --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      
+      body {
+        font-family: 'Inter', 'Poppins', sans-serif;
+      }
+      
+      .gradient-text {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f5576c 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+    </style>
   </head>
   <body>
     <header class="header-no-bg">
@@ -43,7 +69,8 @@
     <section class="services-section">
       <div class="services-container">
         <!-- Section Header -->
-        <div class="services-header fade-up" data-delay="0">
+        <div class="services-header fade-up" data-delay="0" data-aos="fade-up">
+          <span class="services-badge"><i class="ri-service-line"></i> What We Offer</span>
           <h1 class="services-title">Our Services</h1>
           <p class="services-tagline">Comprehensive technology solutions tailored to elevate your business</p>
         </div>
@@ -116,14 +143,40 @@
     <style>
       /* Modern Services Section Styles */
       .services-section {
-        padding: 80px 20px;
-        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        padding: 100px 20px;
+        background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
         min-height: 100vh;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .services-section::before {
+        content: '';
+        position: absolute;
+        top: -100px;
+        right: -100px;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle, rgba(102, 126, 234, 0.15) 0%, transparent 70%);
+        border-radius: 50%;
+      }
+      
+      .services-section::after {
+        content: '';
+        position: absolute;
+        bottom: -150px;
+        left: -100px;
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(circle, rgba(245, 87, 108, 0.1) 0%, transparent 70%);
+        border-radius: 50%;
       }
 
       .services-container {
         max-width: 1200px;
         margin: 0 auto;
+        position: relative;
+        z-index: 1;
       }
 
       /* Header Styles */
@@ -131,21 +184,35 @@
         text-align: center;
         margin-bottom: 60px;
       }
+      
+      .services-badge {
+        display: inline-block;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 0.5rem 1.5rem;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: white;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+      }
 
       .services-title {
         font-size: 3rem;
-        font-weight: 700;
-        color: #2c2b2bd6;
+        font-weight: 800;
+        color: #1a1a2e;
         margin-bottom: 16px;
-        letter-spacing: -0.5px;
+        letter-spacing: -0.03em;
       }
 
       .services-tagline {
-        font-size: 1.125rem;
+        font-size: 1.2rem;
         color: #64748b;
         max-width: 600px;
         margin: 0 auto;
-        line-height: 1.6;
+        line-height: 1.7;
       }
 
       /* Services Gallery Grid */
@@ -158,19 +225,40 @@
 
       /* Service Item */
       .service-item {
-        background: #ffffff;
-        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: 24px;
         overflow: hidden;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         cursor: pointer;
         display: flex;
         flex-direction: column;
+        position: relative;
+      }
+      
+      .service-item::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(90deg, #667eea, #764ba2, #f5576c);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s ease;
+      }
+      
+      .service-item:hover::before {
+        transform: scaleX(1);
       }
 
       .service-item:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        transform: translateY(-12px);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
       }
 
       /* Image Wrapper */
@@ -179,7 +267,7 @@
         width: 100%;
         height: 280px;
         overflow: hidden;
-        background: linear-gradient(135deg, #d72020f1 0%, #ac2730ee 100%);
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       }
 
       .service-image {
@@ -198,16 +286,16 @@
       /* Service Content */
       .service-item-title {
         font-size: 1.375rem;
-        font-weight: 600;
-        color: #2c2b2bd6;
+        font-weight: 700;
+        color: #1a1a2e;
         margin: 24px 24px 12px;
         line-height: 1.3;
       }
 
       .service-item-description {
-        font-size: 0.9375rem;
+        font-size: 0.95rem;
         color: #64748b;
-        line-height: 1.6;
+        line-height: 1.7;
         margin: 0 24px 20px;
         flex-grow: 1;
       }
@@ -215,17 +303,20 @@
       .service-item-link {
         display: inline-flex;
         align-items: center;
-        color: #d72020f1;
+        gap: 0.5rem;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
         font-weight: 600;
-        font-size: 0.9375rem;
+        font-size: 0.95rem;
         text-decoration: none;
         margin: 0 24px 24px;
         transition: all 0.3s ease;
       }
 
       .service-item-link:hover {
-        color: #ac2730ee;
-        gap: 8px;
+        gap: 12px;
       }
 
       /* Responsive: Tablet */
@@ -292,181 +383,273 @@
         }
       }
 
-      /* Pricing Section Styles */
+      /* New Pricing Section Styles */
       .pricing__section {
-        padding: 80px 20px;
-        background: #ffffff;
-      }
-
-      .pricing__container {
+        padding: 5rem 1rem 4rem;
         max-width: 1200px;
         margin: 0 auto;
+        background: #fff;
       }
 
-      .pricing__section-title {
+      .pricing__section-header {
         text-align: center;
-        margin-bottom: 50px;
+        margin-bottom: 3.5rem;
       }
-      .pricing__section-title h2 {
-        font-size: 2.5rem;
+
+      .pricing__label {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: #f5f5f5;
+        border: 1px solid #e5e5e5;
+        padding: 0.5rem 1.25rem;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        color: #333;
+        margin-bottom: 1.5rem;
+      }
+
+      .pricing__label i {
+        font-size: 1rem;
+        color: #333;
+      }
+
+      .pricing__section-header h2 {
+        font-size: 3rem;
         font-weight: 700;
-        color: #2c2b2bd6;
-        margin-bottom: 12px;
+        color: #111;
+        margin-bottom: 1rem;
+        letter-spacing: -0.02em;
       }
-      .pricing__section-title p {
-        color: #64748b;
+
+      .pricing__section-header p {
+        color: #666;
         font-size: 1.1rem;
+        max-width: 550px;
+        margin: 0 auto;
+        line-height: 1.6;
       }
 
       .pricing__grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 28px;
-        margin-bottom: 60px;
+        gap: 1.5rem;
+        margin-bottom: 4rem;
+        align-items: start;
       }
 
       .pricing__card {
-        background: #ffffff;
+        background: #fff;
         border-radius: 16px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-        overflow: hidden;
+        border: 1px solid #e8e8e8;
+        overflow: visible;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         position: relative;
+        padding: 2rem;
       }
+
       .pricing__card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
       }
 
-      .pricing__card--starter .pricing__card-header {
-        background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); /* Gold */
-      }
-      .pricing__card--growth .pricing__card-header {
-        background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%); /* Diamond */
-      }
-      .pricing__card--pro .pricing__card-header {
-        background: linear-gradient(135deg, #94a3b8 0%, #64748b 100%); /* Platinum */
+      /* Featured Card - Professional */
+      .pricing__card--featured {
+        background: #000000;
+        border: 1px solid #000000;
+        color: #fff;
+        transform: scale(1.02);
+        z-index: 2;
       }
 
-      .pricing__card-header {
-        padding: 28px 24px;
-        color: #ffffff;
-        text-align: center;
-      }
-      .pricing__card-header h3 {
-        font-size: 1.5rem;
-        margin-bottom: 6px;
-      }
-      .pricing__card-header .subtitle {
-        font-size: 0.9rem;
-        opacity: 0.9;
-        margin-bottom: 12px;
-      }
-      .pricing__card-header .best-for {
-        background: rgba(255, 255, 255, 0.2);
-        padding: 8px 16px;
-        border-radius: 20px;
-        font-size: 0.85rem;
-        display: inline-block;
+      .pricing__card--featured:hover {
+        transform: scale(1.04);
+        box-shadow: 0 12px 40px rgba(224, 122, 122, 0.35);
       }
 
       .pricing__badge {
         position: absolute;
-        top: 12px;
-        right: -30px;
-        background: #fbbf24;
-        color: #000;
-        padding: 4px 40px;
-        font-size: 0.7rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        transform: rotate(45deg);
-      }
-
-      .pricing__card-body {
-        padding: 24px;
-      }
-
-      .pricing__includes {
+        top: -12px;
+        right: 1.5rem;
+        background: #d4f5d4;
+        color: #1a1a1a;
+        padding: 0.4rem 1rem;
+        border-radius: 50px;
+        font-size: 0.75rem;
         font-weight: 600;
-        color: #2c2b2bd6;
-        margin-bottom: 12px;
-        font-size: 0.95rem;
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+      }
+
+      .pricing__badge::before {
+        content: "🔥";
+        font-size: 0.8rem;
+      }
+
+      .pricing__plan-name {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #111;
+        margin-bottom: 0.25rem;
+      }
+
+      .pricing__card--featured .pricing__plan-name {
+        color: #fff;
+      }
+
+      .pricing__plan-desc {
+        font-size: 0.9rem;
+        color: #666;
+        margin-bottom: 1.5rem;
+      }
+
+      .pricing__card--featured .pricing__plan-desc {
+        color: #aaa;
+      }
+
+      .pricing__price {
+        display: flex;
+        align-items: baseline;
+        gap: 0.25rem;
+        margin-bottom: 2rem;
+      }
+
+      .pricing__price-amount {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #111;
+        line-height: 1;
+      }
+
+      .pricing__card--featured .pricing__price-amount {
+        color: #fff;
+      }
+
+      .pricing__price-period {
+        font-size: 1rem;
+        color: #666;
+      }
+
+      .pricing__card--featured .pricing__price-period {
+        color: #aaa;
+      }
+
+      .pricing__price-custom {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #111;
+        margin-bottom: 2rem;
+      }
+
+      .pricing__divider {
+        height: 1px;
+        background: #e8e8e8;
+        margin: 1.5rem 0;
+      }
+
+      .pricing__card--featured .pricing__divider {
+        background: rgba(255, 255, 255, 0.3);
       }
 
       .pricing__features {
         list-style: none;
         padding: 0;
-        margin: 0 0 20px 0;
+        margin: 0 0 2rem 0;
       }
+
       .pricing__features li {
         display: flex;
-        align-items: flex-start;
-        gap: 10px;
-        padding: 8px 0;
-        color: #64748b;
-        font-size: 0.9rem;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.6rem 0;
+        color: #444;
+        font-size: 0.95rem;
       }
+
+      .pricing__card--featured .pricing__features li {
+        color: #ddd;
+      }
+
       .pricing__features li i {
-        color: #10b981;
+        color: #666;
         font-size: 1rem;
         flex-shrink: 0;
-        margin-top: 2px;
       }
 
-      .pricing__outcome {
-        background: #f8fafc;
-        border-left: 4px solid #d72020f1;
-        padding: 12px 16px;
-        margin: 16px 0;
-        border-radius: 0 8px 8px 0;
-      }
-      .pricing__outcome-label {
-        font-size: 0.75rem;
-        font-weight: 600;
-        color: #2c2b2bd6;
-        margin-bottom: 4px;
-      }
-      .pricing__outcome-text {
-        font-style: italic;
-        color: #64748b;
-        font-size: 0.85rem;
+      .pricing__card--featured .pricing__features li i {
+        color: #aaa;
       }
 
-      .pricing__card-footer {
-        padding: 0 24px 24px;
+      .pricing__not-included {
+        font-size: 0.8rem;
+        color: #888;
+        margin-bottom: 1.5rem;
+        padding: 0.75rem;
+        background: #f9f9f9;
+        border-radius: 6px;
+        line-height: 1.5;
       }
+
+      .pricing__not-included strong {
+        color: #666;
+      }
+
+      .pricing__card--featured .pricing__not-included {
+        background: rgba(255, 255, 255, 0.15);
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .pricing__card--featured .pricing__not-included strong {
+        color: #fff;
+      }
+
       .pricing__btn {
         display: block;
         width: 100%;
-        padding: 14px;
+        padding: 1rem 1.5rem;
         text-align: center;
         border-radius: 8px;
         font-weight: 600;
+        font-size: 0.95rem;
         text-decoration: none;
         transition: all 0.3s ease;
+        cursor: pointer;
+        border: none;
       }
-      .pricing__btn--primary {
-        background: #d72020f1;
-        color: #ffffff;
+
+      .pricing__btn--dark {
+        background: #1a1a1a;
+        color: #fff;
       }
-      .pricing__btn--primary:hover {
-        background: #ac2730ee;
+
+      .pricing__btn--dark:hover {
+        background: #333;
       }
+
+      .pricing__btn--light {
+        background: #fff;
+        color: #1a1a1a;
+      }
+
+      .pricing__btn--light:hover {
+        background: #f5f5f5;
+      }
+
       .pricing__btn--outline {
-        border: 2px solid #d72020f1;
-        color: #d72020f1;
-        background: transparent;
+        background: #fff;
+        color: #1a1a1a;
+        border: 1px solid #e8e8e8;
       }
+
       .pricing__btn--outline:hover {
-        background: #d72020f1;
-        color: #ffffff;
+        background: #f5f5f5;
+        border-color: #ddd;
       }
 
       /* Add-ons Section */
       .addons__section {
         background: #f8fafc;
-        padding: 60px 20px;
+        padding: 4rem 1rem;
       }
       .addons__container {
         max-width: 1000px;
@@ -474,13 +657,12 @@
       }
       .addons__header {
         text-align: center;
-        margin-bottom: 40px;
+        margin-bottom: 3rem;
       }
       .addons__header h2 {
         font-size: 2rem;
-        font-weight: 700;
         color: #2c2b2bd6;
-        margin-bottom: 8px;
+        margin-bottom: 0.5rem;
       }
       .addons__header p {
         color: #64748b;
@@ -488,12 +670,12 @@
 
       .addons__grid {
         display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
       }
       .addon__card {
         background: #ffffff;
-        padding: 24px 16px;
+        padding: 1.5rem;
         border-radius: 12px;
         text-align: center;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
@@ -505,143 +687,129 @@
       .addon__card i {
         font-size: 2rem;
         color: #d72020f1;
-        margin-bottom: 12px;
+        margin-bottom: 0.75rem;
       }
       .addon__card h4 {
         color: #2c2b2bd6;
-        font-size: 0.95rem;
-        margin-bottom: 6px;
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
       }
       .addon__card p {
         color: #64748b;
-        font-size: 0.8rem;
+        font-size: 0.85rem;
       }
 
-      /* Pricing Responsive */
-      @media (max-width: 1024px) {
+      @media (max-width: 992px) {
         .pricing__grid {
-          grid-template-columns: repeat(2, 1fr);
+          grid-template-columns: 1fr;
+          max-width: 450px;
+          margin-left: auto;
+          margin-right: auto;
         }
-        .addons__grid {
-          grid-template-columns: repeat(3, 1fr);
+        .pricing__card--featured {
+          transform: none;
+        }
+        .pricing__card--featured:hover {
+          transform: translateY(-4px);
+        }
+        .pricing__section-header h2 {
+          font-size: 2.25rem;
         }
       }
 
       @media (max-width: 768px) {
-        .pricing__section {
-          padding: 60px 16px;
+        .pricing__section-header h2 {
+          font-size: 1.85rem;
         }
-        .pricing__section-title h2 {
-          font-size: 1.75rem;
+        .pricing__section-header p {
+          font-size: 1rem;
         }
-        .pricing__grid {
-          grid-template-columns: 1fr;
-        }
-        .addons__grid {
-          grid-template-columns: repeat(2, 1fr);
+        .pricing__price-amount {
+          font-size: 2.5rem;
         }
         .addons__header h2 {
           font-size: 1.5rem;
         }
       }
-
-      @media (max-width: 480px) {
-        .addons__grid {
-          grid-template-columns: 1fr;
-        }
-      }
     </style>
 
-    <!-- Pricing Section -->
-    <section class="pricing__section">
-      <div class="pricing__container">
-        <div class="pricing__section-title" data-aos="fade-up">
-          <h2>Our Pricing Packages</h2>
-          <p>Find the right solution for your business stage</p>
+    <!-- Pricing Cards Section -->
+    <section id="pricing-section" class="pricing__section">
+      <div class="pricing__section-header">
+        <span class="pricing__label"><i class="ri-price-tag-3-line"></i> Packages</span>
+        <h2>Web Development Retainer Packages</h2>
+        <p>Simple pricing with no hidden fees. Choose the plan that fits your business needs.</p>
+      </div>
+
+      <div class="pricing__grid">
+        <!-- Starter Web Care (Basic) -->
+        <div class="pricing__card" data-aos="fade-up" data-aos-delay="100">
+          <h3 class="pricing__plan-name">Starter Web Care</h3>
+          <p class="pricing__plan-desc">Best for: Small business websites & personal brands</p>
+          <div class="pricing__price">
+            <span class="pricing__price-amount">GHS 500</span>
+            <span class="pricing__price-period">/month</span>
+          </div>
+          <div class="pricing__divider"></div>
+          <ul class="pricing__features">
+            <li><i class="ri-check-line"></i> Website uptime monitoring</li>
+            <li><i class="ri-check-line"></i> Core updates (CMS, plugins, themes etc)</li>
+            <li><i class="ri-check-line"></i> Minor content changes (up to 3/month)</li>
+            <li><i class="ri-check-line"></i> Basic security checks</li>
+            <li><i class="ri-check-line"></i> Monthly website health report</li>
+            <li><i class="ri-check-line"></i> Email support</li>
+            <li><i class="ri-check-line"></i> 1 New page</li>
+            <li><i class="ri-check-line"></i> Redesigns</li>
+            <li><i class="ri-time-line"></i> Response Time: 48 hours</li>
+          </ul>
+          <p class="pricing__not-included"><strong>Not Included:</strong> DevOps integrations, custom features, multiple pages, daily backups</p>
+          <a href="Contact Us.html" class="pricing__btn pricing__btn--dark">Get Started</a>
         </div>
 
-        <div class="pricing__grid">
-          <!-- STARTER Package -->
-          <div class="pricing__card pricing__card--starter" data-aos="fade-up" data-aos-delay="100">
-            <div class="pricing__card-header">
-              <h3>🥇 Gold</h3>
-              <p class="subtitle">Best for First-Time Clients</p>
-              <span class="best-for">Small businesses that just want to be online</span>
-            </div>
-            <div class="pricing__card-body">
-              <p class="pricing__includes">Includes:</p>
-              <ul class="pricing__features">
-                <li><i class="fas fa-check"></i> 1–5 page website (Hostinger)</li>
-                <li><i class="fas fa-check"></i> Free domain (1 year)</li>
-                <li><i class="fas fa-check"></i> Hosting setup</li>
-                <li><i class="fas fa-check"></i> Mobile-friendly design</li>
-                <li><i class="fas fa-check"></i> Basic security setup</li>
-                <li><i class="fas fa-check"></i> Website uptime monitoring</li>
-                <li><i class="fas fa-check"></i> WhatsApp support (business hours)</li>
-              </ul>
-              <div class="pricing__outcome">
-                <p class="pricing__outcome-label">Outcome for client:</p>
-                <p class="pricing__outcome-text">"Your website is online, fast, and monitored."</p>
-              </div>
-            </div>
-            <div class="pricing__card-footer">
-              <a href="#contact" class="pricing__btn pricing__btn--outline">Get Started</a>
-            </div>
+        <!-- Growth Web Management (Standard) - Featured -->
+        <div class="pricing__card pricing__card--featured" data-aos="fade-up" data-aos-delay="200">
+          <div class="pricing__badge">Most Popular</div>
+          <h3 class="pricing__plan-name">Growth Web Management</h3>
+          <p class="pricing__plan-desc">Best for: Growing businesses & service companies</p>
+          <div class="pricing__price">
+            <span class="pricing__price-amount">GHS 800</span>
+            <span class="pricing__price-period">/month</span>
           </div>
+          <div class="pricing__divider"></div>
+          <ul class="pricing__features">
+            <li><i class="ri-check-line"></i> Everything in Starter, plus:</li>
+            <li><i class="ri-check-line"></i> DevOps integration (email or WhatsApp alerts)</li>
+            <li><i class="ri-check-line"></i> Performance optimization</li>
+            <li><i class="ri-check-line"></i> Security hardening & backups</li>
+            <li><i class="ri-check-line"></i> Content updates (up to 8/month)</li>
+            <li><i class="ri-check-line"></i> Bug fixes & small feature updates</li>
+            <li><i class="ri-check-line"></i> SEO technical fixes (basic)</li>
+            <li><i class="ri-check-line"></i> WhatsApp + Email support</li>
+            <li><i class="ri-check-line"></i> Monthly performance report</li>
+            <li><i class="ri-time-line"></i> Response Time: 24 hours</li>
+          </ul>
+          <p class="pricing__not-included"><strong>Not Included:</strong> Full redesigns, complex custom development</p>
+          <a href="Contact Us.html" class="pricing__btn pricing__btn--light">Get Started</a>
+        </div>
 
-          <!-- GROWTH Package -->
-          <div class="pricing__card pricing__card--growth" data-aos="fade-up" data-aos-delay="200">
-            <div class="pricing__badge">Most Popular</div>
-            <div class="pricing__card-header">
-              <h3>💎 Diamond</h3>
-              <p class="subtitle">Most Recommended</p>
-              <span class="best-for">Growing businesses that want reliability</span>
-            </div>
-            <div class="pricing__card-body">
-              <p class="pricing__includes">Includes everything in Starter +</p>
-              <ul class="pricing__features">
-                <li><i class="fas fa-check"></i> Website updates (monthly)</li>
-                <li><i class="fas fa-check"></i> Performance & uptime monitoring dashboard</li>
-                <li><i class="fas fa-check"></i> Monthly health report (PDF or WhatsApp)</li>
-                <li><i class="fas fa-check"></i> Backup configuration</li>
-                <li><i class="fas fa-check"></i> Faster response time</li>
-                <li><i class="fas fa-check"></i> Basic SEO setup</li>
-              </ul>
-              <div class="pricing__outcome">
-                <p class="pricing__outcome-label">Outcome for client:</p>
-                <p class="pricing__outcome-text">"Your website is managed, monitored, and protected."</p>
-              </div>
-            </div>
-            <div class="pricing__card-footer">
-              <a href="#contact" class="pricing__btn pricing__btn--primary">Get Started</a>
-            </div>
-          </div>
-
-          <!-- CARE / PRO Package -->
-          <div class="pricing__card pricing__card--pro" data-aos="fade-up" data-aos-delay="300">
-            <div class="pricing__card-header">
-              <h3>⚪ Platinum</h3>
-              <p class="subtitle">Recurring Income Focus</p>
-              <span class="best-for">Businesses that don't want IT stress</span>
-            </div>
-            <div class="pricing__card-body">
-              <p class="pricing__includes">Includes everything in Growth +</p>
-              <ul class="pricing__features">
-                <li><i class="fas fa-check"></i> Hardware & network support (on-call)</li>
-                <li><i class="fas fa-check"></i> Priority response</li>
-                <li><i class="fas fa-check"></i> Advanced monitoring (resources, errors)</li>
-                <li><i class="fas fa-check"></i> Quarterly system review</li>
-                <li><i class="fas fa-check"></i> Emergency recovery support</li>
-              </ul>
-              <div class="pricing__outcome">
-                <p class="pricing__outcome-label">Outcome for client:</p>
-                <p class="pricing__outcome-text">"We fully take care of your IT so you focus on business."</p>
-              </div>
-            </div>
-            <div class="pricing__card-footer">
-              <a href="#contact" class="pricing__btn pricing__btn--outline">Contact Us</a>
-            </div>
-          </div>
+        <!-- Premium Enterprise -->
+        <div class="pricing__card" data-aos="fade-up" data-aos-delay="300">
+          <h3 class="pricing__plan-name">Premium Enterprise</h3>
+          <p class="pricing__plan-desc">Best for: Large companies & enterprises</p>
+          <p class="pricing__price-custom">Talk to Us!</p>
+          <div class="pricing__divider"></div>
+          <ul class="pricing__features">
+            <li><i class="ri-check-line"></i> Everything in Growth, plus:</li>
+            <li><i class="ri-check-line"></i> Full website redesigns</li>
+            <li><i class="ri-check-line"></i> Custom feature development</li>
+            <li><i class="ri-check-line"></i> Daily automated backups</li>
+            <li><i class="ri-check-line"></i> Priority 24/7 support</li>
+            <li><i class="ri-check-line"></i> Dedicated account manager</li>
+            <li><i class="ri-check-line"></i> Advanced SEO & analytics</li>
+            <li><i class="ri-check-line"></i> Multi-site management</li>
+            <li><i class="ri-time-line"></i> Response Time: 4 hours</li>
+          </ul>
+          <a href="Contact Us.html" class="pricing__btn pricing__btn--outline">Contact Us</a>
         </div>
       </div>
     </section>
@@ -650,34 +818,34 @@
     <section class="addons__section">
       <div class="addons__container">
         <div class="addons__header" data-aos="fade-up">
-          <h2>🔄 Add-Ons (Optional)</h2>
+          <h2>🔄 Add-Ons (Optional, Easy Upsells)</h2>
           <p>Enhance any package with additional services</p>
         </div>
 
         <div class="addons__grid">
           <div class="addon__card" data-aos="zoom-in" data-aos-delay="100">
-            <i class="fas fa-file-alt"></i>
+            <i class="ri-pages-line"></i>
             <h4>Extra Pages</h4>
             <p>Add more pages to your website</p>
           </div>
           <div class="addon__card" data-aos="zoom-in" data-aos-delay="150">
-            <i class="fas fa-shopping-cart"></i>
+            <i class="ri-shopping-cart-line"></i>
             <h4>E-commerce Setup</h4>
             <p>Start selling online</p>
           </div>
           <div class="addon__card" data-aos="zoom-in" data-aos-delay="200">
-            <i class="fas fa-envelope"></i>
+            <i class="ri-mail-settings-line"></i>
             <h4>Email Setup</h4>
             <p>Professional business email</p>
           </div>
           <div class="addon__card" data-aos="zoom-in" data-aos-delay="250">
-            <i class="fas fa-video"></i>
+            <i class="ri-camera-line"></i>
             <h4>CCTV & Hardware</h4>
             <p>Installation services</p>
           </div>
           <div class="addon__card" data-aos="zoom-in" data-aos-delay="300">
-            <i class="fas fa-share-alt"></i>
-            <h4>Social Media</h4>
+            <i class="ri-share-line"></i>
+            <h4>Social Media Integration</h4>
             <p>Connect your platforms</p>
           </div>
         </div>
@@ -685,14 +853,75 @@
     </section>
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="section__container footer__container">
+  <footer class="footer" style="background-image: linear-gradient(rgba(11, 12, 16, 0.85), rgba(11, 12, 16, 0.85)), url('assets/code-bg.jpg'); background-position: center center; background-size: cover; background-repeat: no-repeat; position: relative; overflow: hidden;">
+    <style>
+      .footer::before {
+        content: '';
+        position: absolute;
+        top: -100px;
+        right: -100px;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+        border-radius: 50%;
+      }
+      .footer .footer__container {
+        position: relative;
+        z-index: 1;
+      }
+      .footer .footer__col h3 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: white;
+        margin-bottom: 1rem;
+      }
+      .footer .footer__col h3 span {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .footer .footer__col h4 {
+        color: white;
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        position: relative;
+        padding-bottom: 0.75rem;
+      }
+      .footer .footer__col h4::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 3px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 2px;
+      }
+      .footer .footer__col p {
+        color: rgba(255,255,255,0.7);
+        margin-bottom: 0.75rem;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+      .footer .footer__col p:hover {
+        color: #a5b4fc;
+        padding-left: 5px;
+      }
+      .footer .footer__col p i {
+        color: #667eea;
+        margin-right: 0.5rem;
+      }
+    </style>
+    <div class="section__container footer__container" style="padding: 5rem 1rem;">
       <div class="footer__col">
         <h3>Developong <span>Company</span></h3>
-        <p>
+        <p style="max-width: 280px; line-height: 1.7;">
          Your partners in navigating the complexities of the technological landscape. 
           Our expertise, innovation, and client-centric approach are the cornerstones 
           of our commitment to ensuring your success.
+        </p>
       </div>
 
       <div class="footer__col">
@@ -722,9 +951,9 @@
       </div>
 
     </div>
-    <div class="footer__bar">
+    <div class="footer__bar" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);">
       <div class="footer__bar__content">
-        <p>Copyright © 2023 Developong. All rights reserved.</p>
+        <p>Copyright © 2026 Developong. All rights reserved.</p>
       </div>
     </div>
   </footer>

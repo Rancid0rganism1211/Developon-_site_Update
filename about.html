@@ -7,19 +7,140 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
       rel="stylesheet"
     />
-
-      <!-- 
-         -  favicon
-             -->
-  <link rel="shortcut icon" href="favicon.svg" type="image/svg+xml">
-
-
-      <!-- 
-        - custom css link
-      -->
+    <!-- favicon -->
+    <link rel="shortcut icon" href="favicon.svg" type="image/svg+xml">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Modern Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- custom css link -->
     <link rel="stylesheet" href="styles.css?v=20260125b" />
     <title>Developong Company | About</title>
-
+    
+    <!-- Modern Page Enhancements -->
+    <style>
+      :root {
+        --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        --gradient-dark: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        --glass-bg: rgba(255, 255, 255, 0.1);
+        --glass-border: rgba(255, 255, 255, 0.2);
+        --shadow-modern: 0 8px 32px rgba(0, 0, 0, 0.12);
+        --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.2);
+        --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      
+      body {
+        font-family: 'Inter', 'Poppins', sans-serif;
+      }
+      
+      .gradient-text {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f5576c 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      
+      /* Modern About Section Styles */
+      .about-modern {
+        padding: 6rem 1rem;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .about-modern.light-bg {
+        background: linear-gradient(180deg, #fff 0%, #f8fafc 100%);
+      }
+      
+      .about-modern.dark-bg {
+        background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%);
+      }
+      
+      .about-modern::before {
+        content: '';
+        position: absolute;
+        top: -100px;
+        right: -100px;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+        border-radius: 50%;
+        pointer-events: none;
+      }
+      
+      .about-badge {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+        border-radius: 50px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: #667eea;
+        margin-bottom: 1rem;
+      }
+      
+      .about-badge.dark {
+        background: rgba(102, 126, 234, 0.2);
+        color: #a5b4fc;
+      }
+      
+      .modern-heading {
+        font-size: 3.5rem;
+        font-weight: 900;
+        margin-bottom: 1.5rem;
+        line-height: 1.1;
+        letter-spacing: -0.03em;
+      }
+      
+      .modern-heading.light {
+        color: #1a1a2e;
+      }
+      
+      .modern-heading.dark {
+        color: white;
+      }
+      
+      .modern-text {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 1rem;
+      }
+      
+      .modern-text.light {
+        color: #64748b;
+      }
+      
+      .modern-text.dark {
+        color: rgba(255,255,255,0.7);
+      }
+      
+      .modern-image {
+        border-radius: 24px;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+      }
+      
+      .modern-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 1rem 2rem;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        border-radius: 12px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        text-decoration: none;
+      }
+      
+      .modern-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -45,46 +166,48 @@
       </nav>
 
       <div class="section__container header__container">
-        <div class="header__content">
+        <div class="header__content" data-aos="fade-up" data-aos-duration="1000">
+          <span class="hero-badge" style="display: inline-block; padding: 0.5rem 1rem; background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); border-radius: 50px; font-size: 0.85rem; color: rgba(255,255,255,0.9); margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.2);"><i class="ri-building-4-line"></i> About Our Company</span>
           <h1>
             <span class="heading-line">Crafting excellence,</span>
-            <span class="heading-line">building connections.</span>
+            <span class="heading-line" style="background: linear-gradient(135deg, #667eea 0%, #f5576c 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">building connections.</span>
           </h1>
-          <p>
+          <p style="font-size: 1.1rem; line-height: 1.8; max-width: 500px;">
             Welcome to Developong, your trusted IT consulting companion. We navigate your tech future with innovative solutions.
           </p>
-          <div class="header__buttons">
-            <a href="services.html" class="btn btn-primary">Explore <i class="ri-arrow-right-line"></i></a>
-            <a href="Home.html" class="btn btn-text">Learn More</a>
+          <div class="header__buttons" style="gap: 1rem; margin-top: 2rem;">
+            <a href="services.html" class="btn btn-primary" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 1rem 2rem; border-radius: 12px; font-weight: 600; box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4); transition: all 0.3s ease;">Explore Services <i class="ri-arrow-right-line"></i></a>
+            <a href="Home.html" class="btn btn-text" style="display: inline-flex; align-items: center; gap: 0.5rem;"><i class="ri-home-line"></i> Back to Home</a>
           </div>
         </div>
       </div>
     </header>
 
-    <section class="section__container service__container">
-      <div class="service__header">
-        <div class="service__header__content">
-          <h2 class="section__header">Our Special Service</h2>
-          <p>
+    <section class="section__container service__container" style="padding: 5rem 1rem; background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%); position: relative;" data-aos="fade-up">
+      <div class="service__header" style="text-align: center;">
+        <div class="service__header__content" style="max-width: 600px; margin: 0 auto;">
+          <span class="about-badge"><i class="ri-service-line"></i> Our Services</span>
+          <h2 class="section__header" style="font-size: 3.5rem; font-weight: 900; color: #1a1a2e; margin-bottom: 1rem; letter-spacing: -0.03em; line-height: 1.1;">Our Special Service</h2>
+          <p style="color: #64748b; font-size: 1.1rem; line-height: 1.7;">
             Beyond providing counseling services, our dedication extends to
             delivering unmatched support customized to your individual needs.
           </p>
         </div>
-        <br>
-        <a href="services.html" class="service__btn">Ask A Service</a>
-
+        <div style="margin-top: 2rem;">
+          <a href="services.html" class="modern-btn">Ask A Service <i class="ri-arrow-right-line"></i></a>
+        </div>
       </div>
-    
     </section>
     
         <!---
         ABOUT SECTION
         -->
 
-    <section class="about section__container about__container" id="about">
-      <div class="about__content">
-        <h2 class="section__header"></h2>
-        <p>
+    <section class="about section__container about__container about-modern light-bg" id="about">
+      <div class="about__content" data-aos="fade-right" data-aos-duration="800">
+        <span class="about-badge"><i class="ri-lightbulb-line"></i> Our Vision</span>
+        <h2 class="modern-heading light">Who We Are</h2>
+        <p class="modern-text light">
           
           Welcome to Developong, a pioneering IT consultancy firm dedicated to shaping 
           the future of technology for businesses across industries. Our vision at 
@@ -93,7 +216,7 @@
           complexities of the digital landscape with confidence.
 
         </p>
-        <p>
+        <p class="modern-text light">
           At Developong, we envision a world where businesses not only adapt to 
           technological advancements but thrive through strategic innovation. 
           Our team of seasoned experts is committed to providing bespoke solutions 
@@ -103,25 +226,26 @@
           realm of sustained success and growth.
         </p>
       </div>
-      <div class="about__image">
-        <img src="assets/kl.jpg" alt="about" />
+      <div class="about__image" data-aos="fade-left" data-aos-duration="800">
+        <img src="assets/kl.jpg" alt="about" class="modern-image" />
       </div>
     </section>
 
 
 
-        <section class="about section__container about__container" id="about">
-          <div class="about__contentp">
-            <h2 class="section__header">  </h2>
-            <p>
+        <section class="about section__container about__container about-modern dark-bg" id="about">
+          <div class="about__contentp" data-aos="fade-right" data-aos-duration="800">
+            <span class="about-badge dark"><i class="ri-rocket-line"></i> Innovation</span>
+            <h2 class="modern-heading dark">Our Commitment</h2>
+            <p class="modern-text dark">
               In pursuit of our vision, Developong places a premium on innovation. 
               We strive to be at the forefront of technological evolution, constantly 
               exploring new avenues to bring cutting-edge solutions to our clients. 
               Our commitment to excellence is not just about problem-solving; it's 
               about fostering a culture of continuous improvement and embracing the 
               limitless possibilities that technology offers.
-            </p><br>
-            <p>
+            </p>
+            <p class="modern-text dark">
               Developong's vision extends beyond transactions to relationships. We aim 
               to build lasting connections with our clients, understanding their unique 
               needs and aspirations. By doing so, we become more than consultants; we 
@@ -129,35 +253,37 @@
               Our vision is to be the go-to partner for businesses seeking not just 
               solutions, but a transformative journey toward digital excellence.
             </p>
-            <br>
           </div>
-          <div class="about__image">
-            <img src="assets/gh.jpg" alt="about" />
+          <div class="about__image" data-aos="fade-left" data-aos-duration="800">
+            <img src="assets/gh.jpg" alt="about" class="modern-image" style="box-shadow: 0 25px 50px rgba(0,0,0,0.3);" />
           </div>
         </section>
 
 
-    <section class="about section__container about__container" id="about">
-      <div class="about__content">
-        <h2 class="section__header">   </h2>
-        <p>
+    <section class="about section__container about__container about-modern light-bg" id="about">
+      <div class="about__content" data-aos="fade-right" data-aos-duration="800">
+        <span class="about-badge"><i class="ri-team-line"></i> Join Us</span>
+        <h2 class="modern-heading light">Our Journey</h2>
+        <p class="modern-text light">
           Developong invites you to join us on this visionary journey. Together, let's 
           explore the boundless potential of technology and chart a course toward a future
           where businesses thrive, empowered by the expertise and insights of Developong, your
           trusted IT consultancy partner.
-        </p><br>
-        <p>
+        </p>
+        <p class="modern-text light">
           In essence, Developong's vision transcends the conventional boundaries of IT consultancy. 
           We aspire to create an ecosystem where technology becomes a seamless enabler of growth, 
           innovation, and positive impact. At Developong, we are not just architects of solutions; we are architects of a 
           future where businesses flourish in the digital age. Join us as we embark on this 
           transformative journey, where Developong is not just a consultancy firm but a catalyst for 
-          the remarkable evolution of businesses through the power of technology
-        </p><br>
-        <br>
+          the remarkable evolution of businesses through the power of technology.
+        </p>
+        <div style="margin-top: 2rem;">
+          <a href="Contact Us.html" class="modern-btn">Get In Touch <i class="ri-arrow-right-line"></i></a>
+        </div>
       </div>
-      <div class="about__image">
-        <img src="assets/efR.jpeg" alt="about" />
+      <div class="about__image" data-aos="fade-left" data-aos-duration="800">
+        <img src="assets/efR.jpeg" alt="about" class="modern-image" />
       </div>
     </section>
 
@@ -166,14 +292,75 @@
         -  FOOTER 
       -->
 
-    <footer class="footer">
-      <div class="section__container footer__container">
+    <footer class="footer" style="background-image: linear-gradient(rgba(11, 12, 16, 0.85), rgba(11, 12, 16, 0.85)), url('assets/code-bg.jpg'); background-position: center center; background-size: cover; background-repeat: no-repeat; position: relative; overflow: hidden;">
+      <style>
+        .footer::before {
+          content: '';
+          position: absolute;
+          top: -100px;
+          right: -100px;
+          width: 400px;
+          height: 400px;
+          background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+          border-radius: 50%;
+        }
+        .footer .footer__container {
+          position: relative;
+          z-index: 1;
+        }
+        .footer .footer__col h3 {
+          font-size: 1.8rem;
+          font-weight: 700;
+          color: white;
+          margin-bottom: 1rem;
+        }
+        .footer .footer__col h3 span {
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+        .footer .footer__col h4 {
+          color: white;
+          font-size: 1.1rem;
+          font-weight: 600;
+          margin-bottom: 1.5rem;
+          position: relative;
+          padding-bottom: 0.75rem;
+        }
+        .footer .footer__col h4::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 40px;
+          height: 3px;
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          border-radius: 2px;
+        }
+        .footer .footer__col p {
+          color: rgba(255,255,255,0.7);
+          margin-bottom: 0.75rem;
+          transition: all 0.3s ease;
+          cursor: pointer;
+        }
+        .footer .footer__col p:hover {
+          color: #a5b4fc;
+          padding-left: 5px;
+        }
+        .footer .footer__col p i {
+          color: #667eea;
+          margin-right: 0.5rem;
+        }
+      </style>
+      <div class="section__container footer__container" style="padding: 5rem 1rem;">
         <div class="footer__col">
           <h3>Developong <span>Company</span></h3>
-          <p>
+          <p style="max-width: 280px; line-height: 1.7;">
            Your partners in navigating the complexities of the technological landscape. 
             Our expertise, innovation, and client-centric approach are the cornerstones 
             of our commitment to ensuring your success.
+          </p>
         </div>
 
         <div class="footer__col">
@@ -203,9 +390,9 @@
         </div>
 
       </div>
-      <div class="footer__bar">
+      <div class="footer__bar" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);">
         <div class="footer__bar__content">
-          <p>Copyright © 2023 Developong. All rights reserved.</p>
+          <p>Copyright © 2026 Developong. All rights reserved.</p>
         </div>
       </div>
     </footer>
@@ -213,6 +400,18 @@
     - custom js link
  -->
   <script src="script.js"></script>
+  
+  <!-- AOS Animation Library -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Initialize AOS animations
+    AOS.init({
+      duration: 800,
+      easing: 'ease-out-cubic',
+      once: true,
+      offset: 50
+    });
+  </script>
   </body>
   
 </html>

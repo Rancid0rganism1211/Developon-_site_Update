@@ -5,427 +5,715 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="shortcut icon" href="favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="styles.css?v=20260125b" />
-    <title>Developong Company | Packages</title>
+    <link rel="stylesheet" href="styles.css?v=20260202" />
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Modern Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Developong Company | IT Services Pricing</title>
     <style>
-      /* Pricing Page Styles - Modern Clean Design */
-      .pricing__hero {
-        background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-color-dark) 100%);
-        padding: 6rem 1rem 4rem;
-        text-align: center;
-        color: var(--white);
+      /* Modern Pricing Page Styles */
+      :root {
+        --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        --gradient-dark: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        --color-basic: #10b981;
+        --color-standard: #3b82f6;
+        --color-pro: #8b5cf6;
+        --glass-bg: rgba(255, 255, 255, 0.95);
+        --shadow-modern: 0 8px 32px rgba(0, 0, 0, 0.12);
+        --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       }
+
+      body {
+        font-family: 'Inter', 'Poppins', sans-serif;
+      }
+
+      /* Hero Section */
+      .pricing__hero {
+        background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%);
+        padding: 8rem 1rem 5rem;
+        text-align: center;
+        color: #fff;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .pricing__hero::before {
+        content: '';
+        position: absolute;
+        top: -100px;
+        right: -100px;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle, rgba(102, 126, 234, 0.2) 0%, transparent 70%);
+        border-radius: 50%;
+      }
+
+      .pricing__hero::after {
+        content: '';
+        position: absolute;
+        bottom: -150px;
+        left: -100px;
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
+        border-radius: 50%;
+      }
+
+      .pricing__hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .pricing__hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1.25rem;
+        background: rgba(102, 126, 234, 0.2);
+        border: 1px solid rgba(102, 126, 234, 0.3);
+        border-radius: 50px;
+        font-size: 0.85rem;
+        color: #a5b4fc;
+        margin-bottom: 1.5rem;
+      }
+
       .pricing__hero h1 {
-        font-size: 2.5rem;
+        font-size: 3.5rem;
+        font-weight: 900;
+        margin-bottom: 1.5rem;
+        line-height: 1.1;
+        letter-spacing: -0.03em;
+      }
+
+      .pricing__hero h1 span {
+        background: linear-gradient(135deg, #667eea 0%, #a5b4fc 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .pricing__hero p {
+        font-size: 1.2rem;
+        color: rgba(255, 255, 255, 0.8);
+        max-width: 600px;
+        margin: 0 auto 2.5rem;
+        line-height: 1.7;
+      }
+
+      .pricing__hero-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .btn-hero-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 1rem 2rem;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: #fff;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 1rem;
+        text-decoration: none;
+        transition: var(--transition-smooth);
+        box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
+      }
+
+      .btn-hero-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 30px rgba(102, 126, 234, 0.5);
+      }
+
+      .btn-hero-secondary {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 1rem 2rem;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: #fff;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 1rem;
+        text-decoration: none;
+        transition: var(--transition-smooth);
+      }
+
+      .btn-hero-secondary:hover {
+        background: rgba(255, 255, 255, 0.15);
+        border-color: rgba(255, 255, 255, 0.3);
+      }
+
+      /* How Pricing Works Section */
+      .pricing__how-it-works {
+        background: linear-gradient(180deg, #f8fafc 0%, #fff 100%);
+        padding: 5rem 1rem;
+      }
+
+      .pricing__how-container {
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      .pricing__how-header {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .pricing__how-header h2 {
+        font-size: 2.25rem;
+        font-weight: 700;
+        color: #1a1a2e;
         margin-bottom: 1rem;
       }
-      .pricing__hero p {
+
+      .pricing__how-header p {
+        color: #64748b;
+        font-size: 1.1rem;
         max-width: 600px;
         margin: 0 auto;
-        opacity: 0.9;
       }
 
-      /* New Pricing Section Styles */
-      .pricing__section {
-        padding: 5rem 1rem 4rem;
+      .pricing__factors-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .pricing__factor {
+        background: #fff;
+        padding: 1.5rem;
+        border-radius: 16px;
+        text-align: center;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        border: 1px solid #e8ecf3;
+        transition: var(--transition-smooth);
+      }
+
+      .pricing__factor:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .pricing__factor i {
+        font-size: 2rem;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 0.75rem;
+        display: block;
+      }
+
+      .pricing__factor span {
+        color: #1a1a2e;
+        font-weight: 500;
+        font-size: 0.95rem;
+      }
+
+      .pricing__transparency-note {
+        background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+        border: 1px solid rgba(102, 126, 234, 0.2);
+        border-radius: 12px;
+        padding: 1.25rem 1.5rem;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+      }
+
+      .pricing__transparency-note i {
+        font-size: 1.5rem;
+        color: #667eea;
+      }
+
+      .pricing__transparency-note span {
+        color: #1a1a2e;
+        font-weight: 600;
+        font-size: 1.05rem;
+      }
+
+      /* Service Section Styles */
+      .service__pricing-section {
+        padding: 5rem 1rem;
         max-width: 1200px;
         margin: 0 auto;
-        background: #fff;
       }
 
-      .pricing__section-header {
+      .service__pricing-section:nth-child(even) {
+        background: #f8fafc;
+      }
+
+      .service__pricing-header {
         text-align: center;
         margin-bottom: 3.5rem;
       }
 
-      .pricing__label {
-        display: inline-flex;
+      .service__pricing-icon {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 1.5rem;
+        background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(139, 92, 246, 0.15) 100%);
+        border-radius: 24px;
+        display: flex;
         align-items: center;
-        gap: 0.5rem;
-        background: #f5f5f5;
-        border: 1px solid #e5e5e5;
-        padding: 0.5rem 1.25rem;
-        border-radius: 50px;
-        font-size: 0.9rem;
-        color: #333;
-        margin-bottom: 1.5rem;
+        justify-content: center;
       }
 
-      .pricing__label i {
-        font-size: 1rem;
-        color: #333;
+      .service__pricing-icon i {
+        font-size: 2.5rem;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
       }
 
-      .pricing__section-header h2 {
-        font-size: 3rem;
+      .service__pricing-header h2 {
+        font-size: 2.5rem;
         font-weight: 700;
-        color: #111;
-        margin-bottom: 1rem;
-        letter-spacing: -0.02em;
+        color: #1a1a2e;
+        margin-bottom: 0.75rem;
       }
 
-      .pricing__section-header p {
-        color: #666;
+      .service__pricing-header p {
+        color: #64748b;
         font-size: 1.1rem;
-        max-width: 550px;
+        max-width: 600px;
         margin: 0 auto;
-        line-height: 1.6;
       }
 
-      .pricing__grid {
+      /* Pricing Cards Grid */
+      .pricing__cards-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 1.5rem;
-        margin-bottom: 4rem;
-        align-items: start;
+        gap: 2rem;
+        margin-bottom: 2.5rem;
       }
 
       .pricing__card {
         background: #fff;
-        border-radius: 16px;
-        border: 1px solid #e8e8e8;
-        overflow: visible;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-radius: 24px;
+        border: 1px solid #e8ecf3;
+        overflow: hidden;
+        transition: var(--transition-smooth);
         position: relative;
-        padding: 2rem;
       }
 
       .pricing__card:hover {
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        transform: translateY(-8px);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
       }
 
-      /* Featured Card - Professional */
-      .pricing__card--featured {
-        background: #000000;
-        border: 1px solid #000000;
+      /* Card Tier Colors */
+      .pricing__card--basic .pricing__card-header {
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      }
+
+      .pricing__card--standard .pricing__card-header {
+        background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+      }
+
+      .pricing__card--pro .pricing__card-header {
+        background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+      }
+
+      .pricing__card-header {
+        padding: 2rem;
         color: #fff;
-        transform: scale(1.02);
-        z-index: 2;
+        position: relative;
       }
 
-      .pricing__card--featured:hover {
-        transform: scale(1.04);
-        box-shadow: 0 12px 40px rgba(224, 122, 122, 0.35);
-      }
-
-      .pricing__badge {
-        position: absolute;
-        top: -12px;
-        right: 1.5rem;
-        background: #d4f5d4;
-        color: #1a1a1a;
-        padding: 0.4rem 1rem;
-        border-radius: 50px;
-        font-size: 0.75rem;
-        font-weight: 600;
-        display: flex;
+      .pricing__card-tier {
+        display: inline-flex;
         align-items: center;
-        gap: 0.3rem;
-      }
-
-      .pricing__badge::before {
-        content: "🔥";
+        gap: 0.5rem;
         font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        opacity: 0.9;
+        margin-bottom: 0.5rem;
       }
 
-      .pricing__plan-name {
-        font-size: 1.25rem;
-        font-weight: 600;
-        color: #111;
+      .pricing__card-name {
+        font-size: 1.5rem;
+        font-weight: 700;
         margin-bottom: 0.25rem;
       }
 
-      .pricing__card--featured .pricing__plan-name {
-        color: #fff;
+      .pricing__card-tagline {
+        font-size: 0.9rem;
+        opacity: 0.85;
       }
 
-      .pricing__plan-desc {
-        font-size: 0.9rem;
-        color: #666;
+      /* Recommended Badge */
+      .pricing__card--recommended {
+        transform: scale(1.02);
+        z-index: 2;
+        border: 2px solid #3b82f6;
+      }
+
+      .pricing__card--recommended:hover {
+        transform: scale(1.04);
+      }
+
+      .pricing__recommended-badge {
+        position: absolute;
+        top: -1px;
+        right: 1.5rem;
+        background: #fbbf24;
+        color: #1a1a2e;
+        padding: 0.4rem 1rem;
+        border-radius: 0 0 8px 8px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .pricing__card-body {
+        padding: 2rem;
+      }
+
+      .pricing__features-list {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 1.5rem 0;
+      }
+
+      .pricing__features-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        padding: 0.6rem 0;
+        color: #374151;
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+
+      .pricing__features-list li i {
+        color: #10b981;
+        font-size: 1.1rem;
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+
+      .pricing__features-list li.inherited {
+        color: #64748b;
+        font-style: italic;
+      }
+
+      .pricing__features-list li.inherited i {
+        color: #94a3b8;
+      }
+
+      .pricing__assessment-note {
+        background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        border: 1px dashed #cbd5e1;
+        border-radius: 12px;
+        padding: 1rem;
+        text-align: center;
         margin-bottom: 1.5rem;
       }
 
-      .pricing__card--featured .pricing__plan-desc {
-        color: #aaa;
-      }
-
-      .pricing__price {
-        display: flex;
-        align-items: baseline;
-        gap: 0.25rem;
-        margin-bottom: 2rem;
-      }
-
-      .pricing__price-amount {
-        font-size: 3rem;
-        font-weight: 700;
-        color: #111;
-        line-height: 1;
-      }
-
-      .pricing__card--featured .pricing__price-amount {
-        color: #fff;
-      }
-
-      .pricing__price-period {
-        font-size: 1rem;
-        color: #666;
-      }
-
-      .pricing__card--featured .pricing__price-period {
-        color: #aaa;
-      }
-
-      .pricing__price-custom {
-        font-size: 2.5rem;
-        font-weight: 700;
-        color: #111;
-        margin-bottom: 2rem;
-      }
-
-      .pricing__divider {
-        height: 1px;
-        background: #e8e8e8;
-        margin: 1.5rem 0;
-      }
-
-      .pricing__card--featured .pricing__divider {
-        background: rgba(255, 255, 255, 0.3);
-      }
-
-      .pricing__features {
-        list-style: none;
-        padding: 0;
-        margin: 0 0 2rem 0;
-      }
-
-      .pricing__features li {
+      .pricing__assessment-note span {
+        color: #64748b;
+        font-size: 0.9rem;
         display: flex;
         align-items: center;
-        gap: 0.75rem;
-        padding: 0.6rem 0;
-        color: #444;
-        font-size: 0.95rem;
+        justify-content: center;
+        gap: 0.5rem;
       }
 
-      .pricing__card--featured .pricing__features li {
-        color: #ddd;
+      .pricing__assessment-note i {
+        color: #667eea;
       }
 
-      .pricing__features li i {
-        color: #666;
-        font-size: 1rem;
-        flex-shrink: 0;
-      }
-
-      .pricing__card--featured .pricing__features li i {
-        color: #aaa;
-      }
-
-      .pricing__features li .ri-information-line {
-        color: #999;
-        font-size: 0.9rem;
-        margin-left: 0.25rem;
-        cursor: help;
-      }
-
-      .pricing__card--featured .pricing__features li .ri-information-line {
-        color: #666;
-      }
-
-      .pricing__btn {
+      /* CTA Buttons for Cards */
+      .pricing__card-btn {
         display: block;
         width: 100%;
         padding: 1rem 1.5rem;
         text-align: center;
-        border-radius: 8px;
+        border-radius: 12px;
         font-weight: 600;
         font-size: 0.95rem;
         text-decoration: none;
-        transition: all 0.3s ease;
+        transition: var(--transition-smooth);
         cursor: pointer;
         border: none;
       }
 
-      .pricing__btn--dark {
-        background: #1a1a1a;
+      .pricing__card-btn--basic {
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        color: #fff;
+        box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+      }
+
+      .pricing__card-btn--basic:hover {
+        box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+        transform: translateY(-2px);
+      }
+
+      .pricing__card-btn--standard {
+        background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+        color: #fff;
+        box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+      }
+
+      .pricing__card-btn--standard:hover {
+        box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+        transform: translateY(-2px);
+      }
+
+      .pricing__card-btn--pro {
+        background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+        color: #fff;
+        box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+      }
+
+      .pricing__card-btn--pro:hover {
+        box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
+        transform: translateY(-2px);
+      }
+
+      /* Why Choose Us Section */
+      .pricing__why-us {
+        background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%);
+        padding: 5rem 1rem;
         color: #fff;
       }
 
-      .pricing__btn--dark:hover {
-        background: #333;
-      }
-
-      .pricing__btn--light {
-        background: #fff;
-        color: #1a1a1a;
-      }
-
-      .pricing__btn--light:hover {
-        background: #f5f5f5;
-      }
-
-      .pricing__btn--outline {
-        background: #fff;
-        color: #1a1a1a;
-        border: 1px solid #e8e8e8;
-      }
-
-      .pricing__btn--outline:hover {
-        background: #f5f5f5;
-        border-color: #ddd;
-      }
-
-      .pricing__not-included {
-        font-size: 0.8rem;
-        color: #888;
-        margin-bottom: 1.5rem;
-        padding: 0.75rem;
-        background: #f9f9f9;
-        border-radius: 6px;
-        line-height: 1.5;
-      }
-
-      .pricing__not-included strong {
-        color: #666;
-      }
-
-      .pricing__card--featured .pricing__not-included {
-        background: rgba(255, 255, 255, 0.15);
-        color: rgba(255, 255, 255, 0.8);
-      }
-
-      .pricing__card--featured .pricing__not-included strong {
-        color: #fff;
-      }
-
-      /* Add-ons Section */
-      .addons__section {
-        background: #f8fafc;
-        padding: 4rem 1rem;
-      }
-      .addons__container {
-        max-width: 1000px;
+      .pricing__why-container {
+        max-width: 1100px;
         margin: 0 auto;
       }
-      .addons__header {
+
+      .pricing__why-header {
         text-align: center;
         margin-bottom: 3rem;
       }
-      .addons__header h2 {
-        font-size: 2rem;
-        color: var(--text-dark);
+
+      .pricing__why-header h2 {
+        font-size: 2.25rem;
+        font-weight: 700;
         margin-bottom: 0.5rem;
       }
-      .addons__header p {
-        color: var(--text-light);
+
+      .pricing__why-header p {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 1.1rem;
       }
 
-      .addons__grid {
+      .pricing__why-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
         gap: 1.5rem;
       }
-      .addon__card {
-        background: var(--white);
+
+      .pricing__why-item {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
         padding: 1.5rem;
-        border-radius: 12px;
         text-align: center;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        transition: transform 0.3s ease;
+        transition: var(--transition-smooth);
       }
-      .addon__card:hover {
+
+      .pricing__why-item:hover {
+        background: rgba(255, 255, 255, 0.08);
         transform: translateY(-4px);
       }
-      .addon__card i {
+
+      .pricing__why-item i {
         font-size: 2rem;
-        color: var(--primary-color);
-        margin-bottom: 0.75rem;
+        background: linear-gradient(135deg, #667eea 0%, #a5b4fc 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 1rem;
+        display: block;
       }
-      .addon__card h4 {
-        color: var(--text-dark);
-        font-size: 1rem;
+
+      .pricing__why-item h4 {
+        font-size: 1.1rem;
+        font-weight: 600;
         margin-bottom: 0.5rem;
       }
-      .addon__card p {
-        color: var(--text-light);
-        font-size: 0.85rem;
+
+      .pricing__why-item p {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+        line-height: 1.6;
       }
 
-      /* CTA Section */
-      .pricing__cta {
-        background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-color-dark) 100%);
-        padding: 4rem 1rem;
+      /* Final CTA Section */
+      .pricing__final-cta {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 5rem 1rem;
         text-align: center;
-        color: var(--white);
+        color: #fff;
+        position: relative;
+        overflow: hidden;
       }
-      .pricing__cta h2 {
-        font-size: 2rem;
+
+      .pricing__final-cta::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -25%;
+        width: 50%;
+        height: 200%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+        transform: rotate(30deg);
+        animation: shimmer 8s infinite;
+      }
+
+      @keyframes shimmer {
+        0% { transform: translateX(-100%) rotate(30deg); }
+        100% { transform: translateX(300%) rotate(30deg); }
+      }
+
+      .pricing__final-cta-content {
+        position: relative;
+        z-index: 1;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .pricing__final-cta h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
         margin-bottom: 1rem;
       }
-      .pricing__cta p {
-        max-width: 600px;
-        margin: 0 auto 2rem;
+
+      .pricing__final-cta p {
+        font-size: 1.15rem;
         opacity: 0.9;
-      }
-      .pricing__cta .btn {
-        background: var(--white);
-        color: var(--primary-color);
-        padding: 1rem 2rem;
-        font-weight: 600;
-      }
-      .pricing__cta .btn:hover {
-        background: #f1f5f9;
+        margin-bottom: 2rem;
+        line-height: 1.7;
       }
 
-      @media (max-width: 992px) {
-        .pricing__grid {
+      .pricing__final-cta-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .btn-cta-white {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 1rem 2rem;
+        background: #fff;
+        color: #764ba2;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 1rem;
+        text-decoration: none;
+        transition: var(--transition-smooth);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .btn-cta-white:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .btn-cta-outline {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 1rem 2rem;
+        background: transparent;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        color: #fff;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 1rem;
+        text-decoration: none;
+        transition: var(--transition-smooth);
+      }
+
+      .btn-cta-outline:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: #fff;
+      }
+
+      /* Responsive */
+      @media (max-width: 1024px) {
+        .pricing__cards-grid {
           grid-template-columns: 1fr;
           max-width: 450px;
           margin-left: auto;
           margin-right: auto;
         }
-        .pricing__card--featured {
+        .pricing__card--recommended {
           transform: none;
         }
-        .pricing__card--featured:hover {
-          transform: translateY(-4px);
-        }
-        .pricing__section-header h2 {
-          font-size: 2.25rem;
+        .pricing__card--recommended:hover {
+          transform: translateY(-8px);
         }
       }
 
       @media (max-width: 768px) {
         .pricing__hero h1 {
-          font-size: 1.75rem;
-        }
-        .pricing__section-header h2 {
-          font-size: 1.85rem;
-        }
-        .pricing__section-header p {
-          font-size: 1rem;
-        }
-        .pricing__price-amount {
           font-size: 2.5rem;
         }
-        .addons__header h2,
-        .pricing__cta h2 {
-          font-size: 1.5rem;
+        .pricing__hero p {
+          font-size: 1rem;
         }
+        .service__pricing-header h2 {
+          font-size: 1.85rem;
+        }
+        .pricing__final-cta h2 {
+          font-size: 1.75rem;
+        }
+        .pricing__how-header h2,
+        .pricing__why-header h2 {
+          font-size: 1.75rem;
+        }
+      }
+
+      /* Section Divider */
+      .section-divider {
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #e8ecf3, transparent);
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      /* Full width sections */
+      .full-width-section {
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .full-width-section > * {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
       }
     </style>
   </head>
   <body>
-    <header>
-      <!-- Video Background -->
-      <div class="video-background">
-        <video autoplay muted loop playsinline>
-          <source src="3b17c199-390c-45ad-9fac-af3a781f869f_wm.mp4" type="video/mp4">
-        </video>
-        <div class="video-overlay"></div>
-      </div>
-      <!-- Navigation Bar -->
+    <!-- Navigation -->
+    <header class="header-no-bg">
       <nav class="section__container nav__container">
         <a href="index.html" class="nav__logo">Developong <span>Services</span></a>
         <a href="Contact Us.html" class="mobile-contact-btn">Contact Us</a>
@@ -438,152 +726,363 @@
           <li class="link"><a href="Contact Us.html">Contact Us</a></li>
         </ul>
       </nav>
-
-      <div class="section__container header__container">
-        <div class="header__content">
-          <h1>
-            <span class="heading-line">Transparent pricing,</span>
-            <span class="heading-line">real value.</span>
-          </h1>
-          <p>
-            Choose the perfect retainer plan for your business needs. Quality service and continuous support.
-          </p>
-          <div class="header__buttons">
-            <a href="#pricing-section" class="btn btn-primary">View Plans <i class="ri-arrow-right-line"></i></a>
-            <a href="services.html" class="btn btn-text">Our Services</a>
-          </div>
-        </div>
-      </div>
     </header>
 
-    <!-- Pricing Cards Section -->
-    <section id="pricing-section" class="pricing__section">
-      <div class="pricing__section-header">
-        <span class="pricing__label"><i class="ri-price-tag-3-line"></i> Packages</span>
-        <h2>Web Development Retainer Packages</h2>
-        <p>Simple pricing with no hidden fees. Choose the plan that fits your business needs.</p>
-      </div>
-
-      <div class="pricing__grid">
-        <!-- Starter Web Care (Basic) -->
-        <div class="pricing__card">
-          <h3 class="pricing__plan-name">Starter Web Care</h3>
-          <p class="pricing__plan-desc">Best for: Small business websites & personal brands</p>
-          <div class="pricing__price">
-            <span class="pricing__price-amount">GHS 500</span>
-            <span class="pricing__price-period">/month</span>
-          </div>
-          <div class="pricing__divider"></div>
-          <ul class="pricing__features">
-            <li><i class="ri-check-line"></i> Website uptime monitoring</li>
-            <li><i class="ri-check-line"></i> Core updates (CMS, plugins, themes etc)</li>
-            <li><i class="ri-check-line"></i> Minor content changes (up to 3/month)</li>
-            <li><i class="ri-check-line"></i> Basic security checks</li>
-            <li><i class="ri-check-line"></i> Monthly website health report</li>
-            <li><i class="ri-check-line"></i> Email support</li>
-            <li><i class="ri-check-line"></i> 1 New page</li>
-            <li><i class="ri-check-line"></i> Redesigns</li>
-            <li><i class="ri-time-line"></i> Response Time: 48 hours</li>
-          </ul>
-          <p class="pricing__not-included"><strong>Not Included:</strong> DevOps integrations, custom features, multiple pages, daily backups</p>
-          <a href="services.html" class="pricing__btn pricing__btn--dark">Get Started</a>
-        </div>
-
-        <!-- Growth Web Management (Standard) - Featured -->
-        <div class="pricing__card pricing__card--featured">
-          <div class="pricing__badge">Most Popular</div>
-          <h3 class="pricing__plan-name">Growth Web Management</h3>
-          <p class="pricing__plan-desc">Best for: Growing businesses & service companies</p>
-          <div class="pricing__price">
-            <span class="pricing__price-amount">GHS 800</span>
-            <span class="pricing__price-period">/month</span>
-          </div>
-          <div class="pricing__divider"></div>
-          <ul class="pricing__features">
-            <li><i class="ri-check-line"></i> Everything in Starter, plus:</li>
-            <li><i class="ri-check-line"></i> DevOps integration (email or WhatsApp alerts)</li>
-            <li><i class="ri-check-line"></i> Performance optimization</li>
-            <li><i class="ri-check-line"></i> Security hardening & backups</li>
-            <li><i class="ri-check-line"></i> Content updates (up to 8/month)</li>
-            <li><i class="ri-check-line"></i> Bug fixes & small feature updates</li>
-            <li><i class="ri-check-line"></i> SEO technical fixes (basic)</li>
-            <li><i class="ri-check-line"></i> WhatsApp + Email support</li>
-            <li><i class="ri-check-line"></i> Monthly performance report</li>
-            <li><i class="ri-time-line"></i> Response Time: 24 hours</li>
-          </ul>
-          <p class="pricing__not-included"><strong>Not Included:</strong> Full redesigns, complex custom development</p>
-          <a href="services.html" class="pricing__btn pricing__btn--light">Get Started</a>
-        </div>
-
-        <!-- Premium Enterprise -->
-        <div class="pricing__card">
-          <h3 class="pricing__plan-name">Premium Enterprise</h3>
-          <p class="pricing__plan-desc">Best for: Large companies & enterprises</p>
-          <p class="pricing__price-custom">Talk to Us!</p>
-          <div class="pricing__divider"></div>
-          <ul class="pricing__features">
-            <li><i class="ri-check-line"></i> Everything in Growth, plus:</li>
-            <li><i class="ri-check-line"></i> Full website redesigns</li>
-            <li><i class="ri-check-line"></i> Custom feature development</li>
-            <li><i class="ri-check-line"></i> Daily automated backups</li>
-            <li><i class="ri-check-line"></i> Priority 24/7 support</li>
-            <li><i class="ri-check-line"></i> Dedicated account manager</li>
-            <li><i class="ri-check-line"></i> Advanced SEO & analytics</li>
-            <li><i class="ri-check-line"></i> Multi-site management</li>
-            <li><i class="ri-time-line"></i> Response Time: 4 hours</li>
-          </ul>
-          <a href="Contact Us.html" class="pricing__btn pricing__btn--outline">Contact Us</a>
+    <!-- Hero Section -->
+    <section class="pricing__hero">
+      <div class="pricing__hero-content" data-aos="fade-up">
+        <span class="pricing__hero-badge"><i class="ri-price-tag-3-line"></i> IT Services Pricing</span>
+        <h1>Flexible IT Services to Keep Your <span>Business Running</span></h1>
+        <p>Professional hardware, system monitoring, and IT support — priced after assessment for accuracy and fairness.</p>
+        <div class="pricing__hero-buttons">
+          <a href="Contact Us.html" class="btn-hero-primary"><i class="ri-file-list-3-line"></i> Request Free Assessment</a>
+          <a href="Contact Us.html" class="btn-hero-secondary"><i class="ri-customer-service-2-line"></i> Talk to an IT Specialist</a>
         </div>
       </div>
     </section>
 
-    <!-- Add-ons Section -->
-    <section class="addons__section">
-      <div class="addons__container">
-        <div class="addons__header">
-          <h2>🔄 Add-Ons (Optional, Easy Upsells)</h2>
-          <p>Enhance any package with additional services</p>
+    <!-- How Pricing Works Section -->
+    <section class="pricing__how-it-works">
+      <div class="pricing__how-container">
+        <div class="pricing__how-header" data-aos="fade-up">
+          <h2><i class="ri-lightbulb-line"></i> How Pricing Works</h2>
+          <p>Every organization's IT needs are unique. Pricing depends on:</p>
         </div>
 
-        <div class="addons__grid">
-          <div class="addon__card">
-            <i class="ri-pages-line"></i>
-            <h4>Extra Pages</h4>
-            <p>Add more pages to your website</p>
+        <div class="pricing__factors-grid" data-aos="fade-up" data-aos-delay="100">
+          <div class="pricing__factor">
+            <i class="ri-server-line"></i>
+            <span>System Size & Complexity</span>
           </div>
-          <div class="addon__card">
-            <i class="ri-shopping-cart-line"></i>
-            <h4>E-commerce Setup</h4>
-            <p>Start selling online</p>
+          <div class="pricing__factor">
+            <i class="ri-computer-line"></i>
+            <span>Number of Devices / Users</span>
           </div>
-          <div class="addon__card">
-            <i class="ri-mail-settings-line"></i>
-            <h4>Email Setup</h4>
-            <p>Professional business email</p>
+          <div class="pricing__factor">
+            <i class="ri-shield-check-line"></i>
+            <span>Risk Level & Uptime Needs</span>
           </div>
-          <div class="addon__card">
-            <i class="ri-camera-line"></i>
-            <h4>CCTV & Hardware</h4>
-            <p>Installation services</p>
+          <div class="pricing__factor">
+            <i class="ri-map-pin-line"></i>
+            <span>Onsite vs Remote Support</span>
           </div>
-          <div class="addon__card">
-            <i class="ri-share-line"></i>
-            <h4>Social Media Integration</h4>
-            <p>Connect your platforms</p>
+          <div class="pricing__factor">
+            <i class="ri-time-line"></i>
+            <span>Response Time Expectations</span>
+          </div>
+        </div>
+
+        <div class="pricing__transparency-note" data-aos="fade-up" data-aos-delay="200">
+          <i class="ri-checkbox-circle-line"></i>
+          <span>You pay only for what you need — fair and transparent.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== HARDWARE SERVICES ==================== -->
+    <section class="service__pricing-section" id="hardware">
+      <div class="service__pricing-header" data-aos="fade-up">
+        <div class="service__pricing-icon">
+          <i class="ri-tools-line"></i>
+        </div>
+        <h2>Hardware Services</h2>
+        <p>Keep your physical IT systems reliable — onsite or offsite support for all your hardware needs.</p>
+      </div>
+
+      <div class="pricing__cards-grid">
+        <!-- Basic -->
+        <div class="pricing__card pricing__card--basic" data-aos="fade-up" data-aos-delay="0">
+          <div class="pricing__card-header">
+            <span class="pricing__card-tier"><i class="ri-leaf-line"></i> Tier 1</span>
+            <h3 class="pricing__card-name">Basic</h3>
+            <p class="pricing__card-tagline">Essential hardware support</p>
+          </div>
+          <div class="pricing__card-body">
+            <ul class="pricing__features-list">
+              <li><i class="ri-check-line"></i> PC / Laptop troubleshooting</li>
+              <li><i class="ri-check-line"></i> Printer & device setup</li>
+              <li><i class="ri-check-line"></i> Remote support (when possible)</li>
+              <li><i class="ri-check-line"></i> Basic diagnostics & repair</li>
+              <li><i class="ri-check-line"></i> Email support</li>
+            </ul>
+            <div class="pricing__assessment-note">
+              <span><i class="ri-information-line"></i> Pricing available after assessment</span>
+            </div>
+            <a href="Contact Us.html" class="pricing__card-btn pricing__card-btn--basic">Request Assessment</a>
+          </div>
+        </div>
+
+        <!-- Standard -->
+        <div class="pricing__card pricing__card--standard pricing__card--recommended" data-aos="fade-up" data-aos-delay="100">
+          <div class="pricing__recommended-badge">Recommended</div>
+          <div class="pricing__card-header">
+            <span class="pricing__card-tier"><i class="ri-star-line"></i> Tier 2</span>
+            <h3 class="pricing__card-name">Standard</h3>
+            <p class="pricing__card-tagline">Proactive maintenance & priority support</p>
+          </div>
+          <div class="pricing__card-body">
+            <ul class="pricing__features-list">
+              <li class="inherited"><i class="ri-arrow-right-s-line"></i> Everything in Basic, plus:</li>
+              <li><i class="ri-check-line"></i> Preventive maintenance</li>
+              <li><i class="ri-check-line"></i> Scheduled system checks</li>
+              <li><i class="ri-check-line"></i> Priority response</li>
+              <li><i class="ri-check-line"></i> Hardware health monitoring</li>
+              <li><i class="ri-check-line"></i> WhatsApp + Email support</li>
+            </ul>
+            <div class="pricing__assessment-note">
+              <span><i class="ri-information-line"></i> Pricing available after assessment</span>
+            </div>
+            <a href="Contact Us.html" class="pricing__card-btn pricing__card-btn--standard">Request Assessment</a>
+          </div>
+        </div>
+
+        <!-- Pro -->
+        <div class="pricing__card pricing__card--pro" data-aos="fade-up" data-aos-delay="200">
+          <div class="pricing__card-header">
+            <span class="pricing__card-tier"><i class="ri-vip-crown-line"></i> Tier 3</span>
+            <h3 class="pricing__card-name">Pro</h3>
+            <p class="pricing__card-tagline">Full coverage with emergency response</p>
+          </div>
+          <div class="pricing__card-body">
+            <ul class="pricing__features-list">
+              <li class="inherited"><i class="ri-arrow-right-s-line"></i> Everything in Standard, plus:</li>
+              <li><i class="ri-check-line"></i> Emergency response (24/7)</li>
+              <li><i class="ri-check-line"></i> Asset inventory & reporting</li>
+              <li><i class="ri-check-line"></i> Maintenance records & documentation</li>
+              <li><i class="ri-check-line"></i> Hardware lifecycle management</li>
+              <li><i class="ri-check-line"></i> Dedicated account manager</li>
+            </ul>
+            <div class="pricing__assessment-note">
+              <span><i class="ri-information-line"></i> Pricing available after assessment</span>
+            </div>
+            <a href="Contact Us.html" class="pricing__card-btn pricing__card-btn--pro">Request Assessment</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="pricing__cta">
-      <h2>Ready to Start Your Retainer?</h2>
-      <p>Contact us today to discuss which retainer package is right for your business. We're here to help you succeed with ongoing support.</p>
-      <a href="services.html" class="btn">Contact Us Now</a>
+    <div class="section-divider"></div>
+
+    <!-- ==================== SYSTEM MONITORING (DEVOPS) ==================== -->
+    <section class="service__pricing-section full-width-section" id="monitoring" style="background: #f8fafc; max-width: 100%; padding: 5rem 0;">
+      <div style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
+        <div class="service__pricing-header" data-aos="fade-up">
+          <div class="service__pricing-icon">
+            <i class="ri-line-chart-line"></i>
+          </div>
+          <h2>System Monitoring (DevOps)</h2>
+          <p>Proactive monitoring to prevent downtime and system failures before they impact your business.</p>
+        </div>
+
+        <div class="pricing__cards-grid">
+          <!-- Basic - Visibility -->
+          <div class="pricing__card pricing__card--basic" data-aos="fade-up" data-aos-delay="0">
+            <div class="pricing__card-header">
+              <span class="pricing__card-tier"><i class="ri-eye-line"></i> Visibility</span>
+              <h3 class="pricing__card-name">Basic</h3>
+              <p class="pricing__card-tagline">Know when things go wrong</p>
+            </div>
+            <div class="pricing__card-body">
+              <ul class="pricing__features-list">
+                <li><i class="ri-check-line"></i> Website uptime & availability checks</li>
+                <li><i class="ri-check-line"></i> Email / WhatsApp alerts</li>
+                <li><i class="ri-check-line"></i> Monthly uptime summary</li>
+                <li><i class="ri-check-line"></i> Basic downtime notifications</li>
+                <li><i class="ri-check-line"></i> Response time monitoring</li>
+              </ul>
+              <div class="pricing__assessment-note">
+                <span><i class="ri-information-line"></i> Pricing available after assessment</span>
+              </div>
+              <a href="Contact Us.html" class="pricing__card-btn pricing__card-btn--basic">Request Assessment</a>
+            </div>
+          </div>
+
+          <!-- Standard - Stability -->
+          <div class="pricing__card pricing__card--standard pricing__card--recommended" data-aos="fade-up" data-aos-delay="100">
+            <div class="pricing__recommended-badge">Recommended</div>
+            <div class="pricing__card-header">
+              <span class="pricing__card-tier"><i class="ri-shield-star-line"></i> Stability</span>
+              <h3 class="pricing__card-name">Standard</h3>
+              <p class="pricing__card-tagline">Deep insights & automated protection</p>
+            </div>
+            <div class="pricing__card-body">
+              <ul class="pricing__features-list">
+                <li class="inherited"><i class="ri-arrow-right-s-line"></i> Everything in Basic, plus:</li>
+                <li><i class="ri-check-line"></i> CPU, RAM, disk monitoring</li>
+                <li><i class="ri-check-line"></i> Performance dashboards</li>
+                <li><i class="ri-check-line"></i> Automated backups</li>
+                <li><i class="ri-check-line"></i> Monthly health report</li>
+                <li><i class="ri-check-line"></i> Resource usage alerts</li>
+              </ul>
+              <div class="pricing__assessment-note">
+                <span><i class="ri-information-line"></i> Pricing available after assessment</span>
+              </div>
+              <a href="Contact Us.html" class="pricing__card-btn pricing__card-btn--standard">Request Assessment</a>
+            </div>
+          </div>
+
+          <!-- Pro - Resilience -->
+          <div class="pricing__card pricing__card--pro" data-aos="fade-up" data-aos-delay="200">
+            <div class="pricing__card-header">
+              <span class="pricing__card-tier"><i class="ri-rocket-line"></i> Resilience</span>
+              <h3 class="pricing__card-name">Pro</h3>
+              <p class="pricing__card-tagline">Enterprise-grade monitoring & support</p>
+            </div>
+            <div class="pricing__card-body">
+              <ul class="pricing__features-list">
+                <li class="inherited"><i class="ri-arrow-right-s-line"></i> Everything in Standard, plus:</li>
+                <li><i class="ri-check-line"></i> Advanced alerts & escalation</li>
+                <li><i class="ri-check-line"></i> Log & anomaly monitoring</li>
+                <li><i class="ri-check-line"></i> Quarterly system review</li>
+                <li><i class="ri-check-line"></i> Emergency support (priority)</li>
+                <li><i class="ri-check-line"></i> Custom monitoring rules</li>
+              </ul>
+              <div class="pricing__assessment-note">
+                <span><i class="ri-information-line"></i> Pricing available after assessment</span>
+              </div>
+              <a href="Contact Us.html" class="pricing__card-btn pricing__card-btn--pro">Request Assessment</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ==================== IT SUPPORT & NETWORK / CCTV ==================== -->
+    <section class="service__pricing-section" id="it-support">
+      <div class="service__pricing-header" data-aos="fade-up">
+        <div class="service__pricing-icon">
+          <i class="ri-router-line"></i>
+        </div>
+        <h2>IT Support & Network / CCTV</h2>
+        <p>Network configuration, CCTV cameras, security systems, and comprehensive IT infrastructure support.</p>
+      </div>
+
+      <div class="pricing__cards-grid">
+        <!-- Basic Setup -->
+        <div class="pricing__card pricing__card--basic" data-aos="fade-up" data-aos-delay="0">
+          <div class="pricing__card-header">
+            <span class="pricing__card-tier"><i class="ri-plug-line"></i> Setup</span>
+            <h3 class="pricing__card-name">Basic</h3>
+            <p class="pricing__card-tagline">Essential network & CCTV setup</p>
+          </div>
+          <div class="pricing__card-body">
+            <ul class="pricing__features-list">
+              <li><i class="ri-check-line"></i> Router & switch configuration</li>
+              <li><i class="ri-check-line"></i> Wi-Fi setup & optimization</li>
+              <li><i class="ri-check-line"></i> Device connectivity testing</li>
+              <li><i class="ri-check-line"></i> Basic CCTV camera installation</li>
+              <li><i class="ri-check-line"></i> Network troubleshooting</li>
+            </ul>
+            <div class="pricing__assessment-note">
+              <span><i class="ri-information-line"></i> Pricing available after assessment</span>
+            </div>
+            <a href="Contact Us.html" class="pricing__card-btn pricing__card-btn--basic">Request Assessment</a>
+          </div>
+        </div>
+
+        <!-- Standard - Secure & Stable -->
+        <div class="pricing__card pricing__card--standard pricing__card--recommended" data-aos="fade-up" data-aos-delay="100">
+          <div class="pricing__recommended-badge">Recommended</div>
+          <div class="pricing__card-header">
+            <span class="pricing__card-tier"><i class="ri-lock-line"></i> Secure</span>
+            <h3 class="pricing__card-name">Standard</h3>
+            <p class="pricing__card-tagline">Secure & stable infrastructure</p>
+          </div>
+          <div class="pricing__card-body">
+            <ul class="pricing__features-list">
+              <li class="inherited"><i class="ri-arrow-right-s-line"></i> Everything in Basic, plus:</li>
+              <li><i class="ri-check-line"></i> Network security & optimization</li>
+              <li><i class="ri-check-line"></i> Remote access for CCTV</li>
+              <li><i class="ri-check-line"></i> Full documentation</li>
+              <li><i class="ri-check-line"></i> VPN setup & configuration</li>
+              <li><i class="ri-check-line"></i> Monthly security checks</li>
+            </ul>
+            <div class="pricing__assessment-note">
+              <span><i class="ri-information-line"></i> Pricing available after assessment</span>
+            </div>
+            <a href="Contact Us.html" class="pricing__card-btn pricing__card-btn--standard">Request Assessment</a>
+          </div>
+        </div>
+
+        <!-- Pro - Infrastructure -->
+        <div class="pricing__card pricing__card--pro" data-aos="fade-up" data-aos-delay="200">
+          <div class="pricing__card-header">
+            <span class="pricing__card-tier"><i class="ri-building-line"></i> Infrastructure</span>
+            <h3 class="pricing__card-name">Pro</h3>
+            <p class="pricing__card-tagline">Enterprise infrastructure management</p>
+          </div>
+          <div class="pricing__card-body">
+            <ul class="pricing__features-list">
+              <li class="inherited"><i class="ri-arrow-right-s-line"></i> Everything in Standard, plus:</li>
+              <li><i class="ri-check-line"></i> Advanced firewall setup</li>
+              <li><i class="ri-check-line"></i> Redundancy planning</li>
+              <li><i class="ri-check-line"></i> Performance monitoring</li>
+              <li><i class="ri-check-line"></i> Priority support (24/7)</li>
+              <li><i class="ri-check-line"></i> Multi-site management</li>
+            </ul>
+            <div class="pricing__assessment-note">
+              <span><i class="ri-information-line"></i> Pricing available after assessment</span>
+            </div>
+            <a href="Contact Us.html" class="pricing__card-btn pricing__card-btn--pro">Request Assessment</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="pricing__why-us">
+      <div class="pricing__why-container">
+        <div class="pricing__why-header" data-aos="fade-up">
+          <h2>Why Choose Us</h2>
+          <p>What sets Developong apart from other IT service providers</p>
+        </div>
+
+        <div class="pricing__why-grid" data-aos="fade-up" data-aos-delay="100">
+          <div class="pricing__why-item">
+            <i class="ri-eye-line"></i>
+            <h4>Proactive Monitoring</h4>
+            <p>We catch issues before they become problems, not after they've impacted your business.</p>
+          </div>
+          <div class="pricing__why-item">
+            <i class="ri-file-list-3-line"></i>
+            <h4>Clear Documentation</h4>
+            <p>Every service includes detailed reporting so you know exactly what's happening with your systems.</p>
+          </div>
+          <div class="pricing__why-item">
+            <i class="ri-expand-up-down-line"></i>
+            <h4>Scalable Packages</h4>
+            <p>Start with what you need and scale up as your business grows — no long-term lock-ins.</p>
+          </div>
+          <div class="pricing__why-item">
+            <i class="ri-map-pin-user-line"></i>
+            <h4>Local Support</h4>
+            <p>Professional standards with the personal touch of local, responsive support.</p>
+          </div>
+          <div class="pricing__why-item">
+            <i class="ri-hand-coin-line"></i>
+            <h4>Transparent Pricing</h4>
+            <p>Assessment-based pricing means you pay for exactly what you need — no hidden fees.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="pricing__final-cta">
+      <div class="pricing__final-cta-content" data-aos="fade-up">
+        <h2>Not Sure Which Plan Fits Your Business?</h2>
+        <p>We'll assess your systems for free and recommend the right plan tailored to your specific needs and budget.</p>
+        <div class="pricing__final-cta-buttons">
+          <a href="Contact Us.html" class="btn-cta-white"><i class="ri-file-list-3-line"></i> Request Free Assessment</a>
+          <a href="Contact Us.html" class="btn-cta-outline"><i class="ri-customer-service-2-line"></i> Talk to IT Specialist</a>
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" style="background-image: linear-gradient(rgba(11, 12, 16, 0.85), rgba(11, 12, 16, 0.85)), url('assets/code-bg.jpg'); background-position: center center; background-size: cover; background-repeat: no-repeat;">
       <div class="section__container footer__container">
         <div class="footer__col">
           <h3>Developong <span>Company</span></h3>
@@ -604,10 +1103,10 @@
         </div>
         <div class="footer__col">
           <h4>Services</h4>
-          <p>Search Terms</p>
-          <p>Advance Search</p>
-          <p>Privacy Policy</p>
-          <p>Our Services</p>
+          <p>Hardware Services</p>
+          <p>System Monitoring</p>
+          <p>IT Support</p>
+          <p>Network & CCTV</p>
         </div>
 
         <div class="footer__col">
@@ -621,11 +1120,21 @@
       </div>
       <div class="footer__bar">
         <div class="footer__bar__content">
-          <p>Copyright © 2023 Developong. All rights reserved.</p>
+          <p>Copyright © 2026 Developong. All rights reserved.</p>
         </div>
       </div>
     </footer>
 
     <script src="script.js"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,
+        easing: 'ease-out-cubic',
+        once: true,
+        offset: 50
+      });
+    </script>
   </body>
 </html>

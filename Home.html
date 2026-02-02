@@ -6,8 +6,123 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="shortcut icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="styles.css?v=20260125c" />
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Modern Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <title>Developong Company | Home</title>
+    
+    <!-- Modern Page Enhancements -->
+    <style>
+      /* Modern CSS Variables */
+      :root {
+        --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        --gradient-dark: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        --glass-bg: rgba(255, 255, 255, 0.1);
+        --glass-border: rgba(255, 255, 255, 0.2);
+        --shadow-modern: 0 8px 32px rgba(0, 0, 0, 0.12);
+        --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.2);
+        --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      
+      /* Modern body styling */
+      body {
+        font-family: 'Inter', 'Poppins', sans-serif;
+      }
+      
+      /* Gradient text effect */
+      .gradient-text {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f5576c 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      
+      /* Modern glassmorphism cards */
+      .glass-card {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: var(--shadow-modern);
+      }
+      
+      /* Floating animation */
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+      }
+      
+      /* Pulse glow animation */
+      @keyframes pulse-glow {
+        0%, 100% { box-shadow: 0 0 20px rgba(102, 126, 234, 0.3); }
+        50% { box-shadow: 0 0 40px rgba(102, 126, 234, 0.6); }
+      }
+      
+      /* Shimmer effect */
+      @keyframes shimmer {
+        0% { background-position: -200% 0; }
+        100% { background-position: 200% 0; }
+      }
+      
+      /* Modern button styles */
+      .btn-modern {
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: 12px;
+        color: white;
+        font-weight: 600;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: var(--transition-smooth);
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+      }
+      
+      .btn-modern:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+      }
+      
+      .btn-modern::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+        transition: 0.5s;
+      }
+      
+      .btn-modern:hover::before {
+        left: 100%;
+      }
+      
+      /* Modern section styling */
+      .section-modern {
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .section-modern::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -20%;
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+        border-radius: 50%;
+        pointer-events: none;
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -33,17 +148,18 @@
       </nav>
 
       <div class="section__container header__container">
-        <div class="header__content">
+        <div class="header__content" data-aos="fade-up" data-aos-duration="1000">
+          <span class="hero-badge" style="display: inline-block; padding: 0.5rem 1rem; background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); border-radius: 50px; font-size: 0.85rem; color: rgba(255,255,255,0.9); margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.2);"><i class="ri-rocket-2-line"></i> Transforming Ideas Into Reality</span>
           <h1>
             <span class="heading-line">Build, scale,</span>
-            <span class="heading-line">innovate, grow.</span>
+            <span class="heading-line" style="background: linear-gradient(135deg, #667eea 0%, #f5576c 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">innovate, grow.</span>
           </h1>
-          <p>
+          <p style="font-size: 1.1rem; line-height: 1.8; max-width: 500px;">
             The future is here. We provide dependable IT services, robust infrastructure, and cutting-edge technologies for your business growth.
           </p>
-          <div class="header__buttons">
-            <a href="services.html" class="btn btn-primary">Explore <i class="ri-arrow-right-line"></i></a>
-            <a href="#recent-projects" class="btn btn-text">Tour our Projects</a>
+          <div class="header__buttons" style="gap: 1rem; margin-top: 2rem;">
+            <a href="services.html" class="btn btn-primary" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 1rem 2rem; border-radius: 12px; font-weight: 600; box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4); transition: all 0.3s ease;">Explore Services <i class="ri-arrow-right-line"></i></a>
+            <a href="#recent-projects" class="btn btn-text" style="display: inline-flex; align-items: center; gap: 0.5rem;"><i class="ri-play-circle-line"></i> View Projects</a>
           </div>
         </div>
 
@@ -68,86 +184,147 @@
     <!-- Content to be revealed on scroll -->
 
     <!-- Digital Transformation Services Section -->
-    <section class="digital-services">
+    <section class="digital-services section-modern">
       <style>
         .digital-services {
-          background: #d8e2ef;
-          padding: 5rem 1rem;
+          background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+          padding: 6rem 1rem;
+          position: relative;
+          overflow: hidden;
+        }
+        .digital-services::before {
+          content: '';
+          position: absolute;
+          top: -100px;
+          right: -100px;
+          width: 400px;
+          height: 400px;
+          background: radial-gradient(circle, rgba(102, 126, 234, 0.15) 0%, transparent 70%);
+          border-radius: 50%;
+        }
+        .digital-services::after {
+          content: '';
+          position: absolute;
+          bottom: -150px;
+          left: -100px;
+          width: 500px;
+          height: 500px;
+          background: radial-gradient(circle, rgba(245, 87, 108, 0.1) 0%, transparent 70%);
+          border-radius: 50%;
         }
         .digital-services__container {
           max-width: 1200px;
           margin: 0 auto;
+          position: relative;
+          z-index: 1;
         }
         .digital-services__header {
-          text-align: left;
-          margin-bottom: 3rem;
+          text-align: center;
+          margin-bottom: 4rem;
         }
         .digital-services__label {
           display: inline-block;
-          background: #fff;
-          border: 1px solid #ccc;
-          padding: 0.4rem 1rem;
-          border-radius: 4px;
-          font-size: 0.75rem;
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          padding: 0.5rem 1.5rem;
+          border-radius: 50px;
+          font-size: 0.8rem;
           font-weight: 600;
           text-transform: uppercase;
-          letter-spacing: 0.5px;
-          color: var(--text-dark);
+          letter-spacing: 1px;
+          color: white;
           margin-bottom: 1.5rem;
+          box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
         }
         .digital-services__header h2 {
-          font-size: 2.75rem;
-          font-weight: 700;
-          color: var(--text-dark);
-          margin-bottom: 0.5rem;
-          letter-spacing: -0.02em;
+          font-size: 3.5rem;
+          font-weight: 900;
+          color: #1a1a2e;
+          margin-bottom: 1rem;
+          letter-spacing: -0.03em;
+          line-height: 1.1;
         }
         .digital-services__header p {
-          color: var(--text-light);
-          font-size: 1.1rem;
+          color: #64748b;
+          font-size: 1.2rem;
+          max-width: 500px;
+          margin: 0 auto;
         }
         .digital-services__grid {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
-          gap: 1.5rem;
-          margin-bottom: 3rem;
+          gap: 2rem;
+          margin-bottom: 4rem;
         }
         .digital-service__card {
-          background: var(--white);
-          border: 1px solid #ddd;
-          border-radius: 16px;
-          padding: 2rem 1.5rem;
+          background: rgba(255, 255, 255, 0.9);
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
+          border: 1px solid rgba(255, 255, 255, 0.5);
+          border-radius: 24px;
+          padding: 2.5rem 2rem;
           display: flex;
           flex-direction: column;
-          min-height: 320px;
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          min-height: 350px;
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          position: relative;
+          overflow: hidden;
+        }
+        .digital-service__card::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 4px;
+          background: linear-gradient(90deg, #667eea, #764ba2, #f5576c);
+          transform: scaleX(0);
+          transform-origin: left;
+          transition: transform 0.4s ease;
+        }
+        .digital-service__card:hover::before {
+          transform: scaleX(1);
         }
         .digital-service__card:hover {
-          transform: translateY(-4px);
-          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+          transform: translateY(-12px);
+          box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
         }
         .digital-service__icon {
-          width: 48px;
-          height: 48px;
+          width: 70px;
+          height: 70px;
           display: flex;
           align-items: center;
           justify-content: center;
           margin-bottom: 1.5rem;
+          background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%);
+          border-radius: 20px;
+          transition: all 0.3s ease;
+        }
+        .digital-service__card:hover .digital-service__icon {
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          transform: scale(1.1) rotate(5deg);
         }
         .digital-service__icon i {
           font-size: 2rem;
-          color: var(--primary-color);
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          transition: all 0.3s ease;
+        }
+        .digital-service__card:hover .digital-service__icon i {
+          -webkit-text-fill-color: white;
+          background: none;
         }
         .digital-service__card h4 {
-          font-size: 1.25rem;
-          font-weight: 600;
-          color: var(--text-dark);
+          font-size: 1.3rem;
+          font-weight: 700;
+          color: #1a1a2e;
           margin-bottom: 1rem;
         }
         .digital-service__card p {
-          color: var(--text-light);
+          color: #64748b;
           font-size: 0.95rem;
-          line-height: 1.6;
+          line-height: 1.7;
           flex-grow: 1;
           margin-bottom: 1.5rem;
         }
@@ -155,34 +332,59 @@
           display: inline-flex;
           align-items: center;
           gap: 0.5rem;
-          color: var(--primary-color);
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
           font-weight: 600;
           font-size: 0.95rem;
           text-decoration: none;
           margin-top: auto;
-        }
-        .digital-service__link:hover {
-          color: var(--primary-color-dark);
+          transition: all 0.3s ease;
         }
         .digital-service__link i {
-          font-size: 1rem;
+          font-size: 1.1rem;
+          transition: transform 0.3s ease;
+          -webkit-text-fill-color: #667eea;
+        }
+        .digital-service__link:hover i {
+          transform: translateX(5px);
         }
         .digital-services__cta {
           text-align: center;
         }
         .digital-services__btn {
-          display: inline-block;
-          background: var(--primary-color);
-          color: var(--white);
-          padding: 1rem 2rem;
-          border-radius: 8px;
+          display: inline-flex;
+          align-items: center;
+          gap: 0.75rem;
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          color: white;
+          padding: 1.2rem 2.5rem;
+          border-radius: 14px;
           font-weight: 600;
-          font-size: 1rem;
+          font-size: 1.1rem;
           text-decoration: none;
-          transition: background 0.3s ease;
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          box-shadow: 0 8px 30px rgba(102, 126, 234, 0.4);
+          position: relative;
+          overflow: hidden;
+        }
+        .digital-services__btn::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+          transition: 0.5s;
+        }
+        .digital-services__btn:hover::before {
+          left: 100%;
         }
         .digital-services__btn:hover {
-          background: var(--primary-color-dark);
+          transform: translateY(-4px);
+          box-shadow: 0 15px 40px rgba(102, 126, 234, 0.5);
         }
         @media (max-width: 1024px) {
           .digital-services__grid {
@@ -194,20 +396,20 @@
             grid-template-columns: 1fr;
           }
           .digital-services__header h2 {
-            font-size: 2rem;
+            font-size: 2.2rem;
           }
         }
       </style>
 
       <div class="digital-services__container">
-        <div class="digital-services__header">
-          <span class="digital-services__label">About Us</span>
-          <h2>Digital Transformation Services</h2>
-          <p>How can we help you?</p>
+        <div class="digital-services__header" data-aos="fade-up">
+          <span class="digital-services__label"><i class="ri-sparkle-fill"></i> About Us</span>
+          <h2>Digital Transformation<br>Services</h2>
+          <p>Empowering your business with cutting-edge solutions</p>
         </div>
 
         <div class="digital-services__grid">
-          <div class="digital-service__card">
+          <div class="digital-service__card" data-aos="fade-up" data-aos-delay="0">
             <div class="digital-service__icon">
               <i class="ri-code-s-slash-line"></i>
             </div>
@@ -220,7 +422,7 @@
             </a>
           </div>
 
-          <div class="digital-service__card">
+          <div class="digital-service__card" data-aos="fade-up" data-aos-delay="100">
             <div class="digital-service__icon">
               <i class="ri-computer-line"></i>
             </div>
@@ -233,7 +435,7 @@
             </a>
           </div>
 
-          <div class="digital-service__card">
+          <div class="digital-service__card" data-aos="fade-up" data-aos-delay="200">
             <div class="digital-service__icon">
               <i class="ri-cloud-line"></i>
             </div>
@@ -246,7 +448,7 @@
             </a>
           </div>
 
-          <div class="digital-service__card">
+          <div class="digital-service__card" data-aos="fade-up" data-aos-delay="300">
             <div class="digital-service__icon">
               <i class="ri-customer-service-2-line"></i>
             </div>
@@ -260,8 +462,8 @@
           </div>
         </div>
 
-        <div class="digital-services__cta">
-          <a href="services.html" class="digital-services__btn">View All Services</a>
+        <div class="digital-services__cta" data-aos="fade-up" data-aos-delay="400">
+          <a href="services.html" class="digital-services__btn">Explore All Services <i class="ri-arrow-right-line"></i></a>
         </div>
       </div>
     </section>
@@ -272,20 +474,22 @@
         ABOUT SECTION
         -->
 
-    <section class="about section__container about__container" id="about">
-      <div class="about__content">
-        <h2 class="section__header">About Us</h2>
-        <p>
+    <section class="about section__container about__container" id="about" style="padding: 6rem 1rem; background: linear-gradient(180deg, #fff 0%, #f8fafc 100%);">
+      <div class="about__content" data-aos="fade-right" data-aos-duration="800">
+        <span style="display: inline-block; padding: 0.5rem 1rem; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%); border-radius: 50px; font-size: 0.85rem; font-weight: 600; color: #667eea; margin-bottom: 1rem;"><i class="ri-building-4-line"></i> Who We Are</span>
+        <h2 class="section__header" style="font-size: 3.5rem; font-weight: 900; color: #1a1a2e; margin-bottom: 1.5rem; letter-spacing: -0.03em; line-height: 1.1;">About Us</h2>
+        <p style="font-size: 1.1rem; line-height: 1.8; color: #64748b; margin-bottom: 1rem;">
           We are a developing technology service startup focused on delivering reliable, scalable, and secure IT solutions for individuals, startups, and growing businesses. Our core services span hardware support, IT infrastructure management, WordPress website development and hosting, and DevOps-driven system monitoring.
         </p>
-        <p>
+        <p style="font-size: 1.1rem; line-height: 1.8; color: #64748b;">
         What began as a service-based initiative is evolving into a structured company with a strong emphasis on operational excellence...
-        </p><br>
-        <br>
-        <a href="about.html" class="service__btn">Learn More</a>
+        </p>
+        <div style="margin-top: 2rem;">
+          <a href="about.html" class="service__btn" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 12px; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);">Learn More <i class="ri-arrow-right-line"></i></a>
+        </div>
       </div>
-      <div class="about__image">
-        <img src="assets/efR.jpeg" alt="about" />
+      <div class="about__image" data-aos="fade-left" data-aos-duration="800">
+        <img src="assets/efR.jpeg" alt="about" style="border-radius: 24px; box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);" />
       </div>
     </section>
 
@@ -293,27 +497,28 @@
         WHY_CHOOSE_US
         -->
 
-    <section class="section__container why__container">
-      <div class="why__image">
-        <img src="cnsR.jpg" alt="why choose us"/>
+    <section class="section__container why__container" style="padding: 6rem 1rem; background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%);">
+      <div class="why__image" data-aos="fade-right" data-aos-duration="800">
+        <img src="cnsR.jpg" alt="why choose us" style="border-radius: 24px; box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);"/>
        
       </div>
-      <div class="why__content">
-        <h2 class="section__header">Why Choose Us</h2>
+      <div class="why__content" data-aos="fade-left" data-aos-duration="800">
+        <span style="display: inline-block; padding: 0.5rem 1rem; background: rgba(102, 126, 234, 0.2); border-radius: 50px; font-size: 0.85rem; font-weight: 600; color: #a5b4fc; margin-bottom: 1rem;"><i class="ri-shield-check-line"></i> Our Advantages</span>
+        <h2 class="section__header" style="font-size: 3.5rem; font-weight: 900; color: white; margin-bottom: 1.5rem; letter-spacing: -0.03em; line-height: 1.1;">Why Choose Us</h2>
 
-        <div class="why__grid">
-          <span><i class="ri-hand-heart-line"></i></span>
+        <div class="why__grid" style="margin-top: 2rem;">
+          <span style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%); border-radius: 16px;"><i class="ri-hand-heart-line" style="color: #a5b4fc;"></i></span>
           <div>
-            <h4>Innovative IT Solutions</h4>
-            <p>
+            <h4 style="color: white; margin-bottom: 0.5rem;">Innovative IT Solutions</h4>
+            <p style="color: rgba(255,255,255,0.7); line-height: 1.7;">
                At Developong provides cutting-edge IT solutions,
                utilizing advanced technologies to address the 
                unique needs of businesses.
     </p>
           </div>
-          <span><i class="ri-truck-line"></i></span>
+          <span style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%); border-radius: 16px;"><i class="ri-truck-line" style="color: #a5b4fc;"></i></span>
           <div>
-            <h4>Operational Excellence</h4>
+            <h4 style="color: white; margin-bottom: 0.5rem;">Operational Excellence</h4>
             <p>
                Document all internal processes and service workflows.Develop clear onboarding procedures for clients.Create service-level standards to ensure consistency and quality.
             </p>
@@ -339,10 +544,95 @@
     <!---
         SUCCESS METRICS
       -->
-    <section class="section__container metrics__container" id="metrics">
+    <section class="section__container metrics__container" id="metrics" style="padding: 6rem 1rem; background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf3 100%); position: relative; overflow: hidden;">
+      <style>
+        .metrics__container::before {
+          content: '';
+          position: absolute;
+          top: -100px;
+          left: -100px;
+          width: 300px;
+          height: 300px;
+          background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+          border-radius: 50%;
+        }
+        .metrics__header {
+          text-align: center;
+          margin-bottom: 4rem;
+        }
+        .metrics__grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 2rem;
+          max-width: 1100px;
+          margin: 0 auto;
+        }
+        .metric {
+          background: white;
+          padding: 2.5rem 1.5rem;
+          border-radius: 24px;
+          text-align: center;
+          box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          position: relative;
+          overflow: hidden;
+        }
+        .metric::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 4px;
+          background: linear-gradient(90deg, #667eea, #764ba2, #f5576c);
+        }
+        .metric:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+        .metric__icon {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 70px;
+          height: 70px;
+          background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%);
+          border-radius: 20px;
+          margin-bottom: 1.5rem;
+        }
+        .metric__icon i {
+          font-size: 2rem;
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+        .metric__value {
+          font-size: 3rem;
+          font-weight: 800;
+          background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          margin-bottom: 0.5rem;
+          line-height: 1;
+        }
+        .metric__label {
+          color: #64748b;
+          font-size: 1rem;
+          font-weight: 500;
+        }
+        @media (max-width: 1024px) {
+          .metrics__grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+          .metrics__grid { grid-template-columns: 1fr; }
+        }
+      </style>
       <div class="metrics__header" data-aos="fade-up">
-        <h2 class="section__header">Success Metrics</h2>
-        <p>What we’ve achieved with our clients.</p>
+        <span style="display: inline-block; padding: 0.5rem 1rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50px; font-size: 0.8rem; font-weight: 600; color: white; margin-bottom: 1rem; box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);"><i class="ri-bar-chart-2-line"></i> Our Impact</span>
+        <h2 class="section__header" style="font-size: 3.5rem; font-weight: 900; color: #1a1a2e; margin-bottom: 0.5rem; letter-spacing: -0.03em; line-height: 1.1;">Success Metrics</h2>
+        <p style="color: #64748b; font-size: 1.1rem;">What we've achieved with our clients</p>
       </div>
 
 
@@ -370,11 +660,101 @@
       </div>
     </section>
 
-    <section class="section__container doctors__container">
-      <div class="doctors__header">
-        <div class="doctors__header__content">
-          <h2 class="section__header">Our Special Team</h2>
-          <p>
+    <section class="section__container doctors__container" style="padding: 6rem 1rem; background: white;">
+      <style>
+        .doctors__container .doctors__grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 2rem;
+          margin-top: 3rem;
+        }
+        .doctors__card {
+          background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+          border-radius: 24px;
+          padding: 2.5rem 2rem;
+          text-align: center;
+          box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          border: 1px solid rgba(102, 126, 234, 0.1);
+        }
+        .doctors__card:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+          border-color: rgba(102, 126, 234, 0.3);
+        }
+        .doctors__card__image {
+          margin-bottom: 1.5rem;
+        }
+        .team__icon {
+          width: 100px;
+          height: 100px;
+          margin: 0 auto 1rem;
+          background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.3s ease;
+        }
+        .doctors__card:hover .team__icon {
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          transform: scale(1.1);
+        }
+        .team__icon i {
+          font-size: 2.5rem;
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+        .doctors__card:hover .team__icon i {
+          -webkit-text-fill-color: white;
+          background: none;
+        }
+        .doctors__card h4 {
+          color: #1a1a2e;
+          font-size: 1.25rem;
+          font-weight: 700;
+          margin-bottom: 0.25rem;
+        }
+        .doctors__card p {
+          color: #64748b;
+          font-size: 0.95rem;
+        }
+        .doctors__socials {
+          display: flex;
+          gap: 0.75rem;
+          justify-content: center;
+          margin-top: 1rem;
+        }
+        .doctors__socials a {
+          width: 40px;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+          border-radius: 12px;
+          color: #667eea;
+          transition: all 0.3s ease;
+        }
+        .doctors__socials a:hover {
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          color: white;
+          transform: translateY(-3px);
+        }
+        @media (max-width: 1024px) {
+          .doctors__container .doctors__grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+          .doctors__container .doctors__grid { grid-template-columns: 1fr; }
+        }
+      </style>
+      <div class="doctors__header" data-aos="fade-up">
+        <div class="doctors__header__content" style="text-align: center; max-width: 600px; margin: 0 auto;">
+          <span style="display: inline-block; padding: 0.5rem 1rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50px; font-size: 0.8rem; font-weight: 600; color: white; margin-bottom: 1rem; box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);"><i class="ri-team-line"></i> Meet Our Experts</span>
+          <h2 class="section__header" style="font-size: 3.5rem; font-weight: 900; color: #1a1a2e; margin-bottom: 1rem; letter-spacing: -0.03em; line-height: 1.1;">Our Special Team</h2>
+          <p style="color: #64748b; font-size: 1.1rem; line-height: 1.7;">
             At Developong, we take pride in our team of specialized IT experts
             dedicated to empowering businesses through compassionate guidance
             and unwavering support.
@@ -442,9 +822,10 @@
         PORTFOLIO SECTION
       -->
 
-    <section id="recent-projects" class="section__container home__portfolio">
-      <div class="portfolio__header" data-aos="fade-up">
-        <h2 class="section__header">Recent Projects</h2>
+    <section id="recent-projects" class="section__container home__portfolio" style="padding: 6rem 1rem; background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%); position: relative; overflow: hidden; max-width: 100%;">
+      <div class="portfolio__header" data-aos="fade-up" style="text-align: center; margin-bottom: 3rem;">
+        <span style="display: inline-block; padding: 0.5rem 1rem; background: rgba(102, 126, 234, 0.2); border-radius: 50px; font-size: 0.8rem; font-weight: 600; color: #a5b4fc; margin-bottom: 1rem;"><i class="ri-folder-line"></i> Our Work</span>
+        <h2 class="section__header" style="font-size: 3.5rem; font-weight: 900; color: white; margin-bottom: 1rem; letter-spacing: -0.03em; line-height: 1.1;">Recent Projects</h2>
         <p>
           A few websites we’ve built and launched for clients.<br></br>
        
@@ -453,35 +834,74 @@
       </div>
 
       <style>
+        .home__portfolio::before {
+          content: '';
+          position: absolute;
+          top: -100px;
+          right: -100px;
+          width: 400px;
+          height: 400px;
+          background: radial-gradient(circle, rgba(102, 126, 234, 0.15) 0%, transparent 70%);
+          border-radius: 50%;
+        }
+        .home__portfolio::after {
+          content: '';
+          position: absolute;
+          bottom: -150px;
+          left: -100px;
+          width: 500px;
+          height: 500px;
+          background: radial-gradient(circle, rgba(245, 87, 108, 0.1) 0%, transparent 70%);
+          border-radius: 50%;
+        }
         .home__portfolio .portfolio__grid {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
-          gap: 1.5rem;
+          gap: 2rem;
+          position: relative;
+          z-index: 1;
         }
         .home__portfolio .portfolio__card {
-          background: var(--white);
-          border-radius: 12px;
+          background: rgba(255, 255, 255, 0.05);
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          border-radius: 24px;
           overflow: hidden;
-          box-shadow: 0 4px 6px rgba(0,0,0,0.08);
-          transition: transform .3s ease, box-shadow .3s ease;
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .home__portfolio .portfolio__card:hover {
-          transform: translateY(-6px);
-          box-shadow: 0 12px 20px rgba(0,0,0,0.12);
+          transform: translateY(-12px);
+          box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+          border-color: rgba(102, 126, 234, 0.3);
         }
         .home__portfolio .portfolio__image {
           width: 100%;
-          height: 180px;
+          height: 200px;
           object-fit: cover;
           display: block;
+          transition: transform 0.5s ease;
         }
-        .home__portfolio .portfolio__content { padding: 1rem; }
-        .home__portfolio .portfolio__title { color: var(--text-dark); font-weight: 600; margin-bottom: .25rem; }
-        .home__portfolio .portfolio__meta { color: var(--text-light); font-size: .95rem; margin-bottom: .5rem; }
-        .home__portfolio .portfolio__link { color: var(--primary-color); font-weight: 600; text-decoration: none; }
-        .home__portfolio .portfolio__link:hover { color: var(--primary-color-dark); }
+        .home__portfolio .portfolio__card:hover .portfolio__image {
+          transform: scale(1.05);
+        }
+        .home__portfolio .portfolio__content { padding: 1.5rem; }
+        .home__portfolio .portfolio__title { color: white; font-weight: 700; font-size: 1.2rem; margin-bottom: 0.5rem; }
+        .home__portfolio .portfolio__meta { color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: 1rem; }
+        .home__portfolio .portfolio__link { 
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          font-weight: 600; 
+          text-decoration: none;
+        }
+        .home__portfolio .portfolio__link:hover { opacity: 0.8; }
         @media (max-width: 1024px){ .home__portfolio .portfolio__grid{ grid-template-columns: repeat(2, 1fr); } }
-        @media (max-width: 768px){ .home__portfolio .portfolio__grid{ grid-template-columns: 1fr; } .home__portfolio .portfolio__image{ height: 150px; } }
+        @media (max-width: 768px){ .home__portfolio .portfolio__grid{ grid-template-columns: 1fr; } .home__portfolio .portfolio__image{ height: 180px; } }
       </style>
 
       <div class="portfolio__grid">
@@ -534,14 +954,75 @@
         -  FOOTER 
       -->
 
-    <footer class="footer">
-      <div class="section__container footer__container">
+    <footer class="footer" style="background-image: linear-gradient(rgba(11, 12, 16, 0.85), rgba(11, 12, 16, 0.85)), url('assets/code-bg.jpg'); background-position: center center; background-size: cover; background-repeat: no-repeat; position: relative; overflow: hidden;">
+      <style>
+        .footer::before {
+          content: '';
+          position: absolute;
+          top: -100px;
+          right: -100px;
+          width: 400px;
+          height: 400px;
+          background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+          border-radius: 50%;
+        }
+        .footer .footer__container {
+          position: relative;
+          z-index: 1;
+        }
+        .footer .footer__col h3 {
+          font-size: 1.8rem;
+          font-weight: 700;
+          color: white;
+          margin-bottom: 1rem;
+        }
+        .footer .footer__col h3 span {
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+        .footer .footer__col h4 {
+          color: white;
+          font-size: 1.1rem;
+          font-weight: 600;
+          margin-bottom: 1.5rem;
+          position: relative;
+          padding-bottom: 0.75rem;
+        }
+        .footer .footer__col h4::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 40px;
+          height: 3px;
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          border-radius: 2px;
+        }
+        .footer .footer__col p {
+          color: rgba(255,255,255,0.7);
+          margin-bottom: 0.75rem;
+          transition: all 0.3s ease;
+          cursor: pointer;
+        }
+        .footer .footer__col p:hover {
+          color: #a5b4fc;
+          padding-left: 5px;
+        }
+        .footer .footer__col p i {
+          color: #667eea;
+          margin-right: 0.5rem;
+        }
+      </style>
+      <div class="section__container footer__container" style="padding: 5rem 1rem;">
         <div class="footer__col">
           <h3>Developong <span>Company</span></h3>
-          <p>
+          <p style="max-width: 280px; line-height: 1.7;">
            Your partners in navigating the complexities of the technological landscape. 
             Our expertise, innovation, and client-centric approach are the cornerstones 
             of our commitment to ensuring your success.
+          </p>
         </div>
 
         <div class="footer__col">
@@ -571,9 +1052,9 @@
         </div>
 
       </div>
-      <div class="footer__bar">
+      <div class="footer__bar" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);">
         <div class="footer__bar__content">
-          <p>Copyright © 2023 Developong. All rights reserved.</p>
+          <p>Copyright © 2026 Developong. All rights reserved.</p>
           <!---feel free to change the copyright (developong) to your name--->
         </div>
       </div>
@@ -607,6 +1088,58 @@
       showCursor: true,
       cursorChar: '|',
       contentType: 'html'
+    });
+  </script>
+
+  <!-- AOS Animation Library -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Initialize AOS animations
+    AOS.init({
+      duration: 800,
+      easing: 'ease-out-cubic',
+      once: true,
+      offset: 50
+    });
+
+    // Counter animation for metrics
+    const counters = document.querySelectorAll('.counter');
+    const observerOptions = {
+      threshold: 0.5
+    };
+
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const counter = entry.target;
+          const target = parseInt(counter.getAttribute('data-target'));
+          const duration = 2000;
+          const step = target / (duration / 16);
+          let current = 0;
+
+          const updateCounter = () => {
+            current += step;
+            if (current < target) {
+              counter.textContent = Math.floor(current);
+              requestAnimationFrame(updateCounter);
+            } else {
+              counter.textContent = target;
+            }
+          };
+
+          updateCounter();
+          counterObserver.unobserve(counter);
+        }
+      });
+    }, observerOptions);
+
+    counters.forEach(counter => counterObserver.observe(counter));
+
+    // Smooth hover effects for cards
+    document.querySelectorAll('.digital-service__card, .portfolio__card, .doctors__card').forEach(card => {
+      card.addEventListener('mouseenter', function() {
+        this.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+      });
     });
   </script>
 
