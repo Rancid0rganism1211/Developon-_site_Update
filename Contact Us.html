@@ -621,51 +621,51 @@
           <div class="contact__details">
             <div class="contact__detail-item">
               <div class="contact__detail-icon">
-                <i class="ri-map-pin-2-line"></i>
+          <i class="ri-map-pin-2-line"></i>
               </div>
               <div class="contact__detail-content">
-                <h4>Our Office</h4>
-                <p>GA324, North Kaneshie, Accra<br>Ghana</p>
+          <h4>Our Office</h4>
+          <p>GA324, North Kaneshie, Accra<br>Ghana</p>
               </div>
             </div>
 
             <div class="contact__detail-item">
               <div class="contact__detail-icon">
-                <i class="ri-mail-line"></i>
+          <i class="ri-mail-line"></i>
               </div>
               <div class="contact__detail-content">
-                <h4>Email Us</h4>
-                <p><a href="mailto:info@developong.com">info@developong.com</a></p>
+          <h4>Email Us</h4>
+          <p><a href="mailto:info@developong.com">info@developong.com</a></p>
               </div>
             </div>
 
             <div class="contact__detail-item">
               <div class="contact__detail-icon">
-                <i class="ri-phone-line"></i>
+          <i class="ri-phone-line"></i>
               </div>
               <div class="contact__detail-content">
-                <h4>Call Us</h4>
-                <p><a href="tel:+233508635937">(+233) 5086 35 937</a></p>
+          <h4>Call Us</h4>
+          <p><a href="tel:+233508635937">(+233) 5086 35 937</a></p>
               </div>
             </div>
 
             <div class="contact__detail-item">
               <div class="contact__detail-icon">
-                <i class="ri-time-line"></i>
+          <i class="ri-time-line"></i>
               </div>
               <div class="contact__detail-content">
-                <h4>Business Hours</h4>
-                <p>Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 2:00 PM</p>
+          <h4>Business Hours</h4>
+          <p>Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 2:00 PM</p>
               </div>
             </div>
           </div>
 
           <div class="contact__social">
-            <a href="#" class="contact__social-link" title="Facebook"><i class="ri-facebook-fill"></i></a>
-            <a href="#" class="contact__social-link" title="Twitter"><i class="ri-twitter-x-fill"></i></a>
-            <a href="#" class="contact__social-link" title="LinkedIn"><i class="ri-linkedin-fill"></i></a>
-            <a href="#" class="contact__social-link" title="Instagram"><i class="ri-instagram-line"></i></a>
-            <a href="#" class="contact__social-link" title="WhatsApp"><i class="ri-whatsapp-line"></i></a>
+            <a href="https://www.facebook.com/YOUR_PAGE_NAME" class="contact__social-link" title="Facebook" target="_blank"><i class="ri-facebook-fill"></i></a>
+            <a href="https://twitter.com/YOUR_USERNAME" class="contact__social-link" title="Twitter" target="_blank"><i class="ri-twitter-fill"></i></a>
+            <a href="https://www.linkedin.com/company/YOUR_COMPANY_NAME" class="contact__social-link" title="LinkedIn" target="_blank"><i class="ri-linkedin-fill"></i></a>
+            <a href="https://www.instagram.com/YOUR_USERNAME" class="contact__social-link" title="Instagram" target="_blank"><i class="ri-instagram-line"></i></a>
+            <a href="https://wa.me/233XXXXXXXXX" class="contact__social-link" title="WhatsApp" target="_blank"><i class="ri-whatsapp-line"></i></a>
           </div>
         </div>
 
@@ -676,13 +676,13 @@
             <p>Fill out the form below and we'll get back to you within 24 hours.</p>
           </div>
 
-          <form action="https://formsubmit.co/info@developong.com" method="POST" class="contact__form">
-            <!-- FormSubmit.co Configuration -->
-            <input type="hidden" name="_subject" value="New Contact Form Submission - Developong Website">
-            <input type="hidden" name="_captcha" value="true">
-            <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_next" value="thank-you.html">
-            <input type="text" name="_honey" style="display:none">
+          <form action="https://api.web3forms.com/submit" method="POST" class="contact__form">
+            <!-- Web3Forms Configuration -->
+            <input type="hidden" name="access_key" value="79f65040-c130-4103-a452-37385f2d6d99">
+            <input type="hidden" name="subject" value="New Contact Form Submission - Developong Website">
+            <input type="hidden" name="redirect" value="thank-you.html">
+            <input type="hidden" name="from_name" value="Developong Contact Form">
+            <input type="checkbox" name="botcheck" style="display:none">
             
             <div class="form__row">
               <div class="form__group">
@@ -945,6 +945,14 @@
         easing: 'ease-out-cubic',
         once: true,
         offset: 50
+      });
+
+      // Reset form on page load (clears cached values when user navigates back)
+      window.addEventListener('pageshow', function(event) {
+        const form = document.querySelector('.contact__form');
+        if (form) {
+          form.reset();
+        }
       });
 
       // FAQ Accordion functionality
